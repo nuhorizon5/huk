@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국대학교 HANKUK UNIVERSITY</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"/>
+<style>
+:root{
+  --tw:#EBF2F1; --ts:#D6EBEA; --tg:#A8CFCC;
+  --st:#5C8F8A; --di:#0F1F1E; --pt:#0A3711;
+  --accent:#1a6b45;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Pretendard',sans-serif;background:var(--tw);color:var(--di);overflow-x:hidden;}
+img{display:block;width:100%;height:100%;object-fit:cover;}
+button{font-family:'Pretendard',sans-serif;cursor:pointer;}
+
+/* ── HEADER ── */
+#hdr{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  height:68px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;
+  background:rgba(15,31,30,.93);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(168,207,204,.15);
+  transition:background .3s,border-color .3s;
+}
+#hdr.light{background:rgba(235,242,241,.96);border-bottom-color:var(--tg);}
+.hdr-logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none;}
+.hdr-logo svg{width:32px;height:32px;flex-shrink:0;}
+.hdr-logo-text{display:flex;flex-direction:column;}
+.logo-ko{font-size:.95rem;font-weight:800;color:var(--tw);line-height:1.1;transition:color .3s;}
+.logo-en{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.18em;color:var(--tg);transition:color .3s;}
+#hdr.light .logo-ko{color:var(--di);}
+#hdr.light .logo-en{color:var(--st);}
+.hdr-nav{display:flex;align-items:center;gap:.25rem;}
+.nb{background:none;border:none;font-size:.83rem;font-weight:600;color:rgba(235,242,241,.65);padding:.45rem .85rem;border-radius:3px;transition:all .2s;letter-spacing:.01em;}
+.nb:hover,.nb.on{color:var(--tw);background:rgba(255,255,255,.1);}
+#hdr.light .nb{color:var(--st);}
+#hdr.light .nb:hover,#hdr.light .nb.on{color:var(--di);background:var(--ts);}
+.nb-cta{background:var(--pt)!important;color:var(--tw)!important;margin-left:.5rem;}
+.nb-cta:hover{background:var(--accent)!important;}
+/* hamburger */
+.hbg{display:none;background:none;border:none;padding:.5rem;flex-direction:column;gap:5px;}
+.hbg span{display:block;width:22px;height:2px;background:var(--tw);border-radius:2px;transition:all .3s;}
+#hdr.light .hbg span{background:var(--di);}
+.mob-nav{display:none;position:fixed;top:68px;left:0;right:0;background:rgba(15,31,30,.97);backdrop-filter:blur(20px);z-index:998;padding:1.5rem;flex-direction:column;gap:.5rem;}
+.mob-nav.open{display:flex;}
+.mob-nb{background:none;border:none;font-size:1rem;font-weight:600;color:var(--tg);padding:.75rem 1rem;text-align:left;border-bottom:1px solid rgba(168,207,204,.1);}
+.mob-nb:hover{color:var(--tw);}
+
+/* ── PROGRESS BAR ── */
+#progress-bar{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--pt),var(--tg));width:0%;z-index:9999;transition:width .1s linear;pointer-events:none;}
+
+/* ── PAGES ── */
+.pg{display:none;opacity:0;}
+.pg.on{display:block;animation:pgFadeIn .45s cubic-bezier(.22,1,.36,1) forwards;}
+@keyframes pgFadeIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+
+/* ── UTILS ── */
+.mono{font-family:'Space Mono',monospace;}
+.serif{font-family:'Noto Serif KR',serif;}
+.tag{display:inline-block;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--pt);margin-bottom:.75rem;}
+.tag::before{content:'';display:inline-block;width:18px;height:1px;background:var(--pt);vertical-align:middle;margin-right:.5rem;}
+.tag-light{color:var(--tg);}
+.tag-light::before{background:var(--tg);}
+h2.sh{font-family:'Noto Serif KR',serif;font-size:clamp(1.8rem,3.2vw,2.8rem);font-weight:900;line-height:1.2;margin-bottom:.6rem;}
+p.ss{font-size:1.05rem;color:var(--st);line-height:1.75;max-width:600px;margin-bottom:3.5rem;}
+.sec{padding:6rem 3rem;}
+.sec-dk{background:var(--di);color:var(--tw);}
+.sec-sf{background:var(--ts);}
+.sec-wh{background:var(--tw);}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.vis{opacity:1;transform:none;}
+.rd1{transition-delay:.1s;}.rd2{transition-delay:.2s;}.rd3{transition-delay:.3s;}.rd4{transition-delay:.4s;}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;font-size:.95rem;font-weight:700;border:none;border-radius:2px;transition:all .2s;cursor:pointer;text-decoration:none;}
+.btn-p{background:var(--pt);color:var(--tw);}
+.btn-p:hover{background:var(--accent);transform:translateY(-2px);}
+.btn-o{background:transparent;color:var(--tg);border:1px solid var(--st);}
+.btn-o:hover{border-color:var(--tg);color:var(--tw);}
+.btn-o-dk{background:transparent;color:var(--di);border:1px solid var(--di);}
+.btn-o-dk:hover{background:var(--di);color:var(--tw);}
+
+/* ═══════════════ HOME ═══════════════ */
+/* HERO */
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;background:var(--di);display:flex;flex-direction:column;justify-content:flex-end;padding-top:68px;}
+.hero-vid{position:absolute;inset:0;overflow:hidden;}
+.hero-vid video{width:100%;height:100%;object-fit:cover;opacity:.35;}
+.hero-vid-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070') center/cover no-repeat;opacity:.28;}
+.hero-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,1) 0%,rgba(15,31,30,.7) 40%,rgba(15,31,30,.2) 100%);}
+.hero-pcb{display:none;}
+/* animated nodes */
+.node{display:none;}
+.node::after{display:none;}
+@keyframes nd{0%,100%{opacity:.2;transform:scale(1);}50%{opacity:.8;transform:scale(1.8);}}
+.hero-inner{position:relative;z-index:5;padding:14rem 3rem 3rem;max-width:900px;width:100%;}
+.hero-bottom{position:relative;z-index:5;display:flex;justify-content:flex-end;padding:0 3rem 4rem;width:100%;}
+.hero-stats{display:flex;gap:0;}
+.hstat{padding:1.5rem 2rem;border-left:1px solid rgba(168,207,204,.2);background:rgba(15,31,30,.6);backdrop-filter:blur(8px);}
+.hstat-n{font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--tg);line-height:1;}
+.hstat-l{font-size:.75rem;color:var(--st);margin-top:.3rem;max-width:110px;line-height:1.4;}
+.hero-eyebrow{font-family:'Pretendard',sans-serif;font-size:.75rem;letter-spacing:.22em;color:var(--tg);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;animation:fu .8s ease both;}
+.hero-eyebrow::before{display:none;}
+h1.hero-h1{font-family:'Noto Serif KR',serif;font-size:clamp(3.2rem,7.5vw,6.5rem);font-weight:900;color:var(--tw);line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.02em;animation:fu .8s .15s ease both;}
+h1.hero-h1 em{font-style:normal;color:var(--tg);border-bottom:3px solid var(--pt);padding-bottom:.05em;}
+.hero-sub{font-size:1.05rem;color:var(--tg);max-width:520px;line-height:1.8;margin-bottom:2.5rem;animation:fu .8s .3s ease both;}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fu .8s .45s ease both;}
+@keyframes fu{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+
+/* HOME INTRO SPLIT */
+.intro-split{display:grid;grid-template-columns:1fr 1fr;min-height:480px;}
+.intro-txt{padding:5rem 3rem;display:flex;flex-direction:column;justify-content:center;background:var(--di);}
+.intro-img{position:relative;overflow:hidden;min-height:360px;}
+.intro-img img{transition:transform .6s ease;}
+.intro-img:hover img{transform:scale(1.04);}
+
+/* HOME VALUES */
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--tg);}
+.vc{padding:3rem 2.5rem;border-right:1px solid var(--tg);transition:all .35s;cursor:pointer;}
+.vc:last-child{border-right:none;}
+.vc:hover{background:var(--di);color:var(--tw);}
+.vc:hover .vc-sub{color:var(--tg);}
+.vc:hover .vc-kw{background:rgba(168,207,204,.15);color:var(--tg);}
+.vc-en{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.2em;color:var(--pt);margin-bottom:.4rem;}
+.vc:hover .vc-en{color:var(--tg);}
+.vc-ko{font-size:2rem;font-weight:800;margin-bottom:.6rem;}
+.vc-kw{display:inline-block;font-size:.75rem;font-weight:700;color:var(--st);background:rgba(92,143,138,.12);padding:.25rem .75rem;border-radius:20px;margin-bottom:1rem;transition:all .3s;letter-spacing:.05em;}
+.vc-main{font-size:.95rem;font-weight:600;margin-bottom:.6rem;}
+.vc-sub{font-size:.9rem;color:var(--st);line-height:1.7;transition:color .3s;}
+
+/* HOME TRACK PREVIEW */
+.tp-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+.tp{position:relative;height:420px;overflow:hidden;cursor:pointer;}
+.tp img{transition:transform .6s ease;}
+.tp:hover img{transform:scale(1.06);}
+.tp-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.9) 0%,rgba(15,31,30,.3) 60%,transparent 100%);transition:background .3s;}
+.tp:hover .tp-over{background:linear-gradient(to top,rgba(10,55,17,.92) 0%,rgba(10,55,17,.4) 60%,transparent 100%);}
+.tp-info{position:absolute;bottom:0;left:0;right:0;padding:2rem;}
+.tp-num{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--tg);margin-bottom:.5rem;}
+.tp-title{font-family:'Noto Serif KR',serif;font-size:1.6rem;font-weight:900;color:var(--tw);margin-bottom:.5rem;}
+.tp-desc{font-size:.85rem;color:var(--tg);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.tp:hover .tp-desc{max-height:100px;}
+
+/* HOME REPORT PREVIEW */
+.rp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--tg);}
+.rp{background:var(--tw);padding:2.5rem;transition:background .3s;cursor:pointer;}
+.rp:hover{background:var(--di);color:var(--tw);}
+.rp:hover .rp-meta,.rp:hover .rp-body{color:var(--tg);}
+.rp:hover .rp-tag{background:var(--pt);color:var(--tw);}
+.rp-tag{display:inline-block;font-size:.72rem;font-weight:800;background:var(--di);color:var(--tw);padding:.2rem .7rem;border-radius:20px;margin-bottom:1.2rem;transition:all .3s;}
+.rp-title{font-size:1.05rem;font-weight:700;margin-bottom:.4rem;line-height:1.4;}
+.rp-meta{font-family:'Space Mono',monospace;font-size:.72rem;color:var(--st);margin-bottom:1rem;transition:color .3s;}
+.rp-body{font-size:.88rem;color:var(--st);line-height:1.7;border-top:1px solid var(--tg);padding-top:.9rem;transition:color .3s;}
+
+/* ═══════════════ ABOUT ═══════════════ */
+.about-hero{padding:9rem 3rem 5rem;background:var(--tw);border-bottom:1px solid var(--tg);}
+.crisis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(168,207,204,.12);}
+.cc{background:var(--di);padding:3rem 2.5rem;transition:background .3s;}
+.cc:hover{background:rgba(10,55,17,.35);}
+.cc-n{font-family:'Space Mono',monospace;font-size:clamp(2.5rem,5vw,3.8rem);font-weight:700;color:var(--tg);line-height:1;margin-bottom:.6rem;}
+.cc-t{font-size:.95rem;font-weight:700;color:var(--tw);margin-bottom:.4rem;}
+.cc-d{font-size:.85rem;color:var(--st);line-height:1.6;}
+.crisis-quote{margin-top:3rem;padding:2.5rem;border:1px solid rgba(168,207,204,.2);font-size:1.3rem;font-weight:700;color:var(--tw);line-height:1.7;}
+.crisis-quote em{color:var(--tg);font-style:normal;}
+
+/* about compare */
+.ab-compare{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.cmp{padding:4rem 3rem;}
+.cmp-tr{background:var(--ts);}
+.cmp-hk{background:var(--di);}
+.cmp-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.18em;display:inline-block;padding:.25rem .7rem;border-radius:2px;margin-bottom:1.2rem;}
+.cmp-tr .cmp-badge{background:var(--tg);color:var(--di);}
+.cmp-hk .cmp-badge{background:var(--pt);color:var(--tw);}
+.cmp h3{font-size:1.2rem;font-weight:800;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid;}
+.cmp-tr h3{color:var(--st);border-color:var(--tg);}
+.cmp-hk h3{color:var(--tw);border-color:var(--st);}
+.cmp ul{list-style:none;}
+.cmp li{padding:.7rem 0;font-size:.95rem;border-bottom:1px solid rgba(168,207,204,.15);padding-left:1.2rem;position:relative;line-height:1.5;}
+.cmp li::before{content:'—';position:absolute;left:0;opacity:.4;}
+.cmp-tr li{color:var(--st);}
+.cmp-hk li{color:var(--ts);}
+.cmp-hk li strong{color:var(--tw);}
+
+/* op model */
+.op-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(168,207,204,.2);}
+.op{padding:3rem;border-right:1px solid rgba(168,207,204,.2);}
+.op:last-child{border-right:none;}
+.op-n{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--tg);margin-bottom:1.2rem;}
+.op-t{font-size:1.1rem;font-weight:800;color:var(--tw);margin-bottom:.8rem;}
+.op-d{font-size:.9rem;color:var(--tg);line-height:1.7;}
+
+/* ═══════════════ TRACKS ═══════════════ */
+.tracks-hero{position:relative;min-height:420px;overflow:hidden;background:var(--di);display:flex;align-items:flex-end;padding:9rem 3rem 4rem;}
+.tracks-hero-img{position:absolute;inset:0;}
+.tracks-hero-img img{opacity:.25;}
+.tracks-hero-over{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,31,30,.95) 40%,rgba(15,31,30,.4) 100%);}
+.tracks-hero-content{position:relative;z-index:2;}
+
+.tr-row{display:grid;grid-template-columns:1fr 1fr;min-height:460px;border-bottom:1px solid var(--tg);}
+.tr-row:last-child{border-bottom:none;}
+.tr-row:nth-child(even) .tr-info{order:2;}
+.tr-row:nth-child(even) .tr-vis{order:1;}
+.tr-info{padding:4rem 3rem;background:var(--tw);display:flex;flex-direction:column;justify-content:center;transition:background .4s;}
+.tr-row:hover .tr-info{background:var(--di);color:var(--tw);}
+.tr-row:hover .tr-num{color:var(--tg);}
+.tr-row:hover .tr-desc{color:var(--tg);}
+.tr-row:hover .tr-partner{background:rgba(255,255,255,.08);color:var(--tg);}
+.tr-row:hover .tr-act{color:var(--tg);}
+.tr-num{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.22em;color:var(--pt);margin-bottom:.8rem;transition:color .4s;}
+.tr-title{font-family:'Noto Serif KR',serif;font-size:2.3rem;font-weight:900;margin-bottom:.8rem;}
+.tr-partner{display:inline-flex;align-items:center;gap:.4rem;font-size:.82rem;font-weight:600;color:var(--st);background:var(--ts);padding:.35rem .9rem;border-radius:20px;margin-bottom:1.2rem;width:fit-content;transition:all .3s;}
+.tr-desc{font-size:.95rem;line-height:1.8;color:var(--st);margin-bottom:1.2rem;transition:color .4s;}
+.tr-act{font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.1em;color:var(--pt);font-weight:700;transition:color .4s;}
+.tr-vis{position:relative;overflow:hidden;min-height:360px;}
+.tr-vis img{transition:transform .6s ease;}
+.tr-row:hover .tr-vis img{transform:scale(1.04);}
+.tr-vis-over{position:absolute;inset:0;background:rgba(15,31,30,.15);transition:background .4s;}
+.tr-row:hover .tr-vis-over{background:rgba(10,55,17,.3);}
+
+/* ═══════════════ ADMISSION ═══════════════ */
+.adm-hero{position:relative;min-height:500px;overflow:hidden;background:var(--ts);display:flex;align-items:flex-end;padding:9rem 3rem 4rem;}
+.adm-hero-img{position:absolute;inset:0;}
+.adm-hero-img img{opacity:.2;}
+.adm-hero-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(214,235,234,.98) 30%,rgba(214,235,234,.6) 70%,rgba(214,235,234,.2) 100%);}
+.adm-hero-content{position:relative;z-index:2;}
+.adm-quote{font-family:'Noto Serif KR',serif;font-size:clamp(1.1rem,2.2vw,1.6rem);font-weight:700;line-height:1.65;max-width:740px;border-left:4px solid var(--pt);padding-left:2rem;margin-top:2.5rem;color:var(--di);}
+.adm-quote em{font-style:normal;color:var(--pt);}
+
+/* steps */
+.steps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(168,207,204,.2);}
+.step{padding:3.5rem 3rem;border-right:1px solid rgba(168,207,204,.2);position:relative;transition:background .3s;}
+.step:last-child{border-right:none;}
+.step:hover{background:rgba(168,207,204,.05);}
+.step-badge{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.18em;background:rgba(168,207,204,.15);color:var(--tg);padding:.25rem .7rem;border-radius:20px;display:inline-block;margin-bottom:1.8rem;}
+.step-h{font-size:1.3rem;font-weight:800;color:var(--tg);margin-bottom:.8rem;}
+.step-p{font-size:.95rem;color:var(--ts);line-height:1.7;margin-bottom:.6rem;}
+.step-d{font-size:.85rem;color:var(--st);line-height:1.6;}
+
+/* doc cards */
+.doc-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.doc{padding:2rem;border:1px solid rgba(168,207,204,.2);background:rgba(235,242,241,.04);display:flex;flex-direction:column;gap:1.2rem;transition:all .3s;}
+.doc:hover{border-color:rgba(168,207,204,.5);}
+.doc-type{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--tg);}
+.doc-title{font-size:1rem;font-weight:700;color:var(--tw);line-height:1.4;}
+.doc-btn{align-self:flex-start;padding:.55rem 1.1rem;border:1px solid var(--pt);color:var(--pt);background:transparent;font-size:.82rem;font-weight:700;transition:all .2s;display:inline-flex;align-items:center;gap:.3rem;}
+.doc-btn:hover{background:var(--pt);color:var(--tw);}
+
+/* cta band */
+.cta-band{padding:6rem 3rem;text-align:center;background:var(--tw);position:relative;overflow:hidden;}
+.cta-pcb{display:none;}
+.cta-h{font-family:'Noto Serif KR',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;margin-bottom:2rem;position:relative;}
+
+/* ═══════════════ ARCHIVE ═══════════════ */
+.arc-hero{position:relative;min-height:360px;overflow:hidden;background:var(--di);display:flex;align-items:flex-end;padding:9rem 3rem 3.5rem;border-bottom:3px solid var(--pt);}
+.arc-hero-img{position:absolute;inset:0;}
+.arc-hero-img img{opacity:.18;}
+.arc-hero-over{position:absolute;inset:0;background:linear-gradient(to right,rgba(15,31,30,.97) 50%,rgba(15,31,30,.5) 100%);}
+.arc-hero-content{position:relative;z-index:2;}
+.filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;padding:1.5rem 3rem;border-bottom:1px solid var(--tg);background:var(--tw);position:sticky;top:68px;z-index:100;}
+.fb{background:none;border:1px solid var(--tg);font-size:.82rem;font-weight:600;color:var(--st);padding:.38rem .9rem;border-radius:20px;transition:all .2s;}
+.fb.on,.fb:hover{background:var(--di);color:var(--tw);border-color:var(--di);}
+.arc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:var(--tg);}
+.ac{background:var(--tw);padding:2.5rem;display:flex;flex-direction:column;cursor:pointer;transition:background .3s;}
+.ac:hover{background:var(--di);color:var(--tw);}
+.ac:hover .ac-meta,.ac:hover .ac-body{color:var(--tg);}
+.ac:hover .ac-body{border-top-color:var(--st);}
+.ac:hover .ac-tag{background:var(--pt);}
+.ac-tag{display:inline-block;font-size:.72rem;font-weight:800;background:var(--di);color:var(--tw);padding:.2rem .7rem;border-radius:20px;margin-bottom:1.2rem;transition:background .3s;width:fit-content;}
+.ac-title{font-size:1rem;font-weight:700;margin-bottom:.4rem;line-height:1.4;}
+.ac-meta{font-family:'Space Mono',monospace;font-size:.7rem;color:var(--st);margin-bottom:1.2rem;transition:color .3s;}
+.ac-body{font-size:.88rem;color:var(--st);flex-grow:1;border-top:1px solid var(--tg);padding-top:.9rem;line-height:1.7;transition:all .3s;}
+
+/* ═══════════════ IDENTITY ═══════════════ */
+.id-hero{padding:9rem 3rem 5rem;background:var(--ts);border-bottom:1px solid var(--tg);}
+/* color swatches */
+.sw-row{display:grid;grid-template-columns:repeat(6,1fr);gap:0;}
+.sw{padding-bottom:65%;position:relative;cursor:pointer;transition:transform .2s;transform-origin:bottom;}
+.sw:hover{transform:scaleY(1.08);}
+.sw-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:.8rem;}
+.sw-name{font-size:.68rem;font-weight:700;}
+.sw-hex{font-family:'Space Mono',monospace;font-size:.6rem;opacity:.75;}
+
+/* logo steps */
+.ls-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--tg);}
+.ls{border-right:1px solid var(--tg);overflow:hidden;transition:box-shadow .3s;}
+.ls:last-child{border-right:none;}
+.ls:hover{box-shadow:0 0 0 2px var(--pt);}
+.ls-vis{height:200px;display:flex;align-items:center;justify-content:center;background:var(--tw);border-bottom:1px solid var(--tg);}
+.ls-sf .ls-vis{background:var(--ts);}
+.ls-dk .ls-vis{background:var(--di);}
+.ls-info{padding:1.5rem;}
+.ls-phase{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.4rem;}
+.ls-title{font-size:.95rem;font-weight:800;margin-bottom:.4rem;}
+.ls-desc{font-size:.82rem;color:var(--st);line-height:1.6;}
+
+/* typo */
+.ty-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(168,207,204,.2);}
+.ty{padding:4rem 3rem;border-right:1px solid rgba(168,207,204,.2);}
+.ty:last-child{border-right:none;}
+.ty-lbl{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--tg);margin-bottom:1.5rem;}
+.ty-smp-ko{font-family:'Pretendard',sans-serif;font-size:2.8rem;font-weight:800;color:var(--tw);line-height:1;margin-bottom:1.2rem;}
+.ty-smp-en{font-family:'Space Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--tw);line-height:1;margin-bottom:1.2rem;letter-spacing:.04em;}
+.ty-specs{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--tg);line-height:2;}
+
+/* merch */
+.merch-grid{display:grid;grid-template-columns:6fr 4fr;gap:1px;background:var(--tg);}
+.mc{background:var(--tw);padding:2.5rem;display:flex;flex-direction:column;gap:1rem;}
+.mc-dk{background:var(--di)!important;}
+.mc-ph{background:var(--ts);border:1px dashed var(--tg);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:.72rem;color:var(--st);letter-spacing:.04em;text-align:center;padding:1.5rem;}
+.mc-lbl{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--st);}
+.mc-dk .mc-lbl{color:var(--tg);}
+.mc-title{font-size:1rem;font-weight:800;}
+.mc-dk .mc-title{color:var(--tw);}
+
+/* ═══════════════ FOOTER ═══════════════ */
+footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,204,.12);}
+.ft-top{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4rem;margin-bottom:3rem;}
+.ft-logo-ko{font-size:1.1rem;font-weight:800;color:var(--tw);margin-bottom:.2rem;}
+.ft-logo-en{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--tg);margin-bottom:1.2rem;}
+.ft-desc{font-size:.85rem;color:var(--st);line-height:1.7;}
+.ft-col h4{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.2em;color:var(--tg);margin-bottom:1.2rem;}
+.ft-col ul{list-style:none;}
+.ft-col li{margin-bottom:.6rem;}
+.ft-col button{background:none;border:none;font-size:.88rem;color:var(--st);transition:color .2s;text-align:left;}
+.ft-col button:hover{color:var(--tw);}
+.ft-tracks{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem;}
+.ft-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .9rem;border:1px solid rgba(168,207,204,.18);border-radius:20px;font-size:.78rem;color:var(--tg);}
+.ft-bot{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid rgba(168,207,204,.1);font-family:'Space Mono',monospace;font-size:.65rem;color:var(--st);}
+
+/* ═══════════════ PARTNER TICKER ═══════════════ */
+.ticker-wrap{overflow:hidden;border-top:1px solid rgba(168,207,204,.2);border-bottom:1px solid rgba(168,207,204,.2);padding:.9rem 0;background:var(--di);}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:tick 28s linear infinite;}
+.ticker-track:hover{animation-play-state:paused;}
+.ticker-item{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.18em;color:var(--st);padding:0 2.5rem;border-right:1px solid rgba(168,207,204,.12);flex-shrink:0;}
+.ticker-item span{color:var(--tg);}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ═══════════════ PARTNER SECTION ═══════════════ */
+.partner-row{display:grid;grid-template-columns:1fr 1fr;min-height:420px;border-bottom:1px solid rgba(168,207,204,.15);}
+.partner-row:last-child{border-bottom:none;}
+.partner-txt{padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;}
+.partner-vis{position:relative;overflow:hidden;background:var(--ts);}
+.partner-vis img{width:100%;height:100%;object-fit:cover;filter:grayscale(.4);transition:filter .5s;}
+.partner-vis:hover img{filter:grayscale(0);}
+.partner-overline{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.22em;color:var(--pt);margin-bottom:.6rem;}
+.partner-name{font-size:1.5rem;font-weight:800;margin-bottom:.4rem;}
+.partner-role{font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.1em;color:var(--st);margin-bottom:1.2rem;}
+.partner-desc{font-size:.92rem;line-height:1.8;color:var(--st);max-width:400px;}
+.partner-quote{margin-top:1.8rem;padding-left:1.2rem;border-left:2px solid var(--pt);font-size:.9rem;font-style:italic;color:var(--tg);line-height:1.7;}
+
+/* ═══════════════ FACULTY ═══════════════ */
+.faculty-net{position:relative;width:100%;height:480px;overflow:hidden;}
+.faculty-net svg{width:100%;height:100%;}
+.fac-node{cursor:pointer;}
+.fac-node circle{transition:r .3s,fill .3s;}
+.fac-node:hover circle{fill:var(--pt);}
+.fac-portrait{clip-path:circle(38px at 50% 50%);transition:clip-path .3s;}
+.fac-label{font-family:'Space Mono',monospace;font-size:10px;fill:var(--tg);letter-spacing:.08em;}
+.fac-sublabel{font-family:'Pretendard',sans-serif;font-size:9px;fill:var(--st);}
+.fac-detail{position:absolute;bottom:0;left:0;right:0;background:rgba(15,31,30,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(168,207,204,.15);padding:1.5rem 3rem;display:flex;align-items:center;gap:2rem;transform:translateY(100%);transition:transform .4s ease;}
+.fac-detail.show{transform:translateY(0);}
+.fac-detail-img{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1px solid var(--st);}
+.fac-detail-img img{width:100%;height:100%;object-fit:cover;}
+.fac-detail-name{font-size:1rem;font-weight:800;color:var(--tw);margin-bottom:.2rem;}
+.fac-detail-role{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.12em;color:var(--tg);margin-bottom:.4rem;}
+.fac-detail-bio{font-size:.85rem;color:var(--st);line-height:1.6;max-width:600px;}
+.fac-close{margin-left:auto;background:none;border:1px solid rgba(168,207,204,.2);color:var(--tg);font-family:'Space Mono',monospace;font-size:.65rem;padding:.35rem .7rem;cursor:pointer;flex-shrink:0;}
+.fac-close:hover{border-color:var(--tg);color:var(--tw);}
+
+/* ═══════════════ NODE MAP ═══════════════ */
+.nodemap-wrap{position:relative;background:var(--di);overflow:hidden;}
+.nodemap-svg{width:100%;display:block;}
+.map-node{cursor:pointer;}
+.map-node circle.pulse{animation:mpulse 2.5s ease-in-out infinite;}
+@keyframes mpulse{0%,100%{r:6;opacity:.8;}50%{r:10;opacity:.3;}}
+.map-node text{font-family:'Space Mono',monospace;font-size:10px;fill:var(--tg);pointer-events:none;}
+.map-node .loc-sub{font-family:'Pretendard',sans-serif;font-size:9px;fill:var(--st);}
+.map-tooltip{position:absolute;background:rgba(15,31,30,.97);border:1px solid rgba(168,207,204,.2);padding:1rem 1.4rem;pointer-events:none;opacity:0;transition:opacity .2s;min-width:200px;z-index:10;}
+.map-tooltip.show{opacity:1;}
+.map-tt-track{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.3rem;}
+.map-tt-name{font-size:.95rem;font-weight:700;color:var(--tw);margin-bottom:.2rem;}
+.map-tt-desc{font-size:.8rem;color:var(--st);line-height:1.5;}
+
+/* ═══════════════ TERMINAL ARCHIVE ═══════════════ */
+.terminal{background:var(--di);font-family:'Space Mono',monospace;}
+.terminal-bar{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-bottom:1px solid rgba(168,207,204,.1);background:rgba(0,0,0,.3);}
+.terminal-dot{width:10px;height:10px;border-radius:50%;}
+.terminal-title{font-size:.65rem;letter-spacing:.12em;color:var(--st);margin-left:.5rem;}
+.terminal-table{width:100%;border-collapse:collapse;}
+.terminal-table thead tr{border-bottom:1px solid rgba(168,207,204,.15);}
+.terminal-table th{font-size:.62rem;letter-spacing:.18em;color:var(--pt);padding:.75rem 1.5rem;text-align:left;font-weight:400;}
+.terminal-table tbody tr{border-bottom:1px solid rgba(168,207,204,.06);cursor:pointer;transition:background .2s;}
+.terminal-table tbody tr:hover{background:rgba(168,207,204,.04);}
+.terminal-table td{font-size:.82rem;color:var(--tg);padding:.9rem 1.5rem;vertical-align:top;}
+.td-id{color:var(--st);font-size:.72rem;}
+.td-title{color:var(--tw);font-weight:600;font-family:'Pretendard',sans-serif;}
+.td-track span{display:inline-block;font-size:.6rem;letter-spacing:.1em;padding:.15rem .55rem;border-radius:20px;}
+.td-track .t-s{background:rgba(10,55,17,.4);color:#6fcf97;}
+.td-track .t-r{background:rgba(92,143,138,.2);color:var(--tg);}
+.td-track .t-e{background:rgba(168,207,204,.1);color:var(--st);}
+.td-status{font-size:.65rem;letter-spacing:.1em;}
+.s-active{color:#6fcf97;}.s-synced{color:var(--tg);}.s-failed{color:#eb5757;}.s-revised{color:#f2c94c;}.s-complete{color:var(--st);}.s-submitted{color:var(--ts);}
+.terminal-blink{display:inline-block;width:8px;height:13px;background:var(--tg);vertical-align:middle;animation:blink .9s step-end infinite;}
+@keyframes blink{50%{opacity:0;}}
+
+/* ═══════════════ ADMISSION FORM ═══════════════ */
+.adm-form-wrap{padding:5rem 3rem;background:var(--di);position:relative;overflow:hidden;}
+.adm-form-pcb{position:absolute;inset:0;background-image:linear-gradient(rgba(168,207,204,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(168,207,204,.03) 1px,transparent 1px);background-size:52px 52px;}
+.adm-form{position:relative;z-index:2;max-width:680px;}
+.af-prompt{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--pt);margin-bottom:2.5rem;display:flex;align-items:center;gap:.75rem;}
+.af-prompt::before{content:'';display:inline-block;width:20px;height:1px;background:var(--pt);}
+.af-field{margin-bottom:2rem;}
+.af-label{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.18em;color:var(--st);display:block;margin-bottom:.6rem;}
+.af-label span{color:var(--pt);}
+.af-input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'Pretendard',sans-serif;font-size:1rem;padding:.5rem 0;outline:none;transition:border-color .3s;}
+.af-input:focus{border-bottom-color:var(--tg);}
+.af-input::placeholder{color:rgba(168,207,204,.25);font-size:.9rem;}
+.af-select{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'Space Mono',monospace;font-size:.82rem;padding:.5rem 0;outline:none;appearance:none;cursor:pointer;letter-spacing:.05em;}
+.af-select option{background:var(--di);}
+.af-textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'Pretendard',sans-serif;font-size:.95rem;padding:.5rem 0;outline:none;resize:none;line-height:1.8;transition:border-color .3s;min-height:100px;}
+.af-textarea:focus{border-bottom-color:var(--tg);}
+.af-textarea::placeholder{color:rgba(168,207,204,.25);}
+.af-submit{margin-top:2.5rem;background:none;border:1px solid var(--pt);color:var(--tg);font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:.18em;padding:1rem 2.5rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;}
+.af-submit:hover{background:var(--pt);color:var(--tw);}
+.af-submit:disabled{opacity:.4;cursor:not-allowed;}
+.af-confirm{margin-top:2rem;font-family:'Space Mono',monospace;font-size:.72rem;color:var(--tg);display:none;letter-spacing:.06em;}
+.af-confirm.show{display:block;}
+
+/* ═══════════════ KOREA MAP ═══════════════ */
+.komap-wrap{position:relative;background:var(--di);overflow:hidden;padding-bottom:2rem;}
+.komap-svg{display:block;margin:0 auto;max-width:700px;width:100%;}
+.ko-node{cursor:pointer;}
+.ko-node circle{transition:r .25s,fill .25s;}
+.ko-node:hover circle.ko-main{r:13;fill:var(--tg);}
+.ko-node .ko-pulse{animation:mpulse 2.5s ease-in-out infinite;}
+.ko-img-tip{position:absolute;pointer-events:none;opacity:0;transition:opacity .2s;z-index:20;background:var(--di);border:1px solid rgba(168,207,204,.25);width:220px;}
+.ko-img-tip.show{opacity:1;}
+.ko-img-tip img{width:100%;height:130px;object-fit:cover;display:block;}
+.ko-img-tip-label{padding:.5rem .75rem;}
+.ko-img-tip-track{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:var(--pt);}
+.ko-img-tip-name{font-size:.82rem;font-weight:700;color:var(--tw);margin-top:.15rem;}
+
+/* ═══════════════ CRISIS CHART ═══════════════ */
+.crisis-chart-wrap{margin-top:2.5rem;padding:2rem 0 0;}
+.chart-bars{
+  display:flex;
+  align-items:flex-end;
+  gap:1.5rem;
+  height:200px;
+  padding:0 1rem;
+}
+.chart-bar-group{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  height:100%;
+  gap:.75rem;
+}
+.chart-val{
+  font-family:'Space Mono',monospace;
+  font-size:.9rem;
+  font-weight:700;
+  letter-spacing:.04em;
+  text-align:center;
+  flex-shrink:0;
+}
+.chart-bar-outer{
+  flex:1;
+  width:100%;
+  max-width:80px;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+}
+.chart-bar-inner{
+  width:100%;
+  height:0;
+  background:linear-gradient(to top, var(--bar-color), var(--bar-color2));
+  transition:height 1.4s cubic-bezier(.22,1,.36,1);
+  position:relative;
+}
+.chart-bar-inner.go{
+  height:var(--bar-h);
+}
+.chart-bar-ghost{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  border:1px dashed rgba(168,207,204,.2);
+}
+.chart-label{
+  font-family:'Space Mono',monospace;
+  font-size:.6rem;
+  letter-spacing:.08em;
+  color:var(--st);
+  text-align:center;
+  line-height:1.6;
+  flex-shrink:0;
+}
+.chart-label span{
+  color:rgba(92,143,138,.55);
+  font-size:.55rem;
+}
+
+/* ═══════════════ PROMO VIDEO ═══════════════ */
+.promo-wrap{position:relative;background:var(--di);overflow:hidden;aspect-ratio:5/3;}
+.promo-video{width:100%;height:100%;display:block;object-fit:contain;position:absolute;inset:0;}
+.promo-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:rgba(15,31,30,.5);}
+.promo-play{width:64px;height:64px;border-radius:50%;border:1.5px solid rgba(168,207,204,.5);background:rgba(15,31,30,.7);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .25s;backdrop-filter:blur(6px);}
+.promo-play:hover{border-color:var(--tg);background:rgba(10,55,17,.8);}
+.promo-play svg{margin-left:3px;}
+.promo-tag{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.2em;color:var(--tg);}
+.promo-placeholder{width:100%;height:100%;position:absolute;inset:0;background:var(--di);border:1px dashed rgba(168,207,204,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;}
+.promo-placeholder-icon{opacity:.25;}
+.promo-placeholder-text{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--st);}
+
+/* ═══════════════ STATIONERY ═══════════════ */
+.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--tg);}
+.stat-item{background:var(--tw);position:relative;overflow:hidden;cursor:pointer;}
+.stat-item img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .5s;}
+.stat-item:hover img{transform:scale(1.04);}
+.stat-item-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.7) 0%,transparent 55%);pointer-events:none;}
+.stat-item-label{position:absolute;bottom:1.2rem;left:1.4rem;}
+.stat-item-type{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--tg);}
+.stat-item-name{font-size:.9rem;font-weight:700;color:var(--tw);margin-top:.2rem;}
+
+/* ═══════════════ IMAGE BREAK ═══════════════ */
+.img-break-grid{display:grid;grid-template-columns:1fr 1fr;height:400px;}
+.img-break-grid > div img{width:100%;height:100%;object-fit:cover;}
+
+/* ═══════════════ RESPONSIVE ═══════════════ */
+@media(max-width:900px){
+  #hdr{padding:0 1.2rem;}
+  .hdr-nav{display:none;}
+  .hbg{display:flex;}          /* ★ Fix: 햄버거 모바일에서 표시 */
+  .sec{padding:4rem 1.2rem;}
+  .intro-split,.ab-compare,.tr-row,.steps-row,.ty-grid,.merch-grid,.ft-top{grid-template-columns:1fr!important;}
+  .tr-row:nth-child(even) .tr-info,.tr-row:nth-child(even) .tr-vis{order:unset!important;}
+  .val-grid,.crisis-grid,.op-row,.rp-grid,.tp-wrap,.doc-row,.ls-grid{grid-template-columns:1fr 1fr!important;}
+  .sw-row{grid-template-columns:repeat(3,1fr)!important;}
+  .hero-stats{position:static;flex-wrap:wrap;padding:0;margin-top:.5rem;gap:0;}
+  .hero-inner{padding:0 1.2rem 1.5rem;}
+  .hero-bottom{padding:0 1.2rem 2.5rem;}
+  .hstat{border-left:2px solid var(--pt);flex:1;min-width:100px;}
+  .hero-h1{font-size:clamp(2.2rem,9vw,3.8rem)!important;letter-spacing:-.01em!important;}
+  .about-hero,.tracks-hero,.adm-hero,.arc-hero,.id-hero{padding:7rem 1.2rem 3rem;}
+  /* track rows: stack image below text on tablet */
+  .tr-vis{min-height:260px!important;}
+  /* intro-split: image below text */
+  .intro-img{min-height:260px!important;}
+  /* merch grid: full width */
+  .merch-grid{grid-template-columns:1fr!important;}
+  /* ls-grid 로고 스텝 */
+  .ls-grid{grid-template-columns:1fr!important;}
+  .ls-vis{height:160px!important;}
+  /* ft-top */
+  .ft-top{gap:2rem!important;}
+  /* filter bar scroll */
+  .filter-bar{overflow-x:auto;flex-wrap:nowrap;padding:1rem 1.2rem;}
+  .filter-bar::-webkit-scrollbar{display:none;}
+  /* color swatches */
+  .sw{padding-bottom:80%!important;}
+  /* cmp columns */
+  .ab-compare{grid-template-columns:1fr!important;}
+  .cmp{padding:2.5rem 1.5rem!important;}
+  /* val grid */
+  .vc{padding:2rem 1.5rem!important;}
+  /* doc-row */
+  .doc-row{grid-template-columns:1fr!important;}
+  /* rp-grid */
+  .rp-grid{grid-template-columns:1fr!important;}
+  /* ft-bot */
+  .ft-bot{flex-direction:column;gap:.75rem;text-align:center;}
+  /* image break grids */
+  .img-break-grid{grid-template-columns:1fr!important;height:auto!important;}
+  .img-break-grid > div{height:240px;}
+}
+@media(max-width:560px){
+  .val-grid,.crisis-grid,.op-row,.tp-wrap,.doc-row{grid-template-columns:1fr!important;}
+  .sw-row{grid-template-columns:repeat(3,1fr)!important;}
+  .hero-stats{flex-direction:column;}
+  .hstat{min-width:unset;width:100%;border-left:none;border-bottom:1px solid rgba(168,207,204,.2);}
+  .hero-btns{flex-direction:column;gap:.75rem;}
+  .hero-btns .btn{width:100%;justify-content:center;}
+  .steps-row{grid-template-columns:1fr!important;}
+  .ls-grid{grid-template-columns:1fr!important;}
+  .ty-grid{grid-template-columns:1fr!important;}
+  .ty{border-right:none!important;border-bottom:1px solid rgba(168,207,204,.2);}
+  .ls{border-right:none!important;}
+  h2.sh{font-size:1.6rem!important;}
+  .vc-ko{font-size:1.5rem!important;}
+  .tp-title{font-size:1.3rem!important;}
+  .crisis-grid{grid-template-columns:1fr!important;}
+  .ft-top{grid-template-columns:1fr!important;}
+  footer{padding:3rem 1.2rem!important;}
+  .arc-grid{grid-template-columns:1fr!important;}
+  .sec{padding:3rem 1.2rem;}
+  /* 3-col field image grid → stack */
+  [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr!important;height:auto!important;}
+  [style*="grid-template-columns:1fr 1fr 1fr"] > div{height:180px;}
+}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+
+<!-- ═══════ HEADER ═══════ -->
+<header id="hdr">
+  <a class="hdr-logo" onclick="go('home')">
+    <!-- 실제 로고 파일: assets/logo.svg 또는 assets/logo.png -->
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKUAAAB4CAYAAACTizIrAAABCGlDQ1BJQ0MgUHJvZmlsZQAAeJxjYGA8wQAELAYMDLl5JUVB7k4KEZFRCuwPGBiBEAwSk4sLGHADoKpv1yBqL+viUYcLcKakFicD6Q9ArFIEtBxopAiQLZIOYWuA2EkQtg2IXV5SUAJkB4DYRSFBzkB2CpCtkY7ETkJiJxcUgdT3ANk2uTmlyQh3M/Ck5oUGA2kOIJZhKGYIYnBncAL5H6IkfxEDg8VXBgbmCQixpJkMDNtbGRgkbiHEVBYwMPC3MDBsO48QQ4RJQWJRIliIBYiZ0tIYGD4tZ2DgjWRgEL7AwMAVDQsIHG5TALvNnSEfCNMZchhSgSKeDHkMyQx6QJYRgwGDIYMZAKbWPz9HbOBQAABCeklEQVR42u29eXhdV3U2/q619znn3qvJki1PGZwYJ05E7MSRYzujnDCEFspUBHy0pXxASynQia8jUKGOT9uvI+Wj0JaZQlFpSykpLQSijLZjJbaTKAPOoNiOR0nWdIdz9l7r98c5V5YdDxqu5LTPbz+PCXGke8/Z+91rXu8izHV1dFj09rrqvy7ZuH5Dko/eYINwo5jgcqe6xhomAPBe1BLtNUnyJDn3g1K5+O2xnY88CQDo7DTo6REAipf66upi3HUXT31vAtByw8a1PjDXWRO9XEBXMrDaQxd70pVEJBBhCz4E1YOJ1b4o0XuXDyZ3PvLIjv2n7Kf/b7EP87RoDr/L2cbpihUoyOpNb9co+qlyYK/X0ESkAHkCRCCkoOouGwtKIQokbjRK/Hf8ROnPhrb3bZ/yufKS3K3OTgMA6OnxALBs2bI6v/aSWwzbHxMbbE4YV8KaPMhAQFDygCpUFdBss5kAYhAMjHiod0Pkk3uisvubQ/du+056KgS85S2m+j3/PyinezjZhi25ZfPP+jD6Vc3n1igA5z1I1BOUlEAAEU2586SkAFQJSsRGA4JJYoTF+JOV5x776MjAyPGpn/8SWYyuLqC7WwBgyeZr232h8JNizY8jDC4CM7wyVBxInQBI3zJFIKH6Pyk2FVAlJVUCgZkREMg7hCW305fKnxp6YMdn/9tpj/MKykxdN1133TXclPsrV4huhieIqCP1TKRESgQQWBUKQOjE16RSk5ABVaEqBsQIAzLFYr89NvrWw7t3P3aqWXBepWP1Am685kdcc8O7lM1bJAqZnIKciDJEVRhERJkemIoipeqFxJR9EGRAVRaIMBGsZatAUCz3VsbHfnfkwYfvfMlrj/MOyq4uRne3tN60+X9Loe6vksjWe++c8cpKxHN5EFUkNggCUykeCkbGXnFox67+6vedVwkJyEXt7S8bbc79PsLobcQWznkQ1EGVMcf3PmUTRImFbGCDpAJbKn+i8e6jv7oXeysvQe3xEgBltinLtmz603jxol+pQEDeeyIyrHPXL5nUcJU827qx8kE6cGzrsSeeeOo8SgkGIMtvvPGnXX34ZxIELbETD1UQqZnXb1b1IKbAhkzliR326MjbDu/e/dxLRnsswMZPG5BLtmzsilubfyURcYHzakCGtDYGjwLwDGvL4nyhfoVb1vJlABadnTRHh2y2Do1cetOWV8aLCp+fsNzkK0nFihCRstbASzzrXjAZQDl2FedyuU3Jspbti2649mb09jp0dNiXmFDjU/7Q/IMyA+TiGzdvdS2LPp54l5CK0ZP9l9q8oQIMWJfECRrrr1tyw5YPoafHo6PDnI8dd4khgGCNMcgFkQ8DZhgiwAupJ+j8OCA6eeIWsfPlyC5FY9MdSze1v/E8ApPQ2WnQ0WHR1cVTnlRO+aOTuOnosNkFp5ki/Zx25JqvfCUYvHjZHl8oXK6Jk5raUWewrWANonJ8REuHLx+8/8nxk49rwaSALr5m3Tts85K1Ttw6NbzGW6zW0NYRGajzUFUHBYMwL3uiRICKkCFmETWjY7cP3df33QVT5aeEwaZuTsOFF7bUL2+qK9TVKUpAcWKQgseePjoAlM/gIMt0TDGajpS84PpNnaNLmr6uifMEWiip5TS0tjBU/PCRe+/9s5eKPXXBpnUX+qiw2RvzlnJkb6cw16wiWSyMaqK+XmRrg6CqotbAJm6Ch468YnDnYw/Os/PD0NSABoCGK1Yuzi27+DoOomuc4GZv+WJRtxygBmIGqUK9QA0fMg6jLPKYEdkZu9KOpvsfenASqKnzirOBczqglMW33HxH3Ji/XZ3zBCyQ6lCBDYjL5cd+6Xt3X92dBeoXHIVVVbl0qZ4KgAuvvvqC0cb6d1LOvFdyudVwAhXviWFYAakRPoUAVgKJeomMiYrx0/bo8A2H164dRE+P1twRnAL21uvWv8Y3NLzT2+AVCOxSMKfvpQCJZKeiadiL0rCsEoGJQCqAdyDnnrNe/ik3Uvri/r6+R6aGFmcKSgKgnYD57qtufUpCu1q9E2CeVfek2lJYMerJa+Pw8Q0Htj+8B11gdM+7J07o7GQcOUJYuvTEJThyhCbBWV3Vg2ttrUfb5R9y+fDXxdomJN45huV5uEKkcCaMbDg++s3DP7jvjTWXltnntVx99Sa3uP4POBe9wlsLThSiXhQQUqUTQpxONoY1ExxEoukPGWZLagBTiUWTyr/Y4eO/eWzX4z88U3KAzhkSufLKVaULlj4pYRBB/AI6wgrAOGONtceHf+XYvTv+fF5VeBcYOJG1maadJejoMNVnuuCWzZdVwvAzpbr8VlNRB/VWa7xdRgmxUWcN2+DY8Q8OPrDzkzUDZhYXbr5x84eprvC7GoR550SUvBKUcTICZ3CRVJSMEMiGxiBxpQmZGP+tsXv7/gqqhFN85nOCcvG6dWvjFYufUGuQYn+hvAyFgh3b0HJp7O+H77z3vfMGyimHWrd+/dL8ooZ2NbxZxG1QY6wofMC0Bz553A0V7x/Zs+fZqeZNpo6q4Ixab7nxL+Kmup9LvHeBV+upNldZM1AqiXrDasuuXH9kaO2BRx45kJ2lzHUPltxy/V/5psYPxd7DeO9BZDRzuGiWwQbKKh8y+8uLYRMRgPGJvxi+64EPo7OTpkrMaajiGCy6wIFCQNNUJAkELHwFAGDr1tqr7q4uRk+Pb7h23ZYlW6//RrCs5QlXX7jD1Re6fGPD66Wu8KOoL/yYK+Q/4uobvqzLmh9tecVNX1987frbMiCnWqq316Gri6EaH737vvfj+PFPBMZYkHHK6SWrhdMjpFAQkVdBXVRwjYU/BqBZPHf2dnNPj19605Zf9k2NH0qSJGYRFSIjkylSncNZZoBMFb4xTjRxkmhj4y81X3/d59DT49HZydOJU6ZPER97gUCHU1NSz09hACPz+LtrLCFh0N0ty27Y9KvBkiX3xw2Nb3aBaRbxIkniNE589Y8kzvnEebW2ENcVOv3SljuX3HLDZ1etWrUIgKCz06C7W0AEdHTYkXt2/IIdHvlrDclagROq9ZbAaOKk3BC99cJ169ahp8dPiR/OTEL29rpV12/ckDTk/zj2zpEiwJQiklrGoUknLVHrY5fo4uZ3Nt208WczYBoAMOeKRpQGS3HukkveRYFdKiJCtFCODsBpbQdJXMlXhkf/Fv9ZKdXMqO3sNOjp90tuuu4jvmXxH3qFqPhqvUianSA68QdgImJSKDsRIUDr8tcmjQ1vbm5p/e7Y9753FB0dFgMDgoEBRUeHLd1z37cbVix/mebyG0TFEWoay0yD+GFkibSlOLD/n7B0KaO/f2Yw6u+ndsAeXrv635IodwE7r1iYMyaosjDUEN9W17T4C6U77xwDwGeXlKlIVZBsUybMQxLnrLdKSRUkUIMiwjCpHSBh0NPjl27esN7X1f1uWcQ58qykloCzvqVnkLMwrMQuTpI4n7s8bln0vZXXb9yA3l6X3XZFb6+gs9OYx8feT6WJJ8hYQ0KiRGCtlY1JxsRek8i+Zdnmqy/JzInpAyoNd8mzWzZ+wBXqr4VzjmjB4tBQBrEXQa6uXuujDwNQdHTw2V8gC4NQpdJHqgufTgGUiRFYuw9Hj46j60St8JzWkY70vaLcByUKib0HKxEpnTMYygqwZLFDUEBJ2ZdDc2FS3/jdlmuv3TJFDQkAHD68Z8IeH3uvdQ7KUFZVJarVXhJUvRRyxoeF92dA42n/bm+vXwNEWoh+UUWVVVhowS00diqKgN+xYsWKAnp73dlfIE0LoXm88j1OkjLSW7RAT60nXMk40WrcpiYH2dvrVrS3F1wQvE68Aph91Q+BjbrEl6NwMTU3fX3Z+vVL8fWvCwDO8vb2aN/u++xE6c85YEOiokSoRagoc3xYvCIJ7NtXrVqVy1opzv3pmRY8fvP1r0Q+f4n6WABm0oVzaTn1fFjVqYTRsokLL2ybjvctUKVndu36ofeVx8kwkS6cs6MMzbIE/QCAu+6au62TeXnlAC9zgW1VUSVg1mchxDBQQ67s4rrgoqSl7h9BdKK6qbfXowvccCD+HZTLR11gmEWlFlc71V3EJoEgF148cVHr5ilm17SWD/m9SgZG6bx4sQqARZVMSNyQXzG9kNDWrQYAgor/D04rk0SJstjT/C4jDCUg0eTxmn94XV29MltSmbRhZxkYhoKgYKtx4qSxYWvrTVt+bkp1k+KuDn7mmb6RIE7+MGBDHlpDeaQQElFr4IPwLVPNrrMK2Z4e39ze3uSNvdGLhxDM+QBkdReFFVQqtU0XlAIAFCf/rC6GN8wsioWwMBXKHCfIlSo7AJyc4pur6mOueczTKEzivXf58A8u2bBhVaZKuapSg4NDXzKl4iFYU1szSJVVFETmlZ2AOWeCIZOkQT64jm3QqiICLHgo+sVnYtK6inODMk278bHtD+02cWU3s2VWiM63QawQGGbx7kD7sYmdADCZPakNKmv+AkpEximSQr5+rDH3J1OC2oqODnPwqaeOSRx/wzADoNrlq4lIvagEweq7tmy49Jwx6EySlgxtFROAXiL9P95LeXqgPOHRORb9EpNCGDLfBrESCRmGSVzvd/ZmPSo1lC5aGrVQn6bPaqiOCGQQO+/yuc6WTVO88d7e1AAcHf8CxzE0VZe1eh+CwiO0IXH0ynN64VWNE5irzlc+ZDLCQgpN7R9IPtc/fVBmXjiVKndRXKlu6DwLSmL2ToNy/LmafnBa6gUpVQ6x98W0A7F2YBdSkAg0CKC54CMnOY0ABnc9thOVym42TFAV1BCVSoBa0z4dexIAsejlpAKocg3uo87ml1KZzsxJIr4y8cL0QZluKN26/aFdNvb9ZExNN/Q0NpKQNRSUk91Htu383pSNrJl9bcfio9ZrsaaIPKFOWZ1XH0WvWrxhw8oqCKqOT+j1awyC1jAZQarkFXCGrgHA56oT6AIMWc6ngpLmcFQQMKcFlLPABCuUGERJPLhmTPbOBJRAR4fpAbx4/4Osx35eQEmZ6mYwUUU+W/3u2vpPSoNPPlkir/tADKjW2hghqHrO5aKkMXz3pDrNgOJKpTs1SYQAQzX7QiJRhRpz8ZqWNfWZL0Bn2GJ86rLLLvaqF+gcUCkEMZaZk+Swif0QW8tCmHaaXwlZxQ0Bqtv27Nkzgc5OM31QZnYIw98hIkgJB2obHkjz3apq2VBp4ljpyNNfnYz11XK99a0MwCnxHpABIY0n1BSVmhXWGPvWScnV3a0AcNXR4UdU/H4ylkipRk6jMosAZFrd6kUrpgLwdKu0osWAQ0uQ2QpKCZiYR0b+wjx74PKlw2NrzUTpH4yxPDXvcS6TQwwpqQEJ/qPqhE0flFXPd2LkYY7deNoGWruTpFSUwzH5gIgwNvGJ8acOHpuM9dVyVdOn4p/gzBabhxgcixc1NnzZ6htvvHBScnV2mt6BgTKc30FMEKqN05hKHRVYpnGD1Vnoh06ntwEgl8ulDamzcHRU1XNgKTdR/trwvQ/+8tDevaNP9fUdG7rr3p8IJiYeloAZqn46D60EYyvlmIrjd1ZDkDxDYUbH+p44SiLPwxBQ6+yOisAEhsZKz+T3Hfy/6OrimkvJqVedXT+JPyWQWzt9qlAvYVQYs/KKSRWeXQgmdy9nAqUWd0LShIaoYbg8LZ16+WpvYxGRE6qU3CehSujosGhvD1Lng79KbM5R1jKJKE/GErlK37EH9zxVrXyfmdeVBl0dqX8qS/9JLSWlcCBWHOn4xC8dPHiwiP5+mg+8VKMJwfH4h+JiKJGdlwxV1lCVUHjTJPaq4RiVh50IABitTc4x/R8icFg/rQ8knYWWUCgxM8XxsBw69CiIFL29HvX1aURsoqRmmsYQaaodRTT1HbI08sxAWVV7zAO1PkIBHAXWmonxLx7f+fC35rl9VAGgZf/+fapyiJgwHykqViWogAxdhbSczaMtDUnZYnIQThKkxUk1udTVSKkWK9ee8QerddKjo4D3s3htVSKCV//cyMDA6CmCXoV0evVkChXLRsvliWBw/FtThcWs4lNSSWyNJYqQYWMmJg7mj479ctaiMO9R3f6jR4vkdQQgKM2DRCawqgKEVS1rWhoBaBUUaw4c2x84DCoTSGuXURECgiAIzvVzIyNlItE0SjvjEDLBmnAAacU9T9VmKj6Y5t54sqwM+fKRRx89XK3tnD0oE6eE2pwiZX6jFZAtln9mf3//UKa25zP1pdUMkSXzVHow8xPigiiUsHhR06WLTjgbXbxt//5YVfaBGVRjKS3mrClUBYClY2P72fB+MNdGS2RmCUXh00jbHugcPg6b2BFGi185yayZLSir0aAadeg5E1jL42OfOPbAjm9Xm5iwMEvVO0/Q2jajnBIUVUM6zNxwQkT3EwAPo0ey0v7a2OQEGAGm4yns27+/LJo4KM/KbHfqFwFgtLWd9MuFfNMLSLsG6CzY8bCGuZLsPL7joQeqzXtzAmWtfA9V8mxDa0bHHh48uP1Xp/B9L9QizyRpQeX8fD4rhJgDVfeyU8M0rlLJz48nNw3/GSAIjjDN+EAJqlDoJQDo1CC9amLpXM4VgFAArpQ/A8CdWic7K1Aaa2sQWFMhY8iUy8PB8OCbsReVzNBdmDNKb7iCqUmzG1JzKZmBXRigfOBPdRgN+BlWgnJtr8Q5kn3VImAhxT4GTS98MyUcpCJQRvPya9a0nPqfk9EiT3JjnOnpjDUox4eXHp84bXJkVqC0UT6ZbctoKhlIwUYin7AZHXv74d1PPje1r2XeV2daUFJY1bac1NyoXjAvrGlV70kV6tyLdszmon21ktKKtL1ACDDqdTpRFON0QGae+yeoChvTVA7yV2b7Obl3STwx7uHdmeFBwkxwzv1jf3//+OmSIzPzojNjVF1yqWqAlEqeZrRxmTXqKWBrjgz/+uEdff+V2ZFulhiv/pOmfMWpVSs0qTaPHCH09DqgG3U3bf69OJfLaRL7eeviIwKJwBfjF529FwkUtayupYwOuRRMU+jtSSdXzPgcxZiAgqjuagB340gHoTe1CQv1wXNF1TKY67PkykkfLAwTxLGHSz6bhYFetC8zA2UaY2MiWkWzlZIKH4bW6ujIFw9v6/vjGVCxMDo7aZJ4qq1Np/D+6Dn3sadn8l9Wr17dVFq5/KPlxtx7vI+9ITJpGU+N89+ACsEY1TjX0vjEGJCWznV0UE2N86mbJAARPzct4ZLEz7HLQWYTFyImhPYmAJ+Y6jlXXhiN6dLGoka2HqJ6Ut+MqmcODJWLe4bv27E7g4SfCygJ3ZCmVasWecZFkOnSvpy4KqrqKYpMMjG+4/K7HnhvX5pW8mcEYbVQNQWtTAUWAKwBorCtLdgPLHfGNCFJNAgCcqrJhY2Nz5ogUAAYGBq6NNfSEJGT1TYM2o8bfpvPh6uc92JUjYKAefA4qOpSOE9utJK86AVpftiZgjDcd9YfyOoY3PHxAa0rFCmwhdNJtbM4KywiSNhcv6J9ReFgT08pDXWBh7ufGWlcfXE/MS8V8cpTrzqRMhG89/8CYCr/0ixB2QVCN5RaoovBpkll+pFXVsCRCgJrbLF4MBocf10fkKC7m0+jZnlSClaLiwFctH79pZWmXJs3tDZRvpYDs+KwympYUyBPzQFRUP3ZUIEjTEfTggPALmtZmgQWxIyECeIFmjjPIKMnrNx5iAeRggyx0guNx44dGa5Kx0yyuDhu4yiXqc+5fxULyKmHmSiNnhr7O50ldfzxxw80XdD6PJivgHOK6UpMIlbvRSJ7URwuvx44eCc6Ow3uOkJAr8D7PUTUIUxq5MQBK2CQxD5Xif91FEj7v3p7MXtQ9ncS0IOg0LgmsdaSiAfOXYFeJRUQwxrFsQQjYz9+aNeuo6ekEVMw9vT46t81rbtsdWHRouuTMLo5ZnPDCLCWgiD0xqTiWRQGgKhCjM9CgifMOBC1TjVkCKrivaiHkiovBBOEZqWC5P3IwMDAiymXmZpr1g+hgBIZ4wQFT88MnogwnMHZ62T09DhWfVSZrtC0joGnrwVIiC2bqO41AO6cWvwRFkv3+3z0CzT1rqsKWctcKj1zZFvfk1PCSXMAZfqlBI7a1RhApqd5lBRK5PIaBGZk5H1HHnz4gSmODU2K8J4ev3zNmtbkotbXeDY/qdbcWAzCuqpTnGgC8uJN1p/qVNJYGxFxyixLONmTzcpXJ4tYiaqXiBamcU8ZYtLodH+mrqbaz4TAitTOckivWiyj9ljpGABkNM5n9cAh6CPQW2b6/azKIkDM/La2traP9Pf2xlVQm6NDP0gaCmMmzDVAYwWYQCTETOTl+wDis/kSMy3yVQn5Gp9eATqXhExzheQosAGNDP/Nke07PzP5MCc4d9zF7e0rFr/i5t8rr77gUVdX90VfKLxaOajTRLx3ziGJJXCqBjDCYhViQTBKaTW9ZmQCmmU1sj+k6WAzkuzvFzpInba+MNSh76St6enx7YAlp2tEPWrBl0FKqsww5PdtfPbRYzgX1quq3bmHvXikg+Km/32elcl7kSi86Eh98KrJxEBnpzn8zDNH4Ny/kzFQsE+FBZFCyDr5z3N7tNOV1j09vr29vSDAtSrnLqFXAB7qObA2GCt+79h9238p6+qTqupeecUVi1tvu+l3B5c27InrCh/xNljqE+8RJ15VVEkNoFaJWDJ2rdPbfnqWP5ODo87HYnIOHLudp9p4+666tIUML9a0fKwmGVsiAos83QP4UwslTuPsKADkS0k/OVcG84zMmSwRJBIYaBS989T/Xii6T4nEAFKmOjAbiuOJxonyvZnzKnMDZda8vt/adRoEy8l7OVuwOeNtFcuWg4nyofLRAz8JoJKpDEFPj2/dsumd45cs31mpL3zUql1CFe/gRYnIZJxF5705fo42nhIzw1cG68vlXZNeb1dXOruxsXGFMDeR0KxCMqdBpBooyMuek9TzOcLGl+3cedB495ymemvaOZGUB0gMvIfPFW5rbGtrQU+PZO/IB3fsuMeUSt83xpAqVZThyfu9e3ftOqcUnx4osxeUHN+qgQUpiZzrhdlI4MXT8cr/mnj02cN4zWsi9Pa6xsYLW5ZsvfFzyZKmL6gJL9HYOYEoSO2CcMEslOqGChmGQh8e2L37eEZoqpN53iC6TK0FC3xNhLgqQRSUJA+dw/M+8YidndwLOHGuH0zVCcPTjqAriNiLQxQtCZc2vgkZ6UJWcEL2ePnjRjxpYHIcWQNJ9kz+zJxBWQ22GnN7Rkh0VvtDQJ6NsVoa/43Bvu13oaMjh+98p9K6oW1NcO2l231D/bsS7zy5RADYtEbnf9b04NREI7WV5B4ALyLnInA7jAGlaJozIsGGvXOJlot7pqrn6QgbEn9fxpk57f6WqkhVVfIQeBN8qA0I0dvrM1ZhOvbQQ/fw2PgHolLlcR4d/SYmjv82ptEIOB3vm9DT4xffsGFlYnmjFwUzGT7T46t6Do2l8bHvDd69/U/R0ZFDb2+5ft2VN7uly74sYXCxc0nCSkG155rwP3IZk8Rki+4/TpJcaWyOvAm2QAVCQjRXLgCFwoLDsn/kaN9jz2K6pPzZM+WLek+cTzRmmnlpCJFR7wRRePXR6669FQ8+9F8Z1bYHQEfv3f7/APy/GRni5/yJVNQSUfAjFObqjSd3RimpKjCGbDkebBodemfmaZeXbty42ixf+k0X2oslcY4Vweyq+P67iEkVMkw+iQfsoUOPTsmiELq7pbWtbZk39jp4DyHiubveJJRGXf4NgEy7Tz7L7NhDhx6FcwfVEM+GUICUxBujWp//mVOOVSfHu6TmC9UGlFkoKI74zSnfiaNTmQwzfnKAjRhSprGxX3y+74mD2LpVmtavv9Q31d+pubAZlXRi2ekqJv7nqG2AwcJsFc59e//+/aWs1L9qS1Glpf5WDW1BRTzNKZmkSL/NMJyDKxe/P0178iTQ7N+/v6SKhyh1wGfzOEachwbha5ds3nxZBvaTZzqmgXKtBSipGtRmG272IlB+sa5JR76Jp4CtHZv418FtD30FXR12zVe+Etjm+n/xhegS75xH2iv+PxaQ1dCTYyX1CaEUf+MkkGQX3FjTqZz+NM3x+6AQHzJTkjyz5MjojuzMpi/tql56Ej9kUgouncVzkFH1cS7IaUi/mYF99nG0aahuuGUtP4Ywtxje+9OlQ0ihaplMqTJcmDj+82n/bq8bWtn6l76p8erEJUl10Oj/WJWdOngwQgJLxpYrTy86PHg/TvAgpfN6rrtisdjgNvUewNyIwrIklpBRDWP/rb1791ZmTN6QXZiwkvSyEwhmZ+CSqvHei+SC/9Vw5eqqtOTagzLjvpEg+HEhPuOIb4UKM7OOF//s+b4nDqK7W1quu/ZN0lD3Pp94ZxRBLdkgJ4snKavufqlISlKAIJYMTOK+NjAwUJ6077KKJ1vf/Grkck3wOueZgpR29xgTO8oVky/PUHWfZFcuHi/vQuyGwMwzJZkQpOUFgYP4fD4Xti7735m5UnNQMrq7ZfX69UvVmg71nqAvvtkKFbLWoFh69vjR4T8BwGvXrm1AQ8MnPYxCE661uk7z6QojpNazKlI+u/MtiFkFiVGDinM8WvpqerGzzEV2wVnpF2p1jUjVu5AJ5fiJfQ8+uGfGqrt6hF1d3N/fP6TePcHpwBCZqZBQJQipUSeqYfAzF7a1tUx7KMC0QZmhfKIu/3bNRXUO3p0uuM0KNaqwxYnfxd69FQAy2Lrot6UuWgHvPIFr22ag6lXZqRoRwyQBE9mA2VhiYspYad28UhWeYXmQZ2spKFfuObx792OpGTM5jUxb2ts3SRRtTiQR1IDj0zGrhSJy7rNIixxmx7uUxVApcTsNYS4UhaQi3uVzS8pLGj84xbmrESjTm01JPnibB8PIyRmo1EJXMTZgLVd2Dz3w8OcB8AWb1l2Y1Offn0haQCu1qshJCZOUgsCYwFoLZZNUxrk4MYi4/JAvl4ZF43EQmK21ZC2ng37V64JJSgaLwvvKZ04KmKfOhPqG8EMuisiI1OLCqAEblOMKRofT6uez5JOnswLv74KXOfX8EtSoV/VR+AtN6y5uno20PD0oM6KhizduvNRHpp2cUwIbfZGnSUokxHHlT7MbKsVCw4c1jOrIqwiBZj/5VMHZhHMlqAkDY1TIlIrf57GxD7vR4VvCg0Nr9KFHLxv9r7vb+cHn1rQMli4Lx4pb7chId1AsPRQqEQeRyWpoZF5tT1VRyyYoVZ5bXdJv4ETmgtDb65et33RpEOTegMQpwdSiltOTMaQu+f6cG+8yMIeleIfGrsyG0mG5s7WsRbzkosX5RStmJS3tWcS5lPPROyQMIlTEEdhOfWcSFR9YY8qlgejpfd8AQBdsWndBKQjfK84rAWYuEkpSMlNvmQ2pAOPj/4py8U+GH9h1f/VnxqfsxOjo/qHRB/cDwCEAvQA+3tLe/mrTmHs3h8HbxIakznnMEzW2EokxxJS4L/X19SWTJXrZP6XRvtvlwwbEiQPI1uASEKlHoPrJmgQOANq/e/cLzbfd8qinYCPEqc52vjfUcKJazkcfunBL2yf39/YexwzKRvm0n9nb67EKuTigd8FlzHWnfh6xMBNsxX/h4MGDRQA6kav7RVeI6rOq9DkJJuPhjQ2MT8ovREMjrx3+wf1vGn5g1/3o6mJ0dNhMMpzaxUjo7DRZsBpDfX3/NfSD+95eHD/+alTKuzm0RhXzQXagIDKmHE/ky+OfmyJ90lFzmzY1+nzw7lhECWrm3EmsKrDWoFJ5+ta7HvgOakG/ndmjkbr7yTAYLHMI65MovMvnWothw/sxkyzTaUGZ1eEtXtZ+veail7ETIRCfWjAhRMYWY2+Hx74KgJpWXb1Io/Ad3ouyzl4asQKe4BAZYyeK/57fe+DaQ9v77kBXF1dHIVcr1U+Jw6f/v6fHT1Y0ZwCt3LfruyPfu/sGHR//pAmMAaimg+xJ4REYaJz8x/M79jw7qUqzgx7O8/tcPreSnfhqMa3OUSozE8i7r/UAvpb02z5OHlLVLKw/+6d0DDYVEYlyv9ja1rZ8JrblGR0dzkdvU2tVSF88yknVszFkvLvn4KOPPgVAw+X8JorCleS9l1mUoGkW51PAm8Da4PjIt676wT1vOvLssykjV3e3oGeGUq4K0M5OA6LiyA/u/6AdH/8LY9lOi2l2uvEQEMMnZMvlv8DUXvStvdLa1lbvA/PL4r0SlCULsM6B+h5gMlypgIZL/1ALB2fqZ0ilvA2JS5RgMAfea1ZhDxFEuVbf3NCFGYzn4xdtcU+Pb1mzptEb7pQzxSarBaXO3ZHZI6xR7h2a0hXTbM9WFF4jY3Ij498/ds/2N/emwDHT7As/OzhVGZ2dZvCuB35ZisW7ObCmJsAUeBcZDovxzqPb+rahq4smR+B1Q2hx408mdfkV7PysMxynQNKzMWQT/72hXbsezwodauHNCwAarHvkaRO7ARiec+sQAcaJEynk3rn8yitXTTfLw6exK2BbW14r+VwLnPgzFN4aTWLY4sSdANB09dUXJ2Fws/NKsx60ripsLAdjlSP67P6fBMHh4x8/bbP6HDYdACgYnfg/SJzXOVZ8p8MDCJEHrMjvA/DVAteUILWtPgntb1tHWovq8hOHLTDiP4OpRcO1WJ2djF4442UPakMkSxAVzeULbmnzr+HEBLYZgDLLOlTywU8r8+nHUmfEVCLypDk8/DgAaH30WuRzEYm4mbQKVlOEKUclqRXxNDHx9mPPP38Qb+k0Z2rBnJPE7OqiwZ27HuRK5UG2huciLUkhxIZRKj7beODof0xmVDJbcnFT3ftcIbeCEi9KVAvwKDMbKcfD4wcHf5Cp3do5blU+duDerP9T536B1KhLxEf5dze3r1tXbZeYLigJ3d1y0doNK8mYG8V7wukLBpSYwF5279+/vwQANrC3p4S1Mxc1qShUz4E1wUT57wZ39P1gXjkqU8lCodI3iXhOA5aUIGSJOHZ/M6UYAujtlTa0hZSPPuQhmnmKNQg7wZO1ahP5l/Gnnjo2WRJXq1UlPo3j3ewcamFuAEQeIhLZnMkXfh2AZtpkGqDMNnR0Ze52iqJ6PVNYh9JODva4FwCWtF+xQtjcpjLzqhcCQ5WVmNiWyokOj/4J0qmv850i1Lgcj0Bk9g6HQonJmFJpBEeHvzypstN9lEM3Nb7PFQqrOIGAThNSm51kZnKe7ETx61NBVENNIgCQc+P9FMcTRFyTWmxWst7F4uty71iycf2GTOCYc4Oyekts8FZPdDZ+eFIRdS55AgBs1LRBc7k6FZ3FeF4FCD4wAXEp+eqRRx55JrM55j1vHbuKnVNYhuHZWArL8neDTz75wonZ3r1+7eK1DS4MfsMp1EqNZt2pZqZCfPDo8wfunQqiGi8aeLB/CCKHUurpuY+l4czU8WFEqKv/aGa/nlNSprV+11xzGcO8Up1X1RdnZJRUidioT1xjMX4WANSaV2UVy7PYIA8lYYkTDzf+l1jAKjRTiJLZJSwIrKRKYI5jR+MTf59JSUVHhwVBh69qeR0X8ivhnPisKHquJ6tEwoYREr6Cw4cnaq66q1IiDdvE8PJYWog89+/IpgVZSZy4fO4NF9x20/rJ6b5nBGVWERQ1hK/VKEhjeKfzupUVzGCVF3JjY/sAcGxwm6qAZjEJVUFerWETx48c2/bIrslwyvwvslG0eHb+sEKgEnDAdqJ8z6GHH3486+UW9PZKF8BxZH/Vpambmj4zOwcan7hjXlT3Kc6OUepLJ+PWdKiputCYEvTPCDgj1xFP9bp9lHul43T+S7WI9tSPJQLg/aG9e/dWlm/YcJELg8tEBISZe5cE1nQyYvyfAKSm4Y0zrfRdVQRb0wpMnbHJoenELSWX/AEAQn9/dUKtfPqWzW9EmNuA2EsNR1ArMxsXJy+4kfGdk5GE+by18I9qWqZaQ05XMhSLl3z+Fc03tL8a3d1yOmmZkt10d8ulmzcvU7K3qEs77E43MCHlFSYExOkI3LrcOgqCPNTPymMgBal4NbHeu0Bam9DdLSuvuGIx2FyrkjKMzkjtKwSBYarEu45s2/k9aAaQFOymYu1HoUbNTOgmzhkNhVdrEHr9/uCTT46dSe3VZFXpF2P3Q0o8iLmmjaekAsdGJV/322e2KTPVXTTyIxTahrOV6Vf/0pUrOQBwhm9Oz3SW5J9ERp2n2KX26bx73am9RLK4aRNFQYuKn3HhiCMSA4Bc/Pep5O0w1TTo0uuufr3kcxucdwKCqSV/EamAK/E9AGjeZi5O/b7i8GFyfrTmrCUEg8QpReGNK26+7vbT2ZZctU0qgX2NZ5w+YJ6p8jRHRCBr+tMDwk1Zo8wsHjwdp6aio5Wx4SEs3NIksO/26VCjmT6yqmFjS5WR5oNHvz4ZvM7Mn6RQ/wFho4DUZDbOpCggGIorlYjcnQB0ssVinvYHAA7veeYIqR6uzkOv1YcLMYyqOiYt2eDP24DwVNuS0dMjbW1toQR2s1chnMFhoWwgpQIIcvn9AMhbukJEwbMJsmZZ8oD52GvXbT4ydUPmaTF6euTi9esvdYH9Me9FZ2IHp5kn8oYNScV/c+/evUcny+e6u2XlDTeslVy+gxIPToudaniOhuBl/777+55Pv29e96lKIEBMvJe4toNhswc3SJxwoXDl0Rs3vR3d3VItN6zalDpaKFxujLk4JUI9+0EpAeJEFl15ycVkTYtAVGfZvpzaXGLw2GPzzqqbmSk63lL4WcpHEfSMef0zmi0gMCcJIKW/PeVz4az5gIbWKtRntDw1OkVSIgYT7QaQnJPir3YeuCJJjtVcMugJWzshUs3lfqsDHXay/rTqfcd5uwVBwCTwZzqmKuyMAjA6aupbW8mGgKj4OczUESKPl798vsNAhN5eWb1+/dI4F75LXFrzqTN5TqiINYw4fuIX7uur9nMLenv96vbVTUmIt88mqzWdOAoY0MQ9PTVksyB2ThQ8Mm+hYyKjiRefj9Y+cuP4OzClEJgBILHUIZTWGp/FUwZryoqblEq3oS54Q2IMrMzysYnScWrer7j3sb4LThVKNZaSBoAMLyp8MLD55V7heSYlQmmxp4RgWIevdVc3MMvijOUWv9Hno1Z23tf6HUiVVAVMeAILvFziPXT+hLLRVFpKlP/Q1NAkA7Bi+FpVhfDZD0oJRpIYKDS8z+dyH0UcQ1ln62USRGDY5H1jcxMAoGuebMneXn9x+80rkMt/0HsnrMIzomJMydWNcxWXjIx9c3IDs00s58KfghoVqj1fsFLKkx05GlxoUKJUTIepgmtqJJ8IvqqhxCmiXPvize1bq3FLXr5hwwUEvgQimA4nHSkggLqUE2COxg05WAsxnI5Tu6uj9sHzNJeuxTr5mERhs6QDBGa0x6rq2TBxnOwa2b17V9btCXR3y5p16y60xl6f1q/o/NjGoqiUxu2CgTGLyBTqcnuya8bzo8NS2hlYQ0E+9xNV84STnF0jNiiQn1HxO9WCLYWU4IyFsLl2nuKSBj09fml7+zqfC9/nnZvduDsySkSwov+aXp67qvFdGm1p+BGEYUEVfr4YZBSAj/2CC0rmIKlGoGWe3gsK48UhNvzmxpRVw7Ea+3KyBgoVXfAJCkKqCo3C9qk2Rc2/pbH+d30YMs2eA4ApcSqJu3NSklQpEg3/uBCBVOZvEAoBtj7nFhqUVlLDe14xQSAR8T6fa7GLGm4FAPaBaWMlKAkWmudESZm9h4KvvXrV1YtOnR1dCym5/IbNPyr56A0y255vhcAQw7uDLYeHHgaQUjf39PjVq1c3eTKbxHlQOhax9memCjAQB7ZlwUUlLOa7cCubvqsgVg75FQDAxnCTZC1CvPD0UCSinoKg5cDK8CZUJ4/V4v61tSnQYePI/nnCqqyz5WdTNcRAkjy6d+/eOGvbTXmWVjRvsKFtVlWZr9NTYiUwSHk9FphgjoyI6gKAQsEinjyb16xYsaLA6tx6yWZzMc7LUrEWST74MQBakzhcZyeju1tWbJn4oNQVLvcukTR7Q7MABSml81m+f+rzJUF0g1gDms+iZM0YBgO+EoDOl4lzulWOXR4LQbVIYBVVH9pL/YUXXs0UBA7ZANMFpynLWsZUEhgObl+2fn3dbOnjTvrQnh5ds2lTY6W+7re8qBgwCc2aKZC8OARlt/sUexJi7AZJZyrM37mxZxGBmHDTqra25ejuVtSkd+YsK7t4o0llvTADkPmHhoggCCD54DZWID+Jj/OzWL14BMEqqs93YAZN62eUkoCMhfQxyUWt6v1cDlFBxPA+MeXk6Ul78utfFwABKS6rToCct2urRCLeUy5oLi1peD3mQEY60xUVCqK0cOIJCqildSzOVTd2wbW3VmNLqnCWtRya98z53dJxfU2VfO49XrzyHN+LiIidjox7f2zKX+qWCy+0YFqZ0WDOo+NN6exGUY2D6FcA2ExSzztcjIvXLpzOTOvTnKE2JqKhqWGj87OIRQRqg1fWXXXVsqyqeuabnuVOn89H75NcvplEPeZCAqAp8RgTDow88sjw1Gf6YWtdsxAiqt6seby4ADESJ5SP1rZcf81voqfHo719/oLpmXli2Fy8gAKKSQAPuoyNsftANWFDmL3IJhB58ZTLNeaaCm+ZCrAZfVxvr18DRBKY94iqQnXOAQUiQNLJaClCOtPHLk7EFyi0Mas1pPkFJaBEnHjx2tD8283r225CX1+C9vZg1lvf2WnQBT5NFTuhp8d3ANYT2lQEUOWFAIOqgE2UY1K1eAksVSVPCkThOwDwjL3MrKRruL39BkTh5fBOqSasFAQRqQAAPt51ooqNI7/gd1iUkiAwtGzJPy6/pq1tCjCn955d4MkuyJ4ej+50eOvpZMWTm665XIy5SEUVRAvocShskiQeUYjzPpCOyFDi1AXBlrrrN7ZNdHc/WmUUnonHiMbCKyuRUcROVJlRg/pUVdSloPy4grrT7yG34MT/TGDxibgwt5KWtN69eNM17xnc0ffNqkuGrZl2qV7o/v4TrRN39fo0wNIrK6+4YvH4iqaP2nzdZnO8+C9H79/2J+hCys/e0cHo7RUX5K7XMDJwzmF64xJrphmsBOZRC7PeQVVJztdc7CrzqUcU2Cgw75wAfq3KKDytD7jrLg8ieMLt5JUgSlqTgmkF8UlWgABAa1j37CjMcUfUPN8qfOqBMYjFJZKEwWLb0vIvS2676UtBsfSXB6nvISBjp+vtPa0ZsmjDVddrc9ObSjb8CcnZlbEywvr89Rff3P7l57v7DgKgqj2ZhGYraOHGCpMCahgal2Ft4p5DJHhpTKNRVhGwsW9pR/tH+np7E0yPlphApM0vf/lFynQF/My7FM8iJWGCwE+ebKZS6nbvLo69ouMIyDZnDhEtlCQhIlbvtWKIbF3+nWLsOxffesu2wLu74jh5IoyCxyK1frRYXB7kzEVi+RoXhO0ANvl8Dl48grIkGhCJS56rPJWMTgKgp8e3tbXWHzT8qkQEpGqwMK8mBGJDeI7rE9kumgCkxHqeB9EQWL2Iz0WXPr8Zm6fYitOxJ8EtdZdJGNRBapT2o+qwYVna2tZaP2njdHVRf8oi8TRRbVgkZhOrYgEkdt5ZRlKX2zKxqP43/JJFny8X8g+OFsKHtLX5jnLzok/HjU3v91FuUxxYIHaOvVclJia1QbH0e4cP75lAR4epdnseWHLJqzSKlql4v3CXTRWsUJUnmFzpEfG+mGbSXgLyUkl8ECDJRz9+kq04HXvSBFfCGGjtklOkqgo2yxBduHzy6mSkCV7dThDNUwns9G1xVVUksUfsnDjvvKo6iHr1okniUEkcx4mnlDfasqj4iC3Gi/cf3db3BXR18RRiWhWb/1lhAyML+1oMgnX6ID+/Y88+dn4fGUqnh51fQIJUWL2AyfxoOxDMhH9RiFtrbAURoB5BYDmKrs2kcsobBMAWy99CkqhkNZp0HpGpKaGTxYnSHsq8cqukVhiGFESi6o1BUK64+qGx9006RF1djJ4eWdK+7loOg1eK80LzNEnj9IYbsboEwXh8JwNwYSI/YCIFWM77QE8ihohqaFe/0N7+MgCKrnOEPDLj3CfJupp7HAooA0lIt+EEEUBKxfzgww8FleQJCVIyfn3JTIk8y8VlciEbkx8pfWD/nj2PVkv8Ms5I9Q0NH5OQLYnogr2PqjAbCuLkiUPFnQ+k7aFJ/O9IexLpJTFlVkRcaG2lENyYetbTy/WytTU37kiVRRUS2Fd2nRjYNNmMZhL/5xYgFrz0lyKxNgjMyNinDm7f/plJctoMmBdsWreFcrnXa+KFQUYWKjxJJMQMxPJl9CNOD/vw8L1cTg6CmUlfAtOPs3IxWLtphmGFmscwNC3IEA7spX99Q3vHpGOVVTMd2XfgS1SKn9XA0vmYBzntcBvB2TAIaGj47mP3PPAL6Ow0kxVZR45QOxCUGpr+NrGGSRRCCprnWkqlbCw3G+ZyaVzGJj4PgBgdHXb4mWdGqFS5gw2REvz5v9FK2VDaKydjkNPZfO+TWl+pTH1IElmWKPwAps7t6egwGBgo2/Hy76tVVn4J7N3pI62JtYGVibGe4b07fhSqPiNcTd+ht9f98NbrP+MK9VdR4n2twmnn1GwKCMOzJbYT5U8P7d59AB0dZpJLKJoo/zXFiVa98PN+uRXQgBdVJed0vG8OwkcYNB+i3iIW8bnodYtv2LgWPT2SSRqHzk5zbNuOz9qxie+wDQJVuJcOGlUA8iawQTA68enR79//Vhymicl4a/YOK7be9GtU3/Au75zDAjo3UBUYNmaieLBw4PDvZVEAz9nEBH5h9+5dXIm/RdYSVH1WMHVeQelUF7esaWmcIrTOulw5HtJ5MM8VgPGqEoSRBNEfnxSX7OlRKBCU9adRLh5iayyEZKF9cQWlPeLVzQOcBoYNxOjQyO8f7b3357Sz06RuW1aQ0dPjl2296ddK9fk/EifOireyIIcLMATekBhVwsjErwwMDByvOlupVOxO87m5SuXj5B0pV2XT+fUmjSJMism5K2GyXK+Su59cfFaS99kuzzCInUdd/vVLrr/udVMo7ARv7eTDDzxwJBoa6WSXVCQwDFVZyO1LWSXSOK/CCIXG2nLpsDk2+PqR+7Z9NAv5+ElO+Z4ev+SGzZ9PCoU/cl4cVIwsQFqx+vmeOLE2tMHI+N8M73z4a1Mngpx4hvTmyJKtN/xz0tDwRkmcA85TBZGqwAZsXWX38f/svUan9666du3ihqMXtj3tcrlW9bWZ8HXqc0lgEJTjF/Sp59aPDAwczzIeUp1W23rzpldXGvL/BgoiOHFKC1PMQKqiBIUNjPUKmhj7Kh0+8H8Gn9z3QvZsvmo/rly5cnFl7SVfiRsabveJ80bVLNzlEXiYxAZRwCMj97/i7vtu6ensxKSNe9Kh9fQoAC2Mxx/miisqT+bYzpMDDrjEJVp1fM6lvTo7zZNPDo45kV6kBRQyDw/FJhaVQuFCs/rCz4JI0d6e0gFmY5SP3rPjv8zR4TcgduMaBhaAI52f9qe0Cla9Al6tZbbGBMWJh8MjR143dPe2dww+ue8FdHYaLF2qUAV6e13rlqtvLLe9bHtS13S7d+KsyrwDcuqYYQ9yHAZBMDr+UGXfD9/ck0rtkyqupkoSQWeneX7nzmeC4tgfGUtGQf48IVKUoVYz2umtW6e9cVHJ/72oJ2QirOZxSyKjceJ8Y90bW2/c/PGspjGVhpnjM/zgnv+UY0c3cbny3cBaK5ZYCA5ZxoxnUTNbTdGAoFB4AjthJo0CE5AxQcU9GBwd+tmh79+36XDf7m+js9OgMzNjeno8iLj15i2/55paepMo9zJJKt6ItwthohEURlWF4DgMbThSvNMfeOHWiWePHEaV1G6q2XbSb/f3A52dpv7hPQ9KS8PrNIxWwMuChQimOhaBCgfFid+e2HfwGWzaROjvPzu++vsVXV18yVe+MjBx0cq3+ly4hL3UvHpHmGAUJBAv+fC2xiWLjxZ39G1He3uAgwcV/f2Czk4T33nXkfiZ576UX9Y6wmwuNzZc7I0hiCpI/SQ7LtHZjPdsgLCKGBJA1ahhBIbVMnOSVIK4/J1opPRbR++591eKBw4+NGlKTEwQ7hjw6O/XxZvab82//LLPlRsLP0WeibxX8MJ42amfT14MkzXG2OPjX/vg3fe+6TtDQ+VMKMqZ7M5Tgeov2HTN1cVFix5KjFES4QWrPk4HrFNYKh/QXY+9fGhoaGwKVs++qtxBN173pmRR0z8n3nkC13TzlVIKOwHUM2lOlWlo5OcHt/d9apL4qsrEnc0UbWttqz96RfPPIeB3SmDXJVGQfkDaalC1kkRBqXOU2nhERFAmEDEsEVQVPqlIlMgDgUiPKRe/vX/bw3snH67KhpsVVyzesGElmgu/EUfhh8RamMQ7IdgFq2tSVYDE2NCoK1XsaPEjgw88+KfQrB/uDCaWOZN9Nvbd7x8MljSPR/n8axyxI0hK6TiPzempzDCeDRsqFT829MTeu9HRYTEwMD2brL9f0dlpJr7z3f76C5ZvcYXC5fDepR2NVLtnTEMwZD0gzEr56HX1K5dp8YtfuWdSUg0M+OpFOfpgb6X4/L77f/XZ5z/9UOvyO+D9fogrG+8DUs0TsyUmYiZmEHNKqQVyPjHiDlkX7zZl/28YK33aHB//yOADO/5o/Ll920f3HxrKhm8aXHJJWukzMCCrVq1axOuv+k3flP+cy+e3soPCewHBmulF12axL5RdWgUBykqejDEaEFO5+L3CoePvONL38DfQ1cW4tfes1+LMT5d5k4uvv+4P3JLm3/TOe6hwen3n62aJpyBnguL4I1d9/95re7u6JGu+n8k3Mrq6sPzfvn5RpXn5I3HBNsA54WwMS+1NjZQTJjTEmChuCweH33t49+OPnSI1qer5Tv3dtjaEg3b9BbqkscFNlJZ5cReQkObq8v1GTCUulSYKx44dGBgYKL/o3KqNdUuXajWU0r5iReH5yy/9aR8Gv+Fz0cXiBfDeYzZMc7NzZ4SUVC0btQQ7Ud4XlOKPHb1v2xemYmq6F//0/y3byCVbNv5hsmTRb8BD1XsRQ6bmlRuqotZI6Hxsh46/8siDDz8wox6d06jxlRs3vjJuWfStkjU5koowiLXmEzgIVhQJw0lobFBxY1Qqdg/fvf1PT3E+gSpX0pEjNBVM09gbmnT2Um5wmfq5+Q1rVxbqmn+Ocrl3xPnwZV4AdokHiEHzzlClRPAMGG8NERFsKdlnXPLJePD5z4w88vwwVGkydDYDbYRzSczWG7e809cV/s6HJvBeHFQNZWa6zh2QCmIJjTFybPDnh7f3fWq6t+pcwLzoxs2vKtXV/1s55Bycc6xkUWN6OyECK8GI+iSACYhhJirfLpZG3lfatvuFs9jEqVPd1XVyk9fSpYq2Ns0k7ek0BQHQxo3XXBcU8u/zUfhmzeeaRTzUiU95k7Rmo6XoVLNaoYq0BUQNMxsGJw5I4odNufK38sLgPww/88zI1HOYjYk0rQNecu26dtey6BPI11/vvAd55wkgYfBMJSdNHigcDNucA3h48GNHtj/8e3MGZHW1twfo60tWtLe/utzc9BVXCJZoHAvrZDdBLY3M6oF5gJzWF3L22ODjw733r5sCrLnfhewsFt246YPa2PgJGIaIACIOqkxUk9HiU4Gh6XgZrlK4WGYCmMHegSrxfq/Jf0SJ+/zRe3Zum5SG1YD9LN55erZG5kAU7/zBgZc/8/wXjy9ffJyZr0YUNgoTGaeihJS0/RxeelpGpSJMHiBiGxmbxMdpZOw9x7b3fRKdnQZ33FGb+OjBg4KODjv+wAM/zOfoH4Mof5GG5uUusKQeQqqSPe9spYpy6mH6dFgVsw8NG0M2nCg/zhOl3ykeeOFRTK/5bXqrtdVgYEDq11z6Hp+PrtXEVTJv3cwxQqJZmEqUSYSQgpCZyTCxNWxh2MaJJxc/weXSP4Wl+LeWPPrkb73Q/8NvFJ9/YV/VSUZ/P6btnM5aUlZXFxi/A4ECS6+6apkubvqpJDIf8FF4CcGkIQ4RqKrHKYURWSqdmIi9NbDEsOUE3lW+KiPHPzba99jTNZOQZ5AuALDi+k1vTPLRR5JcuFGNhXoPiCgmOSYJZ6mUUqiqps43ERGrYahlhInCVOKSiNseOv3cJc8M9Gzbv79UU0BOMadabr7xPdJU/3cuiRMCmTN+xWRibvIxdMp5pINeiSgldaK0uRwEVkC9A5KkaMQ/LSoPmQT3cyl+4HBf36MnWUBVlo0pqcIaSekZ/M4UT3LZsmV1fu3LOiQ0byDFrd7wy9SGDKJsQt4JehZWAEkiLP4ZTuQ//Xjpq8N9fffN1vaY8XN3dVHVcWq9+frbE8vvYuZX+CBoVZudazVuOMUk0+xwNcsTpQMePdQnZaN4kpW2U+LvbRgv9T7T1/f86S5DDRcDkFXXXbd8bFHd0y6KCiKCM4XqJvFIClYCV4MnmhKLqQgU3rHXURIMsvoBVXkawk8GTh/ODQ8/MdDff+i0F72GQJwrKE8LTgBYA0RDW9qvNkHuSlW90Fizii2rilJSjoschQ9pIo+Ze3/4xGEcnkil70mhk/lfpwBl6VWXLpPm1o0wYQcMXSEGlyZeLjfWhpNBWYXCCzzRfgY9HSbyoLrkER+X+oZ27Oo/rac8S3tqehorjUrU39D+f8OGxtsV4gVqiDi1oDDlTqmkwj3xpN4Xo1xul4kdicezxgQvuErxmM2Hz8aDYyPrdu8+3Isz1INWA/Nbt84mTDej9f8Bk2cF2OXQR5IAAAAASUVORK5CYII=" alt="한국대학교 로고"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+         style="width:36px;height:36px;object-fit:contain;flex-shrink:0;"/>
+    <!-- fallback placeholder SVG (로고 파일 없을 때만 표시) -->
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none;width:32px;height:32px;flex-shrink:0;">
+      <circle cx="16" cy="16" r="4" fill="#5C8F8A"/>
+      <circle cx="16" cy="5"  r="2.5" fill="#5C8F8A"/>
+      <circle cx="5"  cy="11" r="2.5" fill="#5C8F8A"/>
+      <circle cx="5"  cy="21" r="2.5" fill="#5C8F8A"/>
+      <circle cx="16" cy="27" r="2.5" fill="#5C8F8A"/>
+      <circle cx="27" cy="21" r="2.5" fill="#5C8F8A"/>
+      <circle cx="27" cy="11" r="2.5" fill="#5C8F8A"/>
+      <line x1="16" y1="16" x2="16" y2="7.5"   stroke="#5C8F8A" stroke-width="1.2"/>
+      <line x1="16" y1="16" x2="7.2" y2="12.1"  stroke="#5C8F8A" stroke-width="1.2"/>
+      <line x1="16" y1="16" x2="7.2" y2="19.9"  stroke="#5C8F8A" stroke-width="1.2"/>
+      <line x1="16" y1="16" x2="16" y2="24.5"   stroke="#5C8F8A" stroke-width="1.2"/>
+      <line x1="16" y1="16" x2="24.8" y2="19.9" stroke="#5C8F8A" stroke-width="1.2"/>
+      <line x1="16" y1="16" x2="24.8" y2="12.1" stroke="#5C8F8A" stroke-width="1.2"/>
+    </svg>
+    <div class="hdr-logo-text">
+      <span class="logo-ko">한국대학교</span>
+      <span class="logo-en">HANKUK UNIVERSITY</span>
+    </div>
+  </a>
+  <nav class="hdr-nav">
+    <button class="nb on" data-p="home"      onclick="go('home')">홈</button>
+    <button class="nb"    data-p="about"     onclick="go('about')">브랜드 철학</button>
+    <button class="nb"    data-p="tracks"    onclick="go('tracks')">기술 트랙</button>
+    <button class="nb"    data-p="archive"   onclick="go('archive')">라이브 아카이브</button>
+    <button class="nb"    data-p="identity"  onclick="go('identity')">아이덴티티</button>
+    <button class="nb nb-cta" data-p="admission" onclick="go('admission')">입학 지원</button>
+  </nav>
+  <button class="hbg" id="hbg-btn" onclick="toggleMob()" aria-label="메뉴">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+<nav class="mob-nav" id="mob-nav">
+  <button class="mob-nb" onclick="go('home');toggleMob()">홈</button>
+  <button class="mob-nb" onclick="go('about');toggleMob()">브랜드 철학</button>
+  <button class="mob-nb" onclick="go('tracks');toggleMob()">기술 트랙</button>
+  <button class="mob-nb" onclick="go('archive');toggleMob()">라이브 아카이브</button>
+  <button class="mob-nb" onclick="go('identity');toggleMob()">아이덴티티</button>
+  <button class="mob-nb" onclick="go('admission');toggleMob()" style="color:var(--tg);font-weight:800;">입학 지원</button>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════════ -->
+<div id="pg-home" class="pg on">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-vid">
+      <!-- Video placeholder: replace with actual video file -->
+      <!-- <video autoplay muted loop playsinline src="assets/hero.mp4"></video> -->
+      <div class="hero-vid-img"></div>
+    </div>
+    <div class="hero-over"></div>
+    <div class="hero-pcb"></div>
+    <div class="node" style="top:22%;left:62%;animation-delay:0s;"></div>
+    <div class="node" style="top:48%;left:78%;animation-delay:.8s;"></div>
+    <div class="node" style="top:65%;left:58%;animation-delay:1.6s;"></div>
+    <div class="node" style="top:35%;left:88%;animation-delay:2.4s;"></div>
+    <div style="position:relative;z-index:5;width:100%;display:flex;flex-direction:column;justify-content:flex-end;">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">HANKUK UNIVERSITY — 미래 교육 패러다임</div>
+        <h1 class="hero-h1">성적은 <em>지우고</em>,<br>현장을 혁신하는<br>실행력을 새기다.</h1>
+        <p class="hero-sub">미래 인재와 산업을 연결하는 새로운 교육의 패러다임. 집요함으로 선발된 인재가 전국 현장을 누비며 반도체·문화재·생태 산업의 구조적 공백을 채웁니다.</p>
+        <div class="hero-btns">
+          <button class="btn btn-p" onclick="go('admission')" style="padding:.85rem 1.4rem;">집요함 증명하기</button>
+          <button class="btn btn-o" onclick="go('about')" style="padding:.85rem 1.4rem;">브랜드 철학 보기</button>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="hero-stats" style="animation:fu .8s .6s ease both;">
+          <div class="hstat"><div class="hstat-n">28만</div><div class="hstat-l">2040년 대학 입학자원 예상</div></div>
+          <div class="hstat"><div class="hstat-n">39%</div><div class="hstat-l">2043년 신입생 충원율 전망</div></div>
+          <div class="hstat"><div class="hstat-n">8만명</div><div class="hstat-l">2031년 반도체 인력 부족</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMO VIDEO -->
+  <section class="sec sec-dk" style="padding:4rem 3rem;">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="tag tag-light">BRAND FILM · 15SEC</div>
+        <h2 class="sh reveal" style="color:var(--tw);margin-bottom:0;">집요함의 현장</h2>
+      </div>
+      <span style="font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.15em;color:var(--st);">2026 · HANKUK UNIV.</span>
+    </div>
+    <div class="promo-wrap reveal">
+      <!-- 파일명: assets/promo.mp4 -->
+      <video class="promo-video" id="promoVid"
+             src="assets/promo.mp4"
+             autoplay muted loop playsinline
+             style="width:100%;display:block;max-height:600px;object-fit:contain;background:#000;"
+             oncanplay="document.getElementById('promoFallback').style.display='none';"
+             onerror="this.style.display='none';document.getElementById('promoFallback').style.display='flex';">
+      </video>
+      <!-- 파일 없을 때만 표시 -->
+      <div class="promo-placeholder" id="promoFallback" style="display:none;">
+        <svg class="promo-placeholder-icon" width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="8" width="40" height="32" rx="3" stroke="#5C8F8A" stroke-width="1.5"/>
+          <polygon points="20,17 20,31 33,24" fill="#5C8F8A" opacity=".6"/>
+        </svg>
+        <div class="promo-placeholder-text">assets/promo.mp4</div>
+        <div style="font-family:'Pretendard',sans-serif;font-size:.8rem;color:var(--st);margin-top:.25rem;">이 경로에 영상 파일을 넣으면 자동 재생됩니다</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO SPLIT -->
+  <div class="intro-split">
+    <div class="intro-txt">
+      <div class="tag tag-light">ABOUT HANKUK</div>
+      <h2 class="sh serif reveal" style="color:var(--tw);">한국대학교란<br>무엇인가</h2>
+      <p class="reveal rd1" style="color:var(--tg);line-height:1.8;max-width:460px;margin-bottom:2rem;">개인의 기술 역량과 국가 산업 시스템을 직접 연결하는 교육 모델입니다. 성적이 아닌 집요함으로 선발된 인재가, 전국 현장을 누비며 익힌 실력으로, 반도체·문화재·생태 산업의 구조적 공백을 채웁니다.</p>
+      <button class="btn btn-o reveal rd2" onclick="go('about')" style="padding:.85rem 1.4rem;align-self:flex-start;">자세히 보기</button>
+    </div>
+    <div class="intro-img">
+      <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200" alt="현장 학습" loading="lazy"/>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <section class="sec sec-wh">
+    <div class="tag">INTENSIVE · AUTHENTIC · PROFESSIONAL</div>
+    <h2 class="sh reveal">3대 브랜드 가치</h2>
+    <p class="ss reveal rd1">전통적 성적 중심 평가를 폐기하고, 개인의 기술 역량과 국가 산업 시스템을 직접 연결합니다.</p>
+    <div class="val-grid reveal">
+      <div class="vc" onclick="go('about')">
+        <div class="vc-en">INTENSIVE</div>
+        <div class="vc-ko">집요함</div>
+        <div class="vc-kw">마모된 WORN OUT</div>
+        <div class="vc-main">성적이 아닌 몰입의 깊이와 집착</div>
+        <div class="vc-sub">특정 기술 분야에 파고드는 집요한 태도를 핵심 역량으로 정의합니다. 오래 갈아붙인 흔적이 표면에 고스란히 남아있는 상태.</div>
+      </div>
+      <div class="vc" onclick="go('about')">
+        <div class="vc-en">AUTHENTIC</div>
+        <div class="vc-ko">진정성</div>
+        <div class="vc-kw">노출된 EXPOSED</div>
+        <div class="vc-main">선언과 실행의 일치</div>
+        <div class="vc-sub">덮거나 감추지 않는 날것의 구조를 지향하며, 말하는 것과 실제 결과물을 동기화합니다.</div>
+      </div>
+      <div class="vc" onclick="go('about')">
+        <div class="vc-en">PROFESSIONAL</div>
+        <div class="vc-ko">전문성</div>
+        <div class="vc-kw">냉각된 COOLED</div>
+        <div class="vc-main">현장에서 성장하는 실질적 기술자</div>
+        <div class="vc-sub">이론에 머물지 않고 산업 현장의 문제를 즉각 해결하는 실행력을 갖춥니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACK PREVIEW -->
+  <section class="sec sec-dk" style="padding-bottom:0;padding-left:0;padding-right:0;">
+    <div style="padding:0 3rem 3rem;">
+      <div class="tag tag-light">3 TECHNOLOGY TRACKS</div>
+      <h2 class="sh reveal" style="color:var(--tw);">전국 현장이 캠퍼스다</h2>
+    </div>
+    <div class="tp-wrap">
+      <div class="tp" onclick="go('tracks')">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="반도체" loading="lazy"/>
+        <div class="tp-over"></div>
+        <div class="tp-info">
+          <div class="tp-num">TRACK 01</div>
+          <div class="tp-title">반도체</div>
+          <div class="tp-desc">삼성전자·SK하이닉스 생산 라인 인근 공유 거점. 실제 팹에서 장비를 직접 운용합니다.</div>
+        </div>
+      </div>
+      <div class="tp" onclick="go('tracks')">
+        <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?q=80&w=1200" alt="전통복원" loading="lazy"/>
+        <div class="tp-over"></div>
+        <div class="tp-info">
+          <div class="tp-num">TRACK 02</div>
+          <div class="tp-title">전통 복원</div>
+          <div class="tp-desc">경복궁·경주 문화재 현장. AI·디지털 트윈 기반 복원 기술 교육 및 국가유산청 협업.</div>
+        </div>
+      </div>
+      <div class="tp" onclick="go('tracks')">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200" alt="생태기술" loading="lazy"/>
+        <div class="tp-over"></div>
+        <div class="tp-info">
+          <div class="tp-num">TRACK 03</div>
+          <div class="tp-title">생태 기술</div>
+          <div class="tp-desc">국립공원·스마트팜 센터. 기후 위기 대응 기술과 스마트 농업 현장 프로젝트.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE REPORT PREVIEW -->
+  <section class="sec sec-sf">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="tag">LIVE FIELD REPORTS</div>
+        <h2 class="sh reveal">현장 리포트</h2>
+      </div>
+      <button class="btn btn-o-dk reveal" onclick="go('archive')">전체 아카이브 →</button>
+    </div>
+    <div class="rp-grid">
+      <div class="rp reveal rd1">
+        <span class="rp-tag">반도체</span>
+        <div class="rp-title">용인 Fab 거점 차세대 소자 공정 실습 데이터</div>
+        <div class="rp-meta">LOG ID: S-4029 | 2026.04.20 | STATUS: REVISED</div>
+        <div class="rp-body">포토레지스트 도포 두께 불균일로 인한 패턴 결함 분석 및 재설계 파라미터 백업.</div>
+      </div>
+      <div class="rp reveal rd2">
+        <span class="rp-tag">전통 복원</span>
+        <div class="rp-title">경주 월지 출토 목간 3D 메쉬 데이터</div>
+        <div class="rp-meta">LOG ID: R-8812 | 2026.04.18 | STATUS: SYNCED</div>
+        <div class="rp-body">디지털 트윈 스캐닝 원본 데이터. 목재 마모도 측정을 위한 표면 텍스처 매핑 완료.</div>
+      </div>
+      <div class="rp reveal rd3">
+        <span class="rp-tag">생태 기술</span>
+        <div class="rp-title">지리산 아고산대 침엽수림 토양 수분 모니터링</div>
+        <div class="rp-meta">LOG ID: E-1044 | 2026.04.15 | STATUS: ACTIVE</div>
+        <div class="rp-body">고도별 스마트 센서 배열에서 수집된 주간 토양 수분 변동량 로우 데이터.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="tickerTrack">
+      <div class="ticker-item"><span>TRACK 01</span> · 삼성전자 반도체</div>
+      <div class="ticker-item"><span>TRACK 01</span> · SK하이닉스</div>
+      <div class="ticker-item"><span>TRACK 01</span> · 한국반도체산업협회</div>
+      <div class="ticker-item"><span>TRACK 02</span> · 국가유산청</div>
+      <div class="ticker-item"><span>TRACK 02</span> · 문화재연구원</div>
+      <div class="ticker-item"><span>TRACK 03</span> · 국립공원관리공단</div>
+      <div class="ticker-item"><span>TRACK 03</span> · 농촌진흥청</div>
+      <div class="ticker-item"><span>PARTNER</span> · 교육부 글로컬대학30</div>
+      <div class="ticker-item"><span>TRACK 01</span> · 삼성전자 반도체</div>
+      <div class="ticker-item"><span>TRACK 01</span> · SK하이닉스</div>
+      <div class="ticker-item"><span>TRACK 01</span> · 한국반도체산업협회</div>
+      <div class="ticker-item"><span>TRACK 02</span> · 국가유산청</div>
+      <div class="ticker-item"><span>TRACK 02</span> · 문화재연구원</div>
+      <div class="ticker-item"><span>TRACK 03</span> · 국립공원관리공단</div>
+      <div class="ticker-item"><span>TRACK 03</span> · 농촌진흥청</div>
+      <div class="ticker-item"><span>PARTNER</span> · 교육부 글로컬대학30</div>
+    </div>
+  </div>
+
+  <!-- KOREA NODE MAP -->
+  <section class="sec sec-dk" style="padding-bottom:0;">
+    <div style="padding-bottom:3rem;">
+      <div class="tag tag-light">NATIONWIDE FIELD NETWORK</div>
+      <h2 class="sh reveal" style="color:var(--tw);">전국이 캠퍼스다</h2>
+      <p style="color:var(--st);font-size:.95rem;line-height:1.8;max-width:560px;" class="reveal rd1">고정된 캠퍼스 없이 전국 산업 현장 거점을 순환합니다.<br>각 노드에 마우스를 올리면 현장을 확인할 수 있습니다.</p>
+    </div>
+    <div class="komap-wrap reveal" id="komapWrap">
+      <!-- hover image tooltip -->
+      <div class="ko-img-tip" id="koTip">
+        <img id="koTipImg" src="" alt=""/>
+        <div class="ko-img-tip-label">
+          <div class="ko-img-tip-track" id="koTipTrack"></div>
+          <div class="ko-img-tip-name" id="koTipName"></div>
+        </div>
+      </div>
+      <svg class="komap-svg" viewBox="0 0 500 620" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="kgrid" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(168,207,204,0.03)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="500" height="620" fill="url(#kgrid)"/>
+        <!-- Korea outline (simplified) -->
+        <path d="
+          M 198,32 L 212,28 L 228,30 L 248,26 L 265,35 L 278,30 L 292,38
+          L 302,50 L 308,68 L 315,80 L 320,96 L 316,112 L 322,128
+          L 330,140 L 335,158 L 340,175 L 338,192 L 332,208
+          L 340,222 L 345,238 L 342,255 L 348,270 L 352,288
+          L 355,305 L 350,320 L 345,338 L 348,355 L 340,370
+          L 330,382 L 318,390 L 305,398 L 290,405 L 275,408
+          L 260,412 L 248,418 L 235,422 L 220,420 L 208,415
+          L 195,408 L 182,398 L 170,388 L 162,375 L 158,360
+          L 152,345 L 148,330 L 145,315 L 148,300 L 144,285
+          L 140,270 L 138,254 L 135,238 L 132,222 L 128,206
+          L 125,190 L 122,174 L 120,158 L 118,142 L 122,126
+          L 125,110 L 128,94 L 132,78 L 140,64 L 150,52
+          L 162,42 L 178,36 Z
+        " fill="rgba(168,207,204,0.06)" stroke="rgba(168,207,204,0.25)" stroke-width="1.5" stroke-linejoin="round"/>
+        <!-- Jeju island -->
+        <ellipse cx="215" cy="490" rx="42" ry="22" fill="rgba(168,207,204,0.06)" stroke="rgba(168,207,204,0.2)" stroke-width="1.2"/>
+
+        <!-- Connection lines -->
+        <g stroke="rgba(168,207,204,0.1)" stroke-width="1" stroke-dasharray="3 4">
+          <line x1="215" y1="145" x2="248" y2="200"/>
+          <line x1="248" y1="200" x2="285" y2="225"/>
+          <line x1="248" y1="200" x2="220" y2="255"/>
+          <line x1="285" y1="225" x2="305" y2="295"/>
+          <line x1="220" y1="255" x2="185" y2="310"/>
+          <line x1="305" y1="295" x2="270" y2="355"/>
+          <line x1="185" y1="310" x2="215" y2="375"/>
+          <line x1="215" y1="490" x2="215" y2="450"/>
+        </g>
+
+        <!-- TRACK 01 반도체 — 수원 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 01 · 반도체','수원 R&D 거점','assets/field-semiconductor.jpg','https://images.unsplash.com/photo-1604328698692-f76ea9498e76?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="215" cy="145" r="18" fill="rgba(10,55,17,0.5)" stroke="rgba(92,143,138,0.3)" stroke-width="1"/>
+          <circle cx="215" cy="145" r="9" class="ko-main" fill="#0A3711" stroke="#5C8F8A" stroke-width="1.5"/>
+          <circle cx="215" cy="145" r="9" class="ko-pulse" fill="none" stroke="rgba(92,143,138,0.4)" stroke-width="1.5"/>
+          <text x="235" y="141" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">수원</text>
+          <text x="235" y="153" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">R&amp;D 거점</text>
+        </g>
+        <!-- TRACK 01 반도체 — 용인 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 01 · 반도체','용인 반도체 클러스터','assets/field-semiconductor.jpg','https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="248" cy="200" r="18" fill="rgba(10,55,17,0.5)" stroke="rgba(92,143,138,0.3)" stroke-width="1"/>
+          <circle cx="248" cy="200" r="11" class="ko-main" fill="#0A3711" stroke="#5C8F8A" stroke-width="1.5"/>
+          <circle cx="248" cy="200" r="11" class="ko-pulse" fill="none" stroke="rgba(92,143,138,0.4)" stroke-width="1.5"/>
+          <text x="265" y="196" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">용인</text>
+          <text x="265" y="208" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">반도체 클러스터</text>
+        </g>
+        <!-- TRACK 01 반도체 — 이천 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 01 · 반도체','이천 Fab 실습실','assets/field-semiconductor.jpg','https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="285" cy="225" r="14" fill="rgba(10,55,17,0.5)" stroke="rgba(92,143,138,0.25)" stroke-width="1"/>
+          <circle cx="285" cy="225" r="7" class="ko-main" fill="#0A3711" stroke="#5C8F8A" stroke-width="1.5"/>
+          <text x="298" y="221" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">이천</text>
+          <text x="298" y="233" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">Fab 실습실</text>
+        </g>
+
+        <!-- TRACK 02 전통복원 — 경복궁(서울) -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 02 · 전통복원','경복궁 디지털 복원 현장','assets/field-heritage.jpg','https://images.unsplash.com/photo-1548115184-bc6544d06a58?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="220" cy="125" r="14" fill="rgba(15,31,30,0.7)" stroke="rgba(168,207,204,0.3)" stroke-width="1"/>
+          <circle cx="220" cy="125" r="7" class="ko-main" fill="#0F2A28" stroke="#A8CFCC" stroke-width="1.5"/>
+          <text x="172" y="121" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">서울</text>
+          <text x="166" y="133" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">경복궁 복원</text>
+        </g>
+        <!-- TRACK 02 전통복원 — 부여 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 02 · 전통복원','부여 정림사지','assets/field-heritage.jpg','https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="185" cy="310" r="14" fill="rgba(15,31,30,0.7)" stroke="rgba(168,207,204,0.25)" stroke-width="1"/>
+          <circle cx="185" cy="310" r="7" class="ko-main" fill="#0F2A28" stroke="#A8CFCC" stroke-width="1.5"/>
+          <text x="142" y="306" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">부여</text>
+          <text x="138" y="318" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">정림사지</text>
+        </g>
+        <!-- TRACK 02 전통복원 — 경주 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 02 · 전통복원','경주 월지 발굴 현장','assets/field-heritage.jpg','https://images.unsplash.com/photo-1559628129-67cf63b72248?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="305" cy="295" r="16" fill="rgba(15,31,30,0.7)" stroke="rgba(168,207,204,0.3)" stroke-width="1"/>
+          <circle cx="305" cy="295" r="9" class="ko-main" fill="#0F2A28" stroke="#A8CFCC" stroke-width="1.5"/>
+          <circle cx="305" cy="295" r="9" class="ko-pulse" fill="none" stroke="rgba(168,207,204,0.35)" stroke-width="1.5"/>
+          <text x="320" y="291" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">경주</text>
+          <text x="320" y="303" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">월지 발굴</text>
+        </g>
+
+        <!-- TRACK 03 생태기술 — 홍천 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 03 · 생태기술','홍천 스마트팜 센터','assets/field-ecology.jpg','https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="265" cy="165" r="14" fill="rgba(26,107,69,0.4)" stroke="rgba(214,235,234,0.25)" stroke-width="1"/>
+          <circle cx="265" cy="165" r="7" class="ko-main" fill="#1a6b45" stroke="#D6EBEA" stroke-width="1.5"/>
+          <text x="278" y="161" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">홍천</text>
+          <text x="278" y="173" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">스마트팜</text>
+        </g>
+        <!-- TRACK 03 생태기술 — 지리산 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 03 · 생태기술','지리산 생태 모니터링','assets/field-ecology.jpg','https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="220" cy="355" r="16" fill="rgba(26,107,69,0.4)" stroke="rgba(214,235,234,0.3)" stroke-width="1"/>
+          <circle cx="220" cy="355" r="9" class="ko-main" fill="#1a6b45" stroke="#D6EBEA" stroke-width="1.5"/>
+          <circle cx="220" cy="355" r="9" class="ko-pulse" fill="none" stroke="rgba(214,235,234,0.3)" stroke-width="1.5"/>
+          <text x="234" y="351" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">지리산</text>
+          <text x="234" y="363" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">생태 모니터링</text>
+        </g>
+        <!-- TRACK 03 생태기술 — 제주 -->
+        <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 03 · 생태기술','제주 곶자왈 eDNA 조사','assets/field-ecology.jpg','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=400')" onmouseleave="hideKoTip()">
+          <circle cx="215" cy="490" r="16" fill="rgba(26,107,69,0.4)" stroke="rgba(214,235,234,0.3)" stroke-width="1"/>
+          <circle cx="215" cy="490" r="9" class="ko-main" fill="#1a6b45" stroke="#D6EBEA" stroke-width="1.5"/>
+          <text x="229" y="486" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">제주</text>
+          <text x="229" y="498" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">곶자왈 eDNA</text>
+        </g>
+
+        <!-- 서울 HQ -->
+        <g>
+          <circle cx="218" cy="108" r="4" fill="#EBF2F1" stroke="#0A3711" stroke-width="1.2"/>
+          <text x="225" y="104" style="font-family:'Space Mono',monospace;font-size:8px;fill:#EBF2F1;letter-spacing:.06em;">HQ · 서울</text>
+        </g>
+
+        <!-- Legend -->
+        <g transform="translate(16,570)">
+          <circle cx="6" cy="6" r="5" fill="#0A3711" stroke="#5C8F8A" stroke-width="1"/>
+          <text x="16" y="10" style="font-family:'Space Mono',monospace;font-size:8px;fill:#5C8F8A;letter-spacing:.08em;">반도체</text>
+          <circle cx="86" cy="6" r="5" fill="#0F2A28" stroke="#A8CFCC" stroke-width="1"/>
+          <text x="96" y="10" style="font-family:'Space Mono',monospace;font-size:8px;fill:#5C8F8A;letter-spacing:.08em;">전통복원</text>
+          <circle cx="176" cy="6" r="5" fill="#1a6b45" stroke="#D6EBEA" stroke-width="1"/>
+          <text x="186" y="10" style="font-family:'Space Mono',monospace;font-size:8px;fill:#5C8F8A;letter-spacing:.08em;">생태기술</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+</div><!-- /home -->
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: ABOUT
+═══════════════════════════════════════════ -->
+<div id="pg-about" class="pg">
+  <div class="about-hero">
+    <div class="tag">PART 1. 브랜드 정의</div>
+    <h1 class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.15;margin-bottom:.8rem;">THE AUTHENTIC<br>SYSTEM</h1>
+    <p style="font-size:1.2rem;color:var(--st);max-width:580px;line-height:1.75;">대학이 살아남으려면 단순히 존재하는 것이 아니라, 사회가 필요로 하는 인재를 만들어야 한다. 한국대학교는 바로 그 자리를 겨냥한다.</p>
+  </div>
+
+  <!-- CRISIS BAND -->
+  <div class="sec sec-dk" style="position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(168,207,204,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(168,207,204,.04) 1px,transparent 1px);background-size:52px 52px;"></div>
+    <div style="position:relative;z-index:2;">
+      <div class="tag tag-light">인구구조 변화와 대학의 위기</div>
+      <div class="crisis-grid reveal">
+        <div class="cc"><div class="cc-n">28만</div><div class="cc-t">2040년 대학 입학자원</div><div class="cc-d">현재 43만명 대비 약 35% 급감 예상. 국회미래연구원(2025) 전망치.</div></div>
+        <div class="cc"><div class="cc-n">39%</div><div class="cc-t">2043년 신입생 충원율</div><div class="cc-d">지방대 붕괴 가속화 경고. 입학정원의 절반도 못 채우는 사태 현실화.</div></div>
+        <div class="cc"><div class="cc-n">8만명</div><div class="cc-t">2031년 반도체 인력 부족</div><div class="cc-d">한국반도체산업협회 자료. 산업 수요의 폭발적 증가.</div></div>
+      </div>
+      <div class="crisis-chart-wrap reveal rd1">
+        <div class="chart-bars" id="crisisChart">
+
+          <!-- BAR 1: 입학자원 감소 -->
+          <div class="chart-bar-group">
+            <div class="chart-val" style="color:#eb5757;">43만 → 28만</div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-inner" style="--bar-h:100%;--bar-color:#eb5757;--bar-color2:rgba(235,87,87,.25);"></div>
+              <div class="chart-bar-ghost" style="height:65%;background:rgba(235,87,87,.08);"></div>
+            </div>
+            <div class="chart-label">대학 입학자원<br><span>2040 전망</span></div>
+          </div>
+
+          <!-- BAR 2: 충원율 -->
+          <div class="chart-bar-group">
+            <div class="chart-val" style="color:var(--tg);">39%</div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-inner" style="--bar-h:39%;--bar-color:#5C8F8A;--bar-color2:rgba(92,143,138,.2);"></div>
+            </div>
+            <div class="chart-label">신입생 충원율<br><span>2043 전망</span></div>
+          </div>
+
+          <!-- BAR 3: 인력 부족 (상승) -->
+          <div class="chart-bar-group">
+            <div class="chart-val" style="color:#A8CFCC;">+8만명</div>
+            <div class="chart-bar-outer">
+              <div class="chart-bar-inner" style="--bar-h:75%;--bar-color:#A8CFCC;--bar-color2:rgba(168,207,204,.15);"></div>
+            </div>
+            <div class="chart-label">반도체 인력 부족<br><span>2031 예측</span></div>
+          </div>
+
+        </div>
+        <!-- x-axis line -->
+        <div style="border-top:1px solid rgba(168,207,204,.2);margin-top:.5rem;"></div>
+        <div style="display:flex;gap:0;margin-top:.6rem;">
+          <div style="flex:1;text-align:center;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:rgba(92,143,138,.5);">입학자원</div>
+          <div style="flex:1;text-align:center;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:rgba(92,143,138,.5);">충원율</div>
+          <div style="flex:1;text-align:center;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:rgba(92,143,138,.5);">인력부족</div>
+        </div>
+      </div>
+      <div class="crisis-quote reveal rd2">세 수치는 하나의 구조적 위기를 가리킨다.<br><em>학생은 줄고, 충원율은 무너지고, 그 빈자리를 채울 기술 인력은 오히려 부족하다.</em></div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <section class="sec sec-wh">
+    <div class="tag">핵심 역량과 시각 언어</div>
+    <h2 class="sh reveal">3대 브랜드 가치</h2>
+    <p class="ss reveal rd1">전통적 성적 중심 평가를 폐기하고, 개인의 기술 역량과 국가 산업 시스템을 직접 연결합니다.</p>
+    <div class="val-grid reveal">
+      <div class="vc">
+        <div class="vc-en">INTENSIVE</div><div class="vc-ko">집요함</div>
+        <div class="vc-kw">마모된 WORN OUT</div>
+        <div class="vc-main">성적이 아닌 몰입의 깊이와 집착</div>
+        <div class="vc-sub">오래 갈아붙인 흔적이 표면에 고스란히 남아있는 상태. 극한의 반복과 생존을 증명하는 기록. 특정 기술 분야에 파고드는 집요한 태도를 핵심 역량으로 정의합니다.</div>
+      </div>
+      <div class="vc">
+        <div class="vc-en">AUTHENTIC</div><div class="vc-ko">진정성</div>
+        <div class="vc-kw">노출된 EXPOSED</div>
+        <div class="vc-main">선언과 실행의 일치</div>
+        <div class="vc-sub">덮거나 감추지 않는 날것의 구조를 지향하며, 말하는 것과 실제 결과물을 동기화합니다. PCB 회로기판처럼 불필요한 장식을 걷어낸 날것의 구조.</div>
+      </div>
+      <div class="vc">
+        <div class="vc-en">PROFESSIONAL</div><div class="vc-ko">전문성</div>
+        <div class="vc-kw">냉각된 COOLED</div>
+        <div class="vc-main">현장에서 성장하는 실질적 기술자</div>
+        <div class="vc-sub">차갑고 정밀하며 불필요한 감정이 배제된 표면. 이론에 머물지 않고 산업 현장의 문제를 즉각 해결하는 실행력을 갖춥니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BREAK — brand mood -->
+  <div style="height:400px;overflow:hidden;position:relative;">
+    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000" alt="현장" style="object-position:center 40%;filter:grayscale(.3);" loading="lazy"/>
+    <div style="position:absolute;inset:0;background:rgba(15,31,30,.45);display:flex;align-items:center;padding:3rem;">
+      <blockquote style="font-family:'Noto Serif KR',serif;font-size:clamp(1.2rem,2.5vw,2rem);font-weight:700;color:var(--tw);max-width:700px;line-height:1.6;border-left:3px solid var(--pt);padding-left:1.5rem;">
+        "수능 성적은 낮더라도, 특정 기술 분야에 미친 듯이 몰입해본 경험이 있는 자기주도적 청년을 발굴하여 산업의 핵심 인재로 육성합니다."
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- COMPARE -->
+  <div class="ab-compare">
+    <div class="cmp cmp-tr">
+      <div class="cmp-badge">TRADITIONAL</div>
+      <h3>전통 대학</h3>
+      <ul class="cmp ul">
+        <li>수능 점수 중심의 정량적 평가 시스템</li>
+        <li>과거의 검증된 학습 이력에 전적으로 의존</li>
+        <li>범용적인 이론 교육 및 학문적 성취 지향</li>
+      </ul>
+    </div>
+    <div class="cmp cmp-hk">
+      <div class="cmp-badge">HANKUK UNIV.</div>
+      <h3>한국대학교</h3>
+      <ul class="cmp ul">
+        <li><strong>반도체·기기조립 등 특정 기술 몰입 경험 중시</strong></li>
+        <li><strong>수능 성적보다 자기주도적 문제 해결력 우선</strong></li>
+        <li><strong>19~20세 청년의 현장 실행력과 잠재력 검증</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- OPERATION MODEL -->
+  <section class="sec sec-dk" style="position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(168,207,204,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(168,207,204,.04) 1px,transparent 1px);background-size:52px 52px;"></div>
+    <div style="position:relative;z-index:2;">
+      <div class="tag tag-light">미네르바형 운영 모델</div>
+      <h2 class="sh reveal" style="color:var(--tw);">한국대학교 운영 방식</h2>
+      <p class="ss reveal rd1">고정 캠퍼스 없이 전국 산업 현장 거점을 순환하며 교육합니다.</p>
+      <div class="op-row reveal">
+        <div class="op"><div class="op-n">MODEL / 01</div><div class="op-t">캠퍼스 없음</div><div class="op-d">고정 캠퍼스 대신 전국 산업 현장 거점을 순환하며 교육. 반도체 단지·문화재 현장·생태 보존 구역이 캠퍼스가 됩니다.</div></div>
+        <div class="op"><div class="op-n">MODEL / 02</div><div class="op-t">하이브리드 학습</div><div class="op-d">기초 이론은 온라인 아카이브로 언제든 학습. 실시간 세션은 이론을 현장에 적용하는 방법론 토론에 집중합니다.</div></div>
+        <div class="op" style="border-right:none;"><div class="op-n">MODEL / 03</div><div class="op-t">비용 재투자</div><div class="op-d">캠퍼스 유지비를 없애고 절감된 예산을 장학금과 현장 장비 접근권에 100% 재투자. 등록금 최소화의 근거.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="sec sec-wh" style="padding-bottom:0;">
+    <div class="tag">산업 파트너십</div>
+    <h2 class="sh reveal">현장을 여는 기업들</h2>
+    <p class="ss reveal rd1">장비를 제공하고, 졸업생을 우선 채용하고, 현장 문제를 교육과정으로 넘깁니다.</p>
+  </section>
+  <div>
+    <!-- 이재옹 회장 -->
+    <div class="partner-row" style="background:var(--di);">
+      <div class="partner-txt" style="background:var(--di);">
+        <div class="partner-overline">TRACK 01 · 반도체 — STRATEGIC PARTNER</div>
+        <div class="partner-name" style="color:var(--tw);font-size:1.8rem;">이재옹 회장</div>
+        <div class="partner-role">삼성전자 반도체부문 협력위원회 의장</div>
+        <p class="partner-desc">"한국대학교의 현장 중심 교육은 우리가 10년간 찾아왔던 인재 공급 모델입니다. 수능 점수가 아닌 현장에서 증명한 인재를 채용합니다."</p>
+        <div class="partner-quote">삼성전자는 용인·이천 팹 인근 실습 공간을 제공하고, 졸업생 우선 채용 트랙을 운영합니다.</div>
+      </div>
+      <div class="partner-vis" style="min-height:360px;">
+        <img src="assets/jaewong-chair.jpg" alt="이재옹 회장" onerror="this.style.display='none';this.parentElement.style.background='var(--di)';this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-family:Space Mono,monospace;font-size:.65rem;letter-spacing:.12em;color:var(--st);text-align:center;padding:2rem;\'>이재옹 회장<br>이미지 삽입 예정<br><span style=\'opacity:.4;font-size:.55rem;margin-top:.5rem;display:block;\'>assets/jaewong-chair.jpg</span></div>'"/>
+      </div>
+    </div>
+    <!-- SK하이닉스 -->
+    <div class="partner-row" style="flex-direction:row-reverse;">
+      <div class="partner-txt">
+        <div class="partner-overline">TRACK 01 · 반도체 — EQUIPMENT PARTNER</div>
+        <div class="partner-name">SK하이닉스</div>
+        <div class="partner-role">이천 DRAM 공장 장비 지원 협약</div>
+        <p class="partner-desc">HBM·DRAM 패키징 공정 실습 장비 제공. 현장 엔지니어가 직접 멘토링하는 구조로 이론과 실무의 간극을 제거합니다.</p>
+        <div class="partner-quote">연간 인턴십 쿼터 20명 + 정규직 우선 전환 협약 체결.</div>
+      </div>
+      <div class="partner-vis" style="min-height:300px;">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="SK하이닉스 현장" loading="lazy"/>
+      </div>
+    </div>
+    <!-- 국가유산청 -->
+    <div class="partner-row" style="background:var(--ts);">
+      <div class="partner-txt" style="background:var(--ts);">
+        <div class="partner-overline">TRACK 02 · 전통 복원 — GOVERNMENT PARTNER</div>
+        <div class="partner-name">국가유산청</div>
+        <div class="partner-role">문화재 디지털 복원 현장 협력</div>
+        <p class="partner-desc">경복궁·경주·부여 등 실제 문화재 복원 현장을 교육 공간으로 개방합니다. 문화재청 전문가가 현장 지도교수로 참여합니다.</p>
+        <div class="partner-quote">사라지는 전통 기술을 데이터로 보존하는 역할을 학생이 직접 담당합니다.</div>
+      </div>
+      <div class="partner-vis" style="min-height:300px;">
+        <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?q=80&w=1200" alt="문화재 현장" loading="lazy"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACULTY -->
+  <section class="sec sec-dk" style="padding-bottom:0;">
+    <div class="tag tag-light">현장 전문가 교수진</div>
+    <h2 class="sh reveal" style="color:var(--tw);">이론이 아닌 현장에서 가르친다</h2>
+    <p style="color:var(--st);font-size:.95rem;line-height:1.8;max-width:560px;margin-bottom:3rem;" class="reveal rd1">
+      한국대학교의 교수진은 강단이 아닌 현장 출신입니다.<br>
+      각 노드를 클릭하면 소개를 확인할 수 있습니다.
+    </p>
+    <div class="faculty-net reveal" style="height:560px;">
+      <svg width="100%" height="560" viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="cp0"><circle cx="100" cy="100" r="40"/></clipPath>
+          <clipPath id="cp1"><circle cx="320" cy="60"  r="40"/></clipPath>
+          <clipPath id="cp2"><circle cx="560" cy="100" r="40"/></clipPath>
+          <clipPath id="cp3"><circle cx="800" cy="70"  r="40"/></clipPath>
+          <clipPath id="cp4"><circle cx="160" cy="310" r="40"/></clipPath>
+          <clipPath id="cp5"><circle cx="420" cy="360" r="40"/></clipPath>
+          <clipPath id="cp6"><circle cx="680" cy="320" r="40"/></clipPath>
+          <clipPath id="cp7"><circle cx="900" cy="270" r="40"/></clipPath>
+          <!-- PCB lines pattern -->
+          <pattern id="fgrid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(168,207,204,0.03)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect width="1000" height="560" fill="url(#fgrid)"/>
+        <!-- connection lines — PCB style with right angles -->
+        <g stroke="rgba(168,207,204,0.13)" stroke-width="1" fill="none">
+          <polyline points="100,100 210,100 320,60"/>
+          <polyline points="320,60 440,60 560,100"/>
+          <polyline points="560,100 680,60 800,70"/>
+          <polyline points="100,100 100,220 160,310"/>
+          <polyline points="320,60 320,220 420,360"/>
+          <polyline points="560,100 560,240 680,320"/>
+          <polyline points="800,70 800,200 900,270"/>
+          <polyline points="160,310 290,360 420,360"/>
+          <polyline points="420,360 550,340 680,320"/>
+          <polyline points="680,320 790,295 900,270"/>
+          <!-- extra cross links -->
+          <line x1="160" y1="310" x2="420" y2="360" stroke-dasharray="4 4" stroke-opacity=".07"/>
+          <line x1="680" y1="320" x2="800" y2="70"  stroke-dasharray="4 4" stroke-opacity=".07"/>
+        </g>
+        <!-- NODE 0 — 김현석 -->
+        <g class="fac-node" onclick="showFac(0)">
+          <circle cx="100" cy="100" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-01.jpg" x="60" y="60" width="80" height="80" clip-path="url(#cp0)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="100" cy="100" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="44" class="pulse" fill="none" stroke="rgba(92,143,138,0.25)" stroke-width="2"/>
+          <text x="100" y="158" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">김현석</text>
+          <text x="100" y="171" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">반도체공정 · 前삼성전자</text>
+        </g>
+        <!-- NODE 1 — 박지연 -->
+        <g class="fac-node" onclick="showFac(1)">
+          <circle cx="320" cy="60" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-02.jpg" x="280" y="20" width="80" height="80" clip-path="url(#cp1)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="320" cy="60" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <text x="320" y="118" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">박지연</text>
+          <text x="320" y="131" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">디지털복원 · 前국가유산청</text>
+        </g>
+        <!-- NODE 2 — 오성민 -->
+        <g class="fac-node" onclick="showFac(2)">
+          <circle cx="560" cy="100" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-03.jpg" x="520" y="60" width="80" height="80" clip-path="url(#cp2)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="560" cy="100" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <text x="560" y="158" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">오성민</text>
+          <text x="560" y="171" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">스마트팜 · 농촌진흥청</text>
+        </g>
+        <!-- NODE 3 — 이다은 -->
+        <g class="fac-node" onclick="showFac(3)">
+          <circle cx="800" cy="70" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-04.jpg" x="760" y="30" width="80" height="80" clip-path="url(#cp3)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="800" cy="70" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <text x="800" y="128" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">이다은</text>
+          <text x="800" y="141" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">소자설계 · KAIST 박사</text>
+        </g>
+        <!-- NODE 4 — 최태원 -->
+        <g class="fac-node" onclick="showFac(4)">
+          <circle cx="160" cy="310" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-05.jpg" x="120" y="270" width="80" height="80" clip-path="url(#cp4)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="160" cy="310" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <text x="160" y="368" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">최태원</text>
+          <text x="160" y="381" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">생태기술 · 국립공원관리공단</text>
+        </g>
+        <!-- NODE 5 — 정수아 -->
+        <g class="fac-node" onclick="showFac(5)">
+          <circle cx="420" cy="360" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-06.jpg" x="380" y="320" width="80" height="80" clip-path="url(#cp5)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="420" cy="360" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <circle cx="420" cy="360" r="44" class="pulse" fill="none" stroke="rgba(92,143,138,0.2)" stroke-width="2"/>
+          <text x="420" y="418" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">정수아</text>
+          <text x="420" y="431" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">AI복원모델 · 서울대 공학</text>
+        </g>
+        <!-- NODE 6 — 한동준 -->
+        <g class="fac-node" onclick="showFac(6)">
+          <circle cx="680" cy="320" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-07.jpg" x="640" y="280" width="80" height="80" clip-path="url(#cp6)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="680" cy="320" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <text x="680" y="378" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">한동준</text>
+          <text x="680" y="391" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">반도체장비 · 前SK하이닉스</text>
+        </g>
+        <!-- NODE 7 — 윤채린 -->
+        <g class="fac-node" onclick="showFac(7)">
+          <circle cx="900" cy="270" r="44" fill="#0A1E1D" stroke="rgba(92,143,138,0.5)" stroke-width="1.5"/>
+          <image href="assets/faculty-08.jpg" x="860" y="230" width="80" height="80" clip-path="url(#cp7)" preserveAspectRatio="xMidYMid slice"/>
+          <circle cx="900" cy="270" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
+          <text x="900" y="328" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">윤채린</text>
+          <text x="900" y="341" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">드론측량 · 문화재연구원</text>
+        </g>
+      </svg>
+      <!-- Detail panel -->
+      <div class="fac-detail" id="facDetail">
+        <div class="fac-detail-img"><img id="facImg" src="" alt=""/></div>
+        <div>
+          <div class="fac-detail-name" id="facName"></div>
+          <div class="fac-detail-role" id="facRole"></div>
+          <div class="fac-detail-bio" id="facBio"></div>
+        </div>
+        <button class="fac-close" onclick="closeFac()">✕ 닫기</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BREAK — field mood after faculty -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;height:320px;">
+    <div style="overflow:hidden;position:relative;">
+      <img src="assets/field-semiconductor.jpg" alt="반도체 현장"
+           onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800'"
+           style="width:100%;height:100%;object-fit:cover;filter:grayscale(.2);" loading="lazy"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.7) 0%,transparent 60%);"></div>
+      <div style="position:absolute;bottom:1.2rem;left:1.2rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--tg);">TRACK 01 · 반도체</div>
+    </div>
+    <div style="overflow:hidden;position:relative;">
+      <img src="assets/field-heritage.jpg" alt="전통복원 현장"
+           onerror="this.src='https://images.unsplash.com/photo-1548115184-bc6544d06a58?q=80&w=800'"
+           style="width:100%;height:100%;object-fit:cover;filter:grayscale(.2);" loading="lazy"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.7) 0%,transparent 60%);"></div>
+      <div style="position:absolute;bottom:1.2rem;left:1.2rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--tg);">TRACK 02 · 전통복원</div>
+    </div>
+    <div style="overflow:hidden;position:relative;">
+      <img src="assets/field-ecology.jpg" alt="생태기술 현장"
+           onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800'"
+           style="width:100%;height:100%;object-fit:cover;filter:grayscale(.2);" loading="lazy"/>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.7) 0%,transparent 60%);"></div>
+      <div style="position:absolute;bottom:1.2rem;left:1.2rem;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--tg);">TRACK 03 · 생태기술</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: TRACKS
+═══════════════════════════════════════════ -->
+<div id="pg-tracks" class="pg">
+  <div class="tracks-hero">
+    <div class="tracks-hero-img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000" alt="반도체" loading="lazy"/></div>
+    <div class="tracks-hero-over"></div>
+    <div class="tracks-hero-content">
+      <div class="tag tag-light">PART 1. 브랜드 정의 — 운영방식</div>
+      <h1 class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--ts);line-height:1.15;margin-bottom:.8rem;">THE PROFESSIONAL FIELD</h1>
+      <p style="font-size:1.1rem;color:var(--tg);max-width:540px;line-height:1.75;">고정된 캠퍼스 대신 전국 산업 현장 거점을 순환하며 교육합니다. 3개의 기술 트랙이 국가 산업의 구조적 공백을 채웁니다.</p>
+    </div>
+  </div>
+
+  <div class="track-layout">
+    <!-- T01 -->
+    <div class="tr-row">
+      <div class="tr-info">
+        <div class="tr-num">TRACK 01 / 반도체</div>
+        <h2 class="tr-title">반도체</h2>
+        <div class="tr-partner">삼성전자·SK하이닉스 생산 라인 인근 공유 거점</div>
+        <p class="tr-desc">반도체 소자 설계·공정 이론을 온라인으로 학습하고, 용인·이천 등 실제 팹(Fab) 인근 실습실에서 장비를 직접 운용합니다.</p>
+        <div class="tr-act">기업 장비 제공 및 졸업생 우선 채용 연계</div>
+      </div>
+      <div class="tr-vis">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="반도체 현장" loading="lazy"/>
+        <div class="tr-vis-over"></div>
+      </div>
+    </div>
+    <!-- T02 -->
+    <div class="tr-row">
+      <div class="tr-info">
+        <div class="tr-num">TRACK 02 / 전통 복원</div>
+        <h2 class="tr-title">전통 복원</h2>
+        <div class="tr-partner">경복궁·경주 등 문화재 현장 / 국가유산청 협업</div>
+        <p class="tr-desc">디지털 트윈·AI 기반 문화재 복원 기술을 교육합니다. 실제 문화재 복원 현장에서 문화재청 전문가와 협업하며 실무를 익힙니다.</p>
+        <div class="tr-act">사라져가는 전통 기술의 데이터 보존</div>
+      </div>
+      <div class="tr-vis">
+        <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?q=80&w=1200" alt="문화재 복원" loading="lazy"/>
+        <div class="tr-vis-over"></div>
+      </div>
+    </div>
+    <!-- T03 -->
+    <div class="tr-row">
+      <div class="tr-info">
+        <div class="tr-num">TRACK 03 / 생태 기술</div>
+        <h2 class="tr-title">생태 기술</h2>
+        <div class="tr-partner">국립공원·스마트팜 센터 / 지자체 생태 현장</div>
+        <p class="tr-desc">기후 위기 대응 기술·스마트 농업·생물 다양성 관리를 교육합니다. 국립공원 관리공단·지자체 스마트팜 센터에서 현장 프로젝트를 수행하며 지역 소멸 방어에 직접 기여합니다.</p>
+        <div class="tr-act">국립공원 관리공단 및 지자체 센터 현장 투입</div>
+      </div>
+      <div class="tr-vis">
+        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200" alt="생태 기술" loading="lazy"/>
+        <div class="tr-vis-over"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: ADMISSION
+═══════════════════════════════════════════ -->
+<div id="pg-admission" class="pg">
+  <div class="adm-hero">
+    <div class="adm-hero-img"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=2000" alt="입학" loading="lazy"/></div>
+    <div class="adm-hero-over"></div>
+    <div class="adm-hero-content">
+      <div class="tag">PART 1. 브랜드 정의 — 입학 방식</div>
+      <h1 class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.15;margin-bottom:.8rem;">THE INTENSIVE PROOF</h1>
+      <p style="font-size:1.1rem;color:var(--st);max-width:520px;line-height:1.75;">수능 없는 입학 방식. 성적이 아닌 '집요함'을 봅니다.</p>
+      <blockquote class="adm-quote">"수능 성적은 낮더라도, 특정 기술 분야에 <em>미친 듯이 몰입해본 경험</em>이 있는 19세~20대 초반 자기주도적 청년을 발굴하여 산업의 핵심 인재로 육성합니다."</blockquote>
+    </div>
+  </div>
+
+  <!-- COMPARE -->
+  <div class="ab-compare">
+    <div class="cmp cmp-tr">
+      <div class="cmp-badge">TRADITIONAL</div>
+      <h3>기존 대학</h3>
+      <ul class="cmp ul">
+        <li>수능 점수 중심의 정량적 평가 시스템</li>
+        <li>과거의 검증된 학습 이력에 전적으로 의존</li>
+        <li>범용적인 이론 교육 및 학문적 성취 지향</li>
+      </ul>
+    </div>
+    <div class="cmp cmp-hk">
+      <div class="cmp-badge">HANKUK UNIV.</div>
+      <h3>한국대학교</h3>
+      <ul class="cmp ul">
+        <li><strong>반도체·기기조립 등 특정 기술 몰입 경험 중시</strong></li>
+        <li><strong>수능 성적보다 자기주도적 문제 해결력 우선</strong></li>
+        <li><strong>19~20세 청년의 현장 실행력과 잠재력 검증</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3 STEPS -->
+  <section class="sec sec-dk" style="position:relative;overflow:hidden;">
+    <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(168,207,204,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(168,207,204,.04) 1px,transparent 1px);background-size:52px 52px;"></div>
+    <div style="position:relative;z-index:2;">
+      <div class="tag tag-light">수능 없는 입학 3단계</div>
+      <h2 class="sh reveal" style="color:var(--tw);margin-bottom:3rem;">성적이 아닌 집요함을 본다</h2>
+      <div class="steps-row reveal">
+        <div class="step">
+          <div class="step-badge">STEP 01</div>
+          <div class="step-h">기술 관심 에세이</div>
+          <p class="step-p">지원 분야(반도체·복원·생태)에 대해 직접 탐구한 경험을 서술합니다.</p>
+          <div class="step-d">길이보다 깊이를 평가합니다. 수능 점수란 없습니다.</div>
+        </div>
+        <div class="step">
+          <div class="step-badge">STEP 02</div>
+          <div class="step-h">포트폴리오 제출</div>
+          <p class="step-p">직접 만든 것이라면 무엇이든 제출 가능합니다.</p>
+          <div class="step-d">아두이노 프로젝트, 복원 스케치, 생태 조사 보고서 등 형식 제한이 없습니다.</div>
+        </div>
+        <div class="step">
+          <div class="step-badge">STEP 03</div>
+          <div class="step-h">현장 과제 심사</div>
+          <p class="step-p">트랙별 실제 문제를 주고 접근 방식을 봅니다.</p>
+          <div class="step-d">정답이 없는 문제에 어떻게 달려드는지를 평가하는 최종 관문입니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BREAK -->
+  <div style="height:360px;overflow:hidden;position:relative;">
+    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2000" alt="현장 실습" style="object-position:center 60%;" loading="lazy"/>
+    <div style="position:absolute;inset:0;background:rgba(15,31,30,.5);display:flex;align-items:center;justify-content:center;">
+      <div style="text-align:center;">
+        <div style="font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.3em;color:var(--tg);margin-bottom:1rem;">PROOF OF DEDICATION</div>
+        <div style="font-family:'Noto Serif KR',serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:900;color:var(--tw);">극한의 반복과 생존을 증명하십시오.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCS -->
+  <section class="sec sec-dk" style="padding-top:4rem;">
+    <div class="doc-row reveal">
+      <div class="doc">
+        <div class="doc-type">DOCUMENT / STEP 01</div>
+        <div class="doc-title">기술 관심 에세이<br>공식 양식 (HWP/DOC)</div>
+        <button class="doc-btn">양식 다운로드 ↓</button>
+      </div>
+      <div class="doc">
+        <div class="doc-type">GUIDELINE / STEP 02</div>
+        <div class="doc-title">자유 형식 포트폴리오<br>데이터 제출 규격서 (PDF)</div>
+        <button class="doc-btn">규격서 다운로드 ↓</button>
+      </div>
+      <div class="doc">
+        <div class="doc-type">ARCHIVE / STEP 03</div>
+        <div class="doc-title">트랙별 현장 문제<br>기출 아카이브 열람</div>
+        <button class="doc-btn">아카이브 접속 →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA + FORM -->
+  <div class="adm-form-wrap">
+    <div class="adm-form-pcb"></div>
+    <div class="adm-form">
+      <div class="af-prompt">PROOF OF DEDICATION — 지원서 작성</div>
+      <div class="af-field">
+        <label class="af-label"><span>&gt;</span> NAME :</label>
+        <input class="af-input" type="text" placeholder="성명을 입력하세요" id="afName"/>
+      </div>
+      <div class="af-field">
+        <label class="af-label"><span>&gt;</span> TRACK :</label>
+        <select class="af-select" id="afTrack">
+          <option value="">— 지원 트랙을 선택하세요 —</option>
+          <option value="반도체">TRACK 01 · 반도체</option>
+          <option value="전통복원">TRACK 02 · 전통 복원</option>
+          <option value="생태기술">TRACK 03 · 생태 기술</option>
+        </select>
+      </div>
+      <div class="af-field">
+        <label class="af-label"><span>&gt;</span> OBSESSION :</label>
+        <textarea class="af-textarea" id="afEssay" placeholder="특정 기술 분야에 미친 듯이 몰입해본 경험을 서술하세요. 길이보다 깊이를 평가합니다." rows="5"></textarea>
+      </div>
+      <div class="af-field">
+        <label class="af-label"><span>&gt;</span> CONTACT :</label>
+        <input class="af-input" type="text" placeholder="이메일 또는 연락처" id="afContact"/>
+      </div>
+      <button class="af-submit" id="afSubmit" onclick="submitAdm()">집요함 전송하기 ↗</button>
+      <div class="af-confirm" id="afConfirm">
+        <span style="color:var(--pt);">&gt;</span> 집요함이 접수되었습니다.<br>
+        <span style="color:var(--st);font-size:.65rem;">LOG ID 가 이메일로 발송됩니다. 현장 과제 심사 일정을 기다려주십시오.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: ARCHIVE
+═══════════════════════════════════════════ -->
+<div id="pg-archive" class="pg">
+  <div class="arc-hero">
+    <div class="arc-hero-img"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2000" alt="아카이브" style="filter:grayscale(.6);" loading="lazy"/></div>
+    <div class="arc-hero-over"></div>
+    <div class="arc-hero-content">
+      <div class="tag tag-light">PART 2. 브랜드 세계관 — 진정성</div>
+      <h1 class="mono" style="font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--ts);line-height:1.15;margin-bottom:.8rem;">RAW DATA<br>ARCHIVE</h1>
+      <p style="font-size:1rem;color:var(--tg);max-width:500px;line-height:1.75;">덮거나 감추지 않는 날것의 구조. 현장의 말과 실제 결과물을 동기화합니다.</p>
+    </div>
+  </div>
+
+  <!-- ── 대시보드 바 ── -->
+  <div style="background:var(--di);border-bottom:1px solid rgba(168,207,204,.12);display:flex;flex-wrap:wrap;gap:0;">
+    <div style="flex:1;min-width:160px;padding:2rem 2.5rem;border-right:1px solid rgba(168,207,204,.1);">
+      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.4rem;">TOTAL LOGS</div>
+      <div style="font-family:'Space Mono',monospace;font-size:2.2rem;font-weight:700;color:var(--tg);line-height:1;">9</div>
+    </div>
+    <div style="flex:1;min-width:160px;padding:2rem 2.5rem;border-right:1px solid rgba(168,207,204,.1);">
+      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.4rem;">ACTIVE</div>
+      <div style="font-family:'Space Mono',monospace;font-size:2.2rem;font-weight:700;color:#6fcf97;line-height:1;">3</div>
+    </div>
+    <div style="flex:1;min-width:160px;padding:2rem 2.5rem;border-right:1px solid rgba(168,207,204,.1);">
+      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.4rem;">TRACKS RUNNING</div>
+      <div style="font-family:'Space Mono',monospace;font-size:2.2rem;font-weight:700;color:var(--tg);line-height:1;">3</div>
+    </div>
+    <div style="flex:1;min-width:160px;padding:2rem 2.5rem;border-right:1px solid rgba(168,207,204,.1);">
+      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.4rem;">LAST UPDATED</div>
+      <div style="font-family:'Space Mono',monospace;font-size:1.1rem;font-weight:700;color:var(--tg);line-height:1;margin-top:.4rem;">2026.04.20</div>
+    </div>
+    <div style="flex:1;min-width:160px;padding:2rem 2.5rem;">
+      <div style="font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.4rem;">SYNC STATUS</div>
+      <div style="font-family:'Space Mono',monospace;font-size:.85rem;font-weight:700;color:#6fcf97;line-height:1;margin-top:.5rem;">● LIVE</div>
+    </div>
+  </div>
+
+  <!-- ── 트랙별 현장 영상 ── -->
+  <section style="background:var(--di);padding:5rem 3rem;">
+    <div class="tag tag-light">FIELD FOOTAGE</div>
+    <h2 class="sh reveal" style="color:var(--tw);margin-bottom:.5rem;">트랙별 현장 영상</h2>
+    <p style="color:var(--st);font-size:.9rem;line-height:1.8;margin-bottom:3rem;" class="reveal rd1">각 기술 트랙의 실제 현장 기록입니다.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(168,207,204,.08);" class="reveal">
+
+      <!-- TRACK 01 영상 -->
+      <div style="background:var(--di);position:relative;overflow:hidden;">
+        <video src="assets/video-track-semiconductor.mp4" muted loop playsinline
+               style="width:100%;height:320px;object-fit:cover;display:block;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        </video>
+        <div style="display:none;height:320px;overflow:hidden;position:relative;">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800" alt="반도체 현장" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.4);">
+          <div style="position:absolute;inset:0;background:rgba(15,31,30,.45);display:flex;align-items:flex-end;padding:1rem 1.2rem;">
+            <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.13em;color:rgba(168,207,204,.4);">assets/video-track-semiconductor.mp4</span>
+          </div>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.75) 0%,transparent 55%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:1.4rem;left:1.4rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.3rem;">TRACK 01</div>
+          <div style="font-size:1rem;font-weight:700;color:var(--tw);">반도체 현장</div>
+        </div>
+      </div>
+
+      <!-- TRACK 02 영상 -->
+      <div style="background:var(--di);position:relative;overflow:hidden;">
+        <video src="assets/video-track-heritage.mp4" muted loop playsinline
+               style="width:100%;height:320px;object-fit:cover;display:block;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        </video>
+        <div style="display:none;height:320px;overflow:hidden;position:relative;">
+          <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?q=80&w=800" alt="전통 복원 현장" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.4);">
+          <div style="position:absolute;inset:0;background:rgba(15,31,30,.45);display:flex;align-items:flex-end;padding:1rem 1.2rem;">
+            <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.13em;color:rgba(168,207,204,.4);">assets/video-track-heritage.mp4</span>
+          </div>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.75) 0%,transparent 55%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:1.4rem;left:1.4rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.3rem;">TRACK 02</div>
+          <div style="font-size:1rem;font-weight:700;color:var(--tw);">전통 복원 현장</div>
+        </div>
+      </div>
+
+      <!-- TRACK 03 영상 -->
+      <div style="background:var(--di);position:relative;overflow:hidden;">
+        <video src="assets/video-track-ecology.mp4" muted loop playsinline
+               style="width:100%;height:320px;object-fit:cover;display:block;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        </video>
+        <div style="display:none;height:320px;overflow:hidden;position:relative;">
+          <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800" alt="생태 기술 현장" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.4);">
+          <div style="position:absolute;inset:0;background:rgba(15,31,30,.45);display:flex;align-items:flex-end;padding:1rem 1.2rem;">
+            <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.13em;color:rgba(168,207,204,.4);">assets/video-track-ecology.mp4</span>
+          </div>
+        </div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(15,31,30,.75) 0%,transparent 55%);pointer-events:none;"></div>
+        <div style="position:absolute;bottom:1.4rem;left:1.4rem;">
+          <div style="font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.3rem;">TRACK 03</div>
+          <div style="font-size:1rem;font-weight:700;color:var(--tw);">생태 기술 현장</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="filter-bar" id="arc-filters">
+    <button class="fb on" onclick="filterArc('all',this)">ALL</button>
+    <button class="fb" onclick="filterArc('반도체',this)">TRACK 01. 반도체</button>
+    <button class="fb" onclick="filterArc('전통 복원',this)">TRACK 02. 전통 복원</button>
+    <button class="fb" onclick="filterArc('생태 기술',this)">TRACK 03. 생태 기술</button>
+  </div>
+
+  <div class="terminal" id="arc-grid" style="overflow-x:auto;">
+    <div class="terminal-bar">
+      <div class="terminal-dot" style="background:#eb5757;"></div>
+      <div class="terminal-dot" style="background:#f2c94c;"></div>
+      <div class="terminal-dot" style="background:#6fcf97;"></div>
+      <span class="terminal-title">HU-FIELD-ARCHIVE — RAW DATA LOG v2.6 <span class="terminal-blink"></span></span>
+    </div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <table class="terminal-table" style="min-width:600px;">
+      <thead>
+        <tr>
+          <th>LOG ID</th>
+          <th>TITLE</th>
+          <th>TRACK</th>
+          <th>DATE</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="ac" data-t="반도체">
+          <td class="td-id">S-4029</td>
+          <td class="td-title">이천 Fab 노광 공정 수율 저하 리포트<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">포토레지스트 도포 두께 불균일로 인한 패턴 결함 발생. 원인 분석 및 재설계 파라미터 백업 파일.</span></td>
+          <td class="td-track"><span class="t-s">반도체</span></td>
+          <td>2026.04.20</td>
+          <td class="td-status s-failed">● FAILED</td>
+        </tr>
+        <tr class="ac" data-t="전통 복원">
+          <td class="td-id">R-8812</td>
+          <td class="td-title">경주 월지 출토 목간 3D 메쉬 데이터<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">디지털 트윈 스캐닝 원본 데이터. 목재 마모도 측정 표면 텍스처 매핑 완료.</span></td>
+          <td class="td-track"><span class="t-r">전통 복원</span></td>
+          <td>2026.04.18</td>
+          <td class="td-status s-synced">● SYNCED</td>
+        </tr>
+        <tr class="ac" data-t="생태 기술">
+          <td class="td-id">E-1044</td>
+          <td class="td-title">지리산 아고산대 침엽수림 토양 수분 모니터링<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">고도별 스마트 센서 배열에서 수집된 주간 토양 수분 변동량 로우 데이터. (CSV 첨부)</span></td>
+          <td class="td-track"><span class="t-e">생태 기술</span></td>
+          <td>2026.04.15</td>
+          <td class="td-status s-active">● ACTIVE</td>
+        </tr>
+        <tr class="ac" data-t="반도체">
+          <td class="td-id">S-4030</td>
+          <td class="td-title">차세대 소자 설계 시뮬레이션 3차 결과<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">전력 효율 개선을 위한 트랜지스터 게이트 구조 변경 시뮬레이션 3차 결과 플롯.</span></td>
+          <td class="td-track"><span class="t-s">반도체</span></td>
+          <td>2026.04.12</td>
+          <td class="td-status s-revised">● REVISED</td>
+        </tr>
+        <tr class="ac" data-t="생태 기술">
+          <td class="td-id">E-1045</td>
+          <td class="td-title">스마트팜 센터 작물 생장 알고리즘 테스트<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">조도 및 영양액 배합 비율 조정에 따른 토마토 생육 속도 비교 영상 로그.</span></td>
+          <td class="td-track"><span class="t-e">생태 기술</span></td>
+          <td>2026.04.10</td>
+          <td class="td-status s-active">● ACTIVE</td>
+        </tr>
+        <tr class="ac" data-t="전통 복원">
+          <td class="td-id">R-8813</td>
+          <td class="td-title">경복궁 단청 안료 성분 AI 분석 모델링<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">전통 안료 화학 조성 역산출 딥러닝 모델 가중치 파일 업데이트.</span></td>
+          <td class="td-track"><span class="t-r">전통 복원</span></td>
+          <td>2026.04.05</td>
+          <td class="td-status s-synced">● SYNCED</td>
+        </tr>
+        <tr class="ac" data-t="반도체">
+          <td class="td-id">S-4031</td>
+          <td class="td-title">용인 반도체 클러스터 인턴십 배치 결과<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">2026년 상반기 기업 인턴십 배치 완료. 참여 기업 7개사, 학생 12명 투입.</span></td>
+          <td class="td-track"><span class="t-s">반도체</span></td>
+          <td>2026.03.28</td>
+          <td class="td-status s-complete">● COMPLETE</td>
+        </tr>
+        <tr class="ac" data-t="전통 복원">
+          <td class="td-id">R-8810</td>
+          <td class="td-title">부여 정림사지 석탑 균열 진단 리포트<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">드론 포토그래메트리 기반 균열 패턴 정밀 분석. 국가유산청 제출본 첨부.</span></td>
+          <td class="td-track"><span class="t-r">전통 복원</span></td>
+          <td>2026.03.20</td>
+          <td class="td-status s-submitted">● SUBMITTED</td>
+        </tr>
+        <tr class="ac" data-t="생태 기술">
+          <td class="td-id">E-1040</td>
+          <td class="td-title">제주 곶자왈 외래종 eDNA 모니터링 데이터<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">환경 DNA 샘플링 기반 외래 침입종 분포 현황 분석. 격자 도면 첨부.</span></td>
+          <td class="td-track"><span class="t-e">생태 기술</span></td>
+          <td>2026.03.15</td>
+          <td class="td-status s-active">● ACTIVE</td>
+        </tr>
+      </tbody>
+    </table>
+    </div><!-- /overflow-x scroll wrapper -->
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     PAGE: IDENTITY
+═══════════════════════════════════════════ -->
+<div id="pg-identity" class="pg" style="background:var(--di);">
+  <div class="id-hero">
+    <div class="tag">PART 3–5. 비주얼 시스템 / 로고 / 타이포그래피</div>
+    <h1 class="serif" style="font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.15;margin-bottom:.8rem;">FLEXIBLE<br>IDENTITY</h1>
+    <p style="font-size:1.2rem;color:var(--st);max-width:560px;line-height:1.75;">자연과 기술의 융합. 공식 인장에서 커뮤니케이션 마크로 변모하는 유동적 아이덴티티 시스템.</p>
+  </div>
+
+  <!-- COLOR PALETTE -->
+  <section class="sec sec-wh">
+    <div class="tag">컬러 팔레트</div>
+    <h2 class="sh reveal">브랜드 컬러 시스템</h2>
+    <p class="ss reveal rd1">색상은 최소한으로 제한. 중심은 항상 시각적 구조. 연결을 통한 정보 위계 확립.</p>
+    <div class="sw-row reveal">
+      <div class="sw"><div class="sw-in" style="background:#EBF2F1;"><div class="sw-name">틸화이트</div><div class="sw-hex">#EBF2F1</div></div></div>
+      <div class="sw"><div class="sw-in" style="background:#D6EBEA;"><div class="sw-name">틸서피스</div><div class="sw-hex">#D6EBEA</div></div></div>
+      <div class="sw"><div class="sw-in" style="background:#A8CFCC;"><div class="sw-name">틸그레이</div><div class="sw-hex">#A8CFCC</div></div></div>
+      <div class="sw"><div class="sw-in" style="background:#5C8F8A;color:#fff;"><div class="sw-name" style="color:#fff;">스틸틸</div><div class="sw-hex" style="color:rgba(255,255,255,.8);">#5C8F8A</div></div></div>
+      <div class="sw"><div class="sw-in" style="background:#0F1F1E;"><div class="sw-name" style="color:var(--tg);">딥잉크</div><div class="sw-hex" style="color:var(--st);">#0F1F1E</div></div></div>
+      <div class="sw"><div class="sw-in" style="background:#0A3711;"><div class="sw-name" style="color:var(--tg);">PCB틸</div><div class="sw-hex" style="color:var(--st);">#0A3711</div></div></div>
+    </div>
+  </section>
+
+  <!-- LOGO SYSTEM -->
+  <section class="sec sec-sf" style="padding-top:0;">
+    <div style="padding-top:6rem;">
+      <div class="tag">유동적 아이덴티티 로직</div>
+      <h2 class="sh reveal">IDENTITY LOGIC</h2>
+      <p class="ss reveal rd1">공식 인장에서 커뮤니케이션 마크까지 — 6단계로 변모하는 로고 시스템. 로고 이미지는 추후 교체됩니다.</p>
+    </div>
+    <div class="ls-grid reveal">
+      <div class="ls">
+        <div class="ls-vis">
+          <img src="assets/logo-official-seal.png" alt="Official Seal"
+               style="width:120px;height:120px;object-fit:contain;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div style="display:none;width:120px;height:120px;overflow:hidden;border-radius:2px;">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=240" alt="Official Seal fallback" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.6) opacity(.35);">
+          </div>
+        </div>
+        <div class="ls-info"><div class="ls-phase">STEP 1–2 / 공식 인장</div><div class="ls-title">Official Seal</div><div class="ls-desc">학문적 뿌리·권위. 졸업장·학술 보고서 표지에 사용.</div></div>
+      </div>
+      <div class="ls ls-sf">
+        <div class="ls-vis">
+          <img src="assets/logo-organization-mark.png" alt="Organization Mark"
+               style="width:120px;height:120px;object-fit:contain;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div style="display:none;width:120px;height:120px;overflow:hidden;border-radius:2px;">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=240" alt="Organization Mark fallback" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.6) opacity(.35);">
+          </div>
+        </div>
+        <div class="ls-info"><div class="ls-phase">STEP 3–4 / 조직 마크</div><div class="ls-title">Organization Mark</div><div class="ls-desc">소속감·캠퍼스. 단과대 로고 및 캠퍼스 사이니지 패턴.</div></div>
+      </div>
+      <div class="ls ls-dk">
+        <div class="ls-vis">
+          <img src="assets/logo-hu-lettermark.png" alt="HU Lettermark"
+               style="width:120px;height:120px;object-fit:contain;"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div style="display:none;width:120px;height:120px;overflow:hidden;border-radius:2px;">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=240" alt="HU Lettermark fallback" style="width:100%;height:100%;object-fit:cover;filter:grayscale(.6) opacity(.35);">
+          </div>
+        </div>
+        <div class="ls-info"><div class="ls-phase">STEP 5–6 / 커뮤니케이션</div><div class="ls-title">HU Lettermark</div><div class="ls-desc">젊은 에너지·유연성. 굿즈·앱 아이콘·SNS 프로필.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section class="sec sec-dk">
+    <div class="tag tag-light">타이포그래피 시스템</div>
+    <h2 class="sh reveal" style="color:var(--tw);margin-bottom:3rem;">공통된 타이포 시스템</h2>
+    <div class="ty-grid reveal">
+      <div class="ty">
+        <div class="ty-lbl">국문 서체</div>
+        <div class="ty-smp-ko">Pretendard<br>한국대학교</div>
+        <div class="ty-specs">Weight: Bold / SemiBold<br>자간: -2% ~ -3%<br>심볼 획 두께에 눌리지 않도록 응집력 확보</div>
+      </div>
+      <div class="ty">
+        <div class="ty-lbl">영문 / 모노스페이스 서체</div>
+        <div class="ty-smp-en">Space Mono<br>HANKUK</div>
+        <div class="ty-specs">Weight: Regular / Bold<br>자간: +5% ~ +10%<br>국문 대비 한 단계 낮게 — 현대적·쾌적한 인상</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BREAK - brand mood -->
+  <div class="img-break-grid">
+    <div style="overflow:hidden;position:relative;">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="반도체" loading="lazy"/>
+      <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--tw);background:rgba(15,31,30,.7);padding:.4rem .8rem;">OFFICIAL BRANDING · Steps 1–2–3</div>
+    </div>
+    <div style="overflow:hidden;position:relative;">
+      <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200" alt="굿즈" loading="lazy"/>
+      <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--tw);background:rgba(15,31,30,.7);padding:.4rem .8rem;">COMMUNICATION MARK · Steps 4–5–6</div>
+    </div>
+  </div>
+
+  <!-- STATIONERY -->
+  <section class="sec sec-dk">
+    <div class="tag tag-light">공식 서식류</div>
+    <h2 class="sh reveal" style="color:var(--tw);">Official Stationery</h2>
+    <p style="color:var(--st);font-size:.95rem;line-height:1.8;max-width:560px;margin-bottom:3rem;" class="reveal rd1">
+      공식 인장(Steps 1–3) 적용 서식류.<br>
+      이미지를 <code style="font-family:'Space Mono',monospace;font-size:.8rem;color:var(--tg);">assets/</code> 폴더에 넣으면 바로 교체됩니다.
+    </p>
+    <div class="stat-grid reveal">
+      <div class="stat-item">
+        <img src="assets/stationery-envelope-large.jpg" alt="대봉투"
+             onerror="this.src='https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?q=80&w=800'" loading="lazy"/>
+        <div class="stat-item-over"></div>
+        <div class="stat-item-label">
+          <div class="stat-item-type">OFFICIAL BRANDING · STEP 1–2</div>
+          <div class="stat-item-name">대봉투</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <img src="assets/stationery-envelope-small.jpg" alt="소봉투"
+             onerror="this.src='https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?q=80&w=800'" loading="lazy"/>
+        <div class="stat-item-over"></div>
+        <div class="stat-item-label">
+          <div class="stat-item-type">OFFICIAL BRANDING · STEP 1–2</div>
+          <div class="stat-item-name">소봉투</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <img src="assets/stationery-letterhead.jpg" alt="레터헤드"
+             onerror="this.src='https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=800'" loading="lazy"/>
+        <div class="stat-item-over"></div>
+        <div class="stat-item-label">
+          <div class="stat-item-type">OFFICIAL BRANDING · STEP 1–3</div>
+          <div class="stat-item-name">레터헤드</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <img src="assets/stationery-namecard.jpg" alt="명함"
+             onerror="this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800'" loading="lazy"/>
+        <div class="stat-item-over"></div>
+        <div class="stat-item-label">
+          <div class="stat-item-type">ORGANIZATION MARK · STEP 3–4</div>
+          <div class="stat-item-name">명함</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERCH — 현장 특화 굿즈 -->
+  <section class="sec sec-dk" style="padding-bottom:0;background:var(--di);">
+    <div class="tag tag-light">FIELD GOODS</div>
+    <h2 class="sh reveal" style="color:var(--tw);">Field Goods Collection</h2>
+    <p style="color:var(--st);font-size:.95rem;line-height:1.8;max-width:580px;margin-bottom:3.5rem;" class="reveal rd1">
+      일상용 기념품이 아닙니다.<br>
+      실제 현장에서 쓰이는 것들에 HU 아이덴티티를 입힙니다.
+    </p>
+  </section>
+
+  <!-- GOODS GRID — 이미지 슬롯 -->
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--di);" class="reveal">
+
+    <!-- 트랙별 현장 패치 -->
+    <div class="stat-item" style="background:var(--di);">
+      <img src="assets/goods-patch.jpg" alt="트랙별 현장 패치"
+           onerror="this.style.display='none';this.parentElement.querySelector('.goods-ph').style.display='flex';"
+           style="width:100%;height:280px;object-fit:cover;display:block;"/>
+      <div class="goods-ph" style="display:none;height:280px;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--di);">
+        <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:rgba(92,143,138,.3);">assets/goods-patch.jpg</span>
+      </div>
+      <div class="stat-item-over"></div>
+      <div class="stat-item-label">
+        <div class="stat-item-type">COMM. MARK · PATCH SET</div>
+        <div class="stat-item-name">트랙별 현장 패치</div>
+      </div>
+    </div>
+
+    <!-- 현장 기록 저널 -->
+    <div class="stat-item" style="background:var(--ts);">
+      <img src="assets/goods-journal.jpg" alt="현장 기록 저널"
+           onerror="this.style.display='none';this.parentElement.querySelector('.goods-ph').style.display='flex';"
+           style="width:100%;height:280px;object-fit:cover;display:block;"/>
+      <div class="goods-ph" style="display:none;height:280px;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--ts);">
+        <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:rgba(92,143,138,.3);">assets/goods-journal.jpg</span>
+      </div>
+      <div class="stat-item-over"></div>
+      <div class="stat-item-label">
+        <div class="stat-item-type">OFFICIAL BRANDING · JOURNAL</div>
+        <div class="stat-item-name">현장 기록 저널</div>
+      </div>
+    </div>
+
+    <!-- 현장 필드 재킷 -->
+    <div class="stat-item" style="background:var(--di);">
+      <img src="assets/goods-jacket.jpg" alt="현장 필드 재킷"
+           onerror="this.style.display='none';this.parentElement.querySelector('.goods-ph').style.display='flex';"
+           style="width:100%;height:280px;object-fit:cover;display:block;"/>
+      <div class="goods-ph" style="display:none;height:280px;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--di);">
+        <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:rgba(92,143,138,.3);">assets/goods-jacket.jpg</span>
+      </div>
+      <div class="stat-item-over"></div>
+      <div class="stat-item-label">
+        <div class="stat-item-type">COMM. MARK · FIELD JACKET</div>
+        <div class="stat-item-name">현장 필드 재킷</div>
+      </div>
+    </div>
+
+    <!-- 현장 거점 스탬프 여권 -->
+    <div class="stat-item" style="background:var(--ts);">
+      <img src="assets/goods-passport.jpg" alt="현장 거점 스탬프 여권"
+           onerror="this.style.display='none';this.parentElement.querySelector('.goods-ph').style.display='flex';"
+           style="width:100%;height:280px;object-fit:cover;display:block;"/>
+      <div class="goods-ph" style="display:none;height:280px;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--ts);">
+        <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:rgba(92,143,138,.3);">assets/goods-passport.jpg</span>
+      </div>
+      <div class="stat-item-over"></div>
+      <div class="stat-item-label">
+        <div class="stat-item-type">OFFICIAL BRANDING · PASSPORT</div>
+        <div class="stat-item-name">현장 거점 스탬프 여권</div>
+      </div>
+    </div>
+
+    <!-- HU 각인 공구 파우치 -->
+    <div class="stat-item" style="background:var(--di);">
+      <img src="assets/goods-pouch.jpg" alt="HU 각인 공구 파우치"
+           onerror="this.style.display='none';this.parentElement.querySelector('.goods-ph').style.display='flex';"
+           style="width:100%;height:280px;object-fit:cover;display:block;"/>
+      <div class="goods-ph" style="display:none;height:280px;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--di);">
+        <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:rgba(92,143,138,.3);">assets/goods-pouch.jpg</span>
+      </div>
+      <div class="stat-item-over"></div>
+      <div class="stat-item-label">
+        <div class="stat-item-type">FIELD GOODS · TOOL POUCH</div>
+        <div class="stat-item-name">HU 각인 공구 파우치</div>
+      </div>
+    </div>
+
+    <!-- 현장 측량 케이스 -->
+    <div class="stat-item" style="background:var(--ts);">
+      <img src="assets/goods-case.jpg" alt="현장 측량 케이스"
+           onerror="this.style.display='none';this.parentElement.querySelector('.goods-ph').style.display='flex';"
+           style="width:100%;height:280px;object-fit:cover;display:block;"/>
+      <div class="goods-ph" style="display:none;height:280px;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;background:var(--ts);">
+        <span style="font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.15em;color:rgba(92,143,138,.3);">assets/goods-case.jpg</span>
+      </div>
+      <div class="stat-item-over"></div>
+      <div class="stat-item-label">
+        <div class="stat-item-type">FIELD GOODS · MEASURING CASE</div>
+        <div class="stat-item-name">현장 측량 케이스</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo-ko">한국대학교</div>
+      <div class="ft-logo-en">HANKUK UNIVERSITY</div>
+      <p class="ft-desc">개인의 기술 역량과 국가 산업 시스템을 직접 연결하는 교육 모델. 성적이 아닌 집요함으로 선발된 인재가 전국 현장을 누비며 산업의 구조적 공백을 채웁니다.</p>
+    </div>
+    <div class="ft-col">
+      <h4>NAVIGATION</h4>
+      <ul>
+        <li><button onclick="go('home')">홈</button></li>
+        <li><button onclick="go('about')">브랜드 철학</button></li>
+        <li><button onclick="go('tracks')">기술 트랙</button></li>
+        <li><button onclick="go('archive')">라이브 아카이브</button></li>
+        <li><button onclick="go('identity')">아이덴티티</button></li>
+        <li><button onclick="go('admission')">입학 지원</button></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4>3 TECHNOLOGY TRACKS</h4>
+      <div class="ft-tracks">
+        <span class="ft-badge" onclick="go('tracks')" style="cursor:pointer;">반도체</span>
+        <span class="ft-badge" onclick="go('tracks')" style="cursor:pointer;">전통 복원</span>
+        <span class="ft-badge" onclick="go('tracks')" style="cursor:pointer;">생태 기술</span>
+      </div>
+      <p style="margin-top:1.5rem;font-size:.82rem;color:var(--st);line-height:1.8;">미네르바형 운영 모델<br>캠퍼스 없음 · 하이브리드 학습 · 비용 재투자</p>
+    </div>
+    <div class="ft-col">
+      <h4>CONTACT</h4>
+      <p style="font-size:.85rem;color:var(--st);line-height:2;margin:0;">
+        서울특별시 성북구 보문로 189길 55,<br>
+        한국대학교 본관 3층<br>
+        <br>
+        T &nbsp;02.2092.2239<br>
+        <a href="http://www.hankuk.ac.kr" style="color:var(--pt);text-decoration:none;letter-spacing:.02em;">www.hankuk.ac.kr</a>
+      </p>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span>© 2026 HANKUK UNIVERSITY. ALL RIGHTS RESERVED.</span>
+    <span>INTENSIVE · AUTHENTIC · PROFESSIONAL</span>
+  </div>
+</footer>
+
+<script>
+// ── SCROLL PROGRESS BAR ──
+window.addEventListener('scroll',()=>{
+  const pg=document.querySelector('.pg.on');
+  if(!pg) return;
+  const bar=document.getElementById('progress-bar');
+  const scrollTop=window.scrollY;
+  const docH=pg.scrollHeight - window.innerHeight;
+  const pct=docH>0 ? Math.min(100,(scrollTop/docH)*100) : 0;
+  bar.style.width=pct+'%';
+},{passive:true});
+
+// ── PAGE ROUTING ──
+function go(id){
+  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
+  const pg=document.getElementById('pg-'+id);
+  if(pg){pg.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
+  document.querySelectorAll('.nb[data-p]').forEach(b=>b.classList.toggle('on',b.dataset.p===id));
+  const hdr=document.getElementById('hdr');
+  if(id==='home'){hdr.classList.remove('light');}else{hdr.classList.add('light');}
+  setTimeout(()=>{
+    document.querySelectorAll('.pg.on .reveal:not(.vis)').forEach(el=>revObs.observe(el));
+  },80);
+}
+
+// ── HAMBURGER ──
+function toggleMob(){
+  document.getElementById('mob-nav').classList.toggle('open');
+}
+
+// ── SCROLL REVEAL ──
+const revObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('vis');revObs.unobserve(e.target);}
+  });
+},{threshold:0.08});
+window.addEventListener('load',()=>{
+  document.querySelectorAll('.pg.on .reveal').forEach(el=>revObs.observe(el));
+});
+
+// ── HEADER on scroll ──
+window.addEventListener('scroll',()=>{
+  const active=document.querySelector('.pg.on');
+  if(active&&active.id==='pg-home'){
+    document.getElementById('hdr').classList.toggle('light',window.scrollY>80);
+  }
+},{passive:true});
+
+// ── ARCHIVE FILTER (terminal table) ──
+function filterArc(track,btn){
+  document.querySelectorAll('#arc-filters .fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#arc-grid tbody tr').forEach(tr=>{
+    const show=(track==='all'||tr.dataset.t===track);
+    tr.style.display=show?'':'none';
+  });
+}
+
+// ── FACULTY DATA ──
+const facData=[
+  {name:'김현석',role:'반도체 공정 트랙장 · 前 삼성전자 수석연구원',bio:'삼성전자 파운드리사업부 20년 경력. 포토리소그래피 공정 최적화 전문. 용인·이천 거점 현장 지도교수.',img:'assets/faculty-01.jpg'},
+  {name:'박지연',role:'전통 복원 트랙장 · 前 국가유산청 디지털복원팀',bio:'경복궁·경주 현장 디지털 트윈 프로젝트 주도. AI 기반 문화재 손상도 예측 모델 개발. 국가유산청 자문위원.',img:'assets/faculty-02.jpg'},
+  {name:'오성민',role:'생태기술 트랙 교수 · 농촌진흥청 스마트팜 자문',bio:'스마트팜 환경제어 알고리즘 및 IoT 센서 네트워크 설계 전문. 홍천·제주 현장 프로젝트 책임.',img:'assets/faculty-03.jpg'},
+  {name:'이다은',role:'반도체 소자설계 교수 · KAIST 전기전자공학 박사',bio:'차세대 저전력 트랜지스터 게이트 구조 연구. EDA 툴 실습 커리큘럼 설계. 이천 Fab 시뮬레이션 지도.',img:'assets/faculty-04.jpg'},
+  {name:'최태원',role:'생태기술 트랙장 · 국립공원관리공단 연구원',bio:'지리산·울릉도·제주 생태계 모니터링 15년 경력. eDNA 분석 및 드론 포토그래메트리 현장 교육 책임.',img:'assets/faculty-05.jpg'},
+  {name:'정수아',role:'AI 복원모델 교수 · 서울대 컴퓨터공학 박사',bio:'딥러닝 기반 문화재 안료 성분 역산출 모델 개발자. 경복궁 단청 AI 분석 프로젝트 총괄. 전통복원 트랙 데이터 과학 담당.',img:'assets/faculty-06.jpg'},
+  {name:'한동준',role:'반도체 장비 교수 · 前 SK하이닉스 공정엔지니어',bio:'DRAM HBM 패키징 장비 운용 12년 경력. 이천 공장 현장 실습 장비 세팅 및 학생 멘토링 총괄.',img:'assets/faculty-07.jpg'},
+  {name:'윤채린',role:'드론측량·3D스캐닝 교수 · 前 문화재연구원',bio:'드론 포토그래메트리 및 LiDAR 기반 문화재 정밀 측량 전문. 부여 정림사지·경주 월지 3D 메쉬 데이터 구축 담당.',img:'assets/faculty-08.jpg'},
+];
+function showFac(i){
+  const d=facData[i];
+  document.getElementById('facImg').src=d.img;
+  document.getElementById('facName').textContent=d.name;
+  document.getElementById('facRole').textContent=d.role;
+  document.getElementById('facBio').textContent=d.bio;
+  document.getElementById('facDetail').classList.add('show');
+}
+function closeFac(){document.getElementById('facDetail').classList.remove('show');}
+
+// ── KOREA MAP HOVER ──
+function showKoTip(e, track, name, localSrc, fallbackSrc){
+  const tip=document.getElementById('koTip');
+  const img=document.getElementById('koTipImg');
+  document.getElementById('koTipTrack').textContent=track;
+  document.getElementById('koTipName').textContent=name;
+  img.onerror=()=>{ img.src=fallbackSrc; };
+  img.src=localSrc;
+  const wrap=document.getElementById('komapWrap').getBoundingClientRect();
+  let x=e.clientX-wrap.left+18;
+  let y=e.clientY-wrap.top-160;
+  if(x+230>wrap.width) x=e.clientX-wrap.left-248;
+  if(y<0) y=e.clientY-wrap.top+18;
+  tip.style.left=x+'px';
+  tip.style.top=y+'px';
+  tip.classList.add('show');
+}
+function hideKoTip(){
+  document.getElementById('koTip').classList.remove('show');
+}
+
+// ── CHART ANIMATION ──
+const chartObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.chart-bar-inner').forEach((bar,i)=>{
+        setTimeout(()=>bar.classList.add('go'), i*180);
+      });
+      chartObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.2});
+window.addEventListener('load',()=>{
+  const chart=document.getElementById('crisisChart');
+  if(chart) chartObs.observe(chart);
+});
+
+function submitAdm(){
+  const name=document.getElementById('afName').value.trim();
+  const track=document.getElementById('afTrack').value;
+  const essay=document.getElementById('afEssay').value.trim();
+  if(!name||!track||!essay){
+    document.getElementById('afSubmit').style.borderColor='#eb5757';
+    setTimeout(()=>document.getElementById('afSubmit').style.borderColor='',1200);
+    return;
+  }
+  const btn=document.getElementById('afSubmit');
+  btn.disabled=true;
+  btn.textContent='전송 중...';
+  setTimeout(()=>{
+    btn.style.display='none';
+    document.getElementById('afConfirm').classList.add('show');
+  },900);
+}
+</script>
+</body>
+</html>
