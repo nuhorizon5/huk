@@ -6,7 +6,7 @@
 <title>한국대학교 HANKUK UNIVERSITY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"/>
 <style>
 :root{
@@ -16,9 +16,9 @@
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Pretendard',sans-serif;background:var(--tw);color:var(--di);overflow-x:hidden;}
+body{font-family:'IBM Plex Sans KR',sans-serif;background:var(--tw);color:var(--di);overflow-x:hidden;}
 img{display:block;width:100%;height:100%;object-fit:cover;}
-button{font-family:'Pretendard',sans-serif;cursor:pointer;}
+button{font-family:'IBM Plex Sans KR',sans-serif;cursor:pointer;}
 
 /* ── HEADER ── */
 #hdr{
@@ -105,7 +105,7 @@ p.ss{font-size:1.05rem;color:var(--st);line-height:1.75;max-width:600px;margin-b
 .hstat{padding:1.5rem 2rem;border-left:1px solid rgba(168,207,204,.2);background:rgba(15,31,30,.6);backdrop-filter:blur(8px);}
 .hstat-n{font-family:'Space Mono',monospace;font-size:1.6rem;font-weight:700;color:var(--tg);line-height:1;}
 .hstat-l{font-size:.75rem;color:var(--st);margin-top:.3rem;max-width:110px;line-height:1.4;}
-.hero-eyebrow{font-family:'Pretendard',sans-serif;font-size:.75rem;letter-spacing:.22em;color:var(--tg);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;animation:fu .8s ease both;}
+.hero-eyebrow{font-family:'IBM Plex Sans KR',sans-serif;font-size:.75rem;letter-spacing:.22em;color:var(--tg);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem;animation:fu .8s ease both;}
 .hero-eyebrow::before{display:none;}
 h1.hero-h1{font-family:'Noto Serif KR',serif;font-size:clamp(3.2rem,7.5vw,6.5rem);font-weight:900;color:var(--tw);line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.02em;animation:fu .8s .15s ease both;}
 h1.hero-h1 em{font-style:normal;color:var(--tg);border-bottom:3px solid var(--pt);padding-bottom:.05em;}
@@ -300,11 +300,11 @@ h1.hero-h1 em{font-style:normal;color:var(--tg);border-bottom:3px solid var(--pt
 .ls-desc{font-size:.82rem;color:var(--st);line-height:1.6;}
 
 /* typo */
-.ty-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(168,207,204,.2);}
+.ty-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border:1px solid rgba(168,207,204,.2);}
 .ty{padding:4rem 3rem;border-right:1px solid rgba(168,207,204,.2);}
 .ty:last-child{border-right:none;}
 .ty-lbl{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.18em;color:var(--tg);margin-bottom:1.5rem;}
-.ty-smp-ko{font-family:'Pretendard',sans-serif;font-size:2.8rem;font-weight:800;color:var(--tw);line-height:1;margin-bottom:1.2rem;}
+.ty-smp-ko{font-family:'IBM Plex Sans KR',sans-serif;font-size:2.8rem;font-weight:800;color:var(--tw);line-height:1;margin-bottom:1.2rem;}
 .ty-smp-en{font-family:'Space Mono',monospace;font-size:1.8rem;font-weight:700;color:var(--tw);line-height:1;margin-bottom:1.2rem;letter-spacing:.04em;}
 .ty-specs{font-family:'Space Mono',monospace;font-size:.75rem;color:var(--tg);line-height:2;}
 
@@ -362,7 +362,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
 .fac-node:hover circle{fill:var(--pt);}
 .fac-portrait{clip-path:circle(38px at 50% 50%);transition:clip-path .3s;}
 .fac-label{font-family:'Space Mono',monospace;font-size:10px;fill:var(--tg);letter-spacing:.08em;}
-.fac-sublabel{font-family:'Pretendard',sans-serif;font-size:9px;fill:var(--st);}
+.fac-sublabel{font-family:'IBM Plex Sans KR',sans-serif;font-size:9px;fill:var(--st);}
 .fac-detail{position:absolute;bottom:0;left:0;right:0;background:rgba(15,31,30,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(168,207,204,.15);padding:1.5rem 3rem;display:flex;align-items:center;gap:2rem;transform:translateY(100%);transition:transform .4s ease;}
 .fac-detail.show{transform:translateY(0);}
 .fac-detail-img{width:60px;height:60px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1px solid var(--st);}
@@ -380,7 +380,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
 .map-node circle.pulse{animation:mpulse 2.5s ease-in-out infinite;}
 @keyframes mpulse{0%,100%{r:6;opacity:.8;}50%{r:10;opacity:.3;}}
 .map-node text{font-family:'Space Mono',monospace;font-size:10px;fill:var(--tg);pointer-events:none;}
-.map-node .loc-sub{font-family:'Pretendard',sans-serif;font-size:9px;fill:var(--st);}
+.map-node .loc-sub{font-family:'IBM Plex Sans KR',sans-serif;font-size:9px;fill:var(--st);}
 .map-tooltip{position:absolute;background:rgba(15,31,30,.97);border:1px solid rgba(168,207,204,.2);padding:1rem 1.4rem;pointer-events:none;opacity:0;transition:opacity .2s;min-width:200px;z-index:10;}
 .map-tooltip.show{opacity:1;}
 .map-tt-track{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.18em;color:var(--pt);margin-bottom:.3rem;}
@@ -399,7 +399,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
 .terminal-table tbody tr:hover{background:rgba(168,207,204,.04);}
 .terminal-table td{font-size:.82rem;color:var(--tg);padding:.9rem 1.5rem;vertical-align:top;}
 .td-id{color:var(--st);font-size:.72rem;}
-.td-title{color:var(--tw);font-weight:600;font-family:'Pretendard',sans-serif;}
+.td-title{color:var(--tw);font-weight:600;font-family:'IBM Plex Sans KR',sans-serif;}
 .td-track span{display:inline-block;font-size:.6rem;letter-spacing:.1em;padding:.15rem .55rem;border-radius:20px;}
 .td-track .t-s{background:rgba(10,55,17,.4);color:#6fcf97;}
 .td-track .t-r{background:rgba(92,143,138,.2);color:var(--tg);}
@@ -418,12 +418,12 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
 .af-field{margin-bottom:2rem;}
 .af-label{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.18em;color:var(--st);display:block;margin-bottom:.6rem;}
 .af-label span{color:var(--pt);}
-.af-input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'Pretendard',sans-serif;font-size:1rem;padding:.5rem 0;outline:none;transition:border-color .3s;}
+.af-input{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'IBM Plex Sans KR',sans-serif;font-size:1rem;padding:.5rem 0;outline:none;transition:border-color .3s;}
 .af-input:focus{border-bottom-color:var(--tg);}
 .af-input::placeholder{color:rgba(168,207,204,.25);font-size:.9rem;}
 .af-select{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'Space Mono',monospace;font-size:.82rem;padding:.5rem 0;outline:none;appearance:none;cursor:pointer;letter-spacing:.05em;}
 .af-select option{background:var(--di);}
-.af-textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'Pretendard',sans-serif;font-size:.95rem;padding:.5rem 0;outline:none;resize:none;line-height:1.8;transition:border-color .3s;min-height:100px;}
+.af-textarea{width:100%;background:transparent;border:none;border-bottom:1px solid rgba(168,207,204,.2);color:var(--tw);font-family:'IBM Plex Sans KR',sans-serif;font-size:.95rem;padding:.5rem 0;outline:none;resize:none;line-height:1.8;transition:border-color .3s;min-height:100px;}
 .af-textarea:focus{border-bottom-color:var(--tg);}
 .af-textarea::placeholder{color:rgba(168,207,204,.25);}
 .af-submit{margin-top:2.5rem;background:none;border:1px solid var(--pt);color:var(--tg);font-family:'Space Mono',monospace;font-size:.8rem;letter-spacing:.18em;padding:1rem 2.5rem;cursor:pointer;transition:all .3s;position:relative;overflow:hidden;}
@@ -727,7 +727,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <polygon points="20,17 20,31 33,24" fill="#5C8F8A" opacity=".6"/>
         </svg>
         <div class="promo-placeholder-text">assets/promo.mp4</div>
-        <div style="font-family:'Pretendard',sans-serif;font-size:.8rem;color:var(--st);margin-top:.25rem;">이 경로에 영상 파일을 넣으면 자동 재생됩니다</div>
+        <div style="font-family:'IBM Plex Sans KR',sans-serif;font-size:.8rem;color:var(--st);margin-top:.25rem;">이 경로에 영상 파일을 넣으면 자동 재생됩니다</div>
       </div>
     </div>
   </section>
@@ -925,7 +925,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="215" cy="145" r="9" class="ko-main" fill="#0A3711" stroke="#5C8F8A" stroke-width="1.5"/>
           <circle cx="215" cy="145" r="9" class="ko-pulse" fill="none" stroke="rgba(92,143,138,0.4)" stroke-width="1.5"/>
           <text x="235" y="141" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">수원</text>
-          <text x="235" y="153" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">R&amp;D 거점</text>
+          <text x="235" y="153" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">R&amp;D 거점</text>
         </g>
         <!-- TRACK 01 반도체 — 용인 -->
         <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 01 · 반도체','용인 반도체 클러스터','assets/field-semiconductor.jpg','https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400')" onmouseleave="hideKoTip()">
@@ -933,14 +933,14 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="248" cy="200" r="11" class="ko-main" fill="#0A3711" stroke="#5C8F8A" stroke-width="1.5"/>
           <circle cx="248" cy="200" r="11" class="ko-pulse" fill="none" stroke="rgba(92,143,138,0.4)" stroke-width="1.5"/>
           <text x="265" y="196" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">용인</text>
-          <text x="265" y="208" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">반도체 클러스터</text>
+          <text x="265" y="208" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">반도체 클러스터</text>
         </g>
         <!-- TRACK 01 반도체 — 이천 -->
         <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 01 · 반도체','이천 Fab 실습실','assets/field-semiconductor.jpg','https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400')" onmouseleave="hideKoTip()">
           <circle cx="285" cy="225" r="14" fill="rgba(10,55,17,0.5)" stroke="rgba(92,143,138,0.25)" stroke-width="1"/>
           <circle cx="285" cy="225" r="7" class="ko-main" fill="#0A3711" stroke="#5C8F8A" stroke-width="1.5"/>
           <text x="298" y="221" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">이천</text>
-          <text x="298" y="233" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">Fab 실습실</text>
+          <text x="298" y="233" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">Fab 실습실</text>
         </g>
 
         <!-- TRACK 02 전통복원 — 경복궁(서울) -->
@@ -948,14 +948,14 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="220" cy="125" r="14" fill="rgba(15,31,30,0.7)" stroke="rgba(168,207,204,0.3)" stroke-width="1"/>
           <circle cx="220" cy="125" r="7" class="ko-main" fill="#0F2A28" stroke="#A8CFCC" stroke-width="1.5"/>
           <text x="172" y="121" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">서울</text>
-          <text x="166" y="133" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">경복궁 복원</text>
+          <text x="166" y="133" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">경복궁 복원</text>
         </g>
         <!-- TRACK 02 전통복원 — 부여 -->
         <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 02 · 전통복원','부여 정림사지','assets/field-heritage.jpg','https://images.unsplash.com/photo-1508009603885-50cf7c579365?q=80&w=400')" onmouseleave="hideKoTip()">
           <circle cx="185" cy="310" r="14" fill="rgba(15,31,30,0.7)" stroke="rgba(168,207,204,0.25)" stroke-width="1"/>
           <circle cx="185" cy="310" r="7" class="ko-main" fill="#0F2A28" stroke="#A8CFCC" stroke-width="1.5"/>
           <text x="142" y="306" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">부여</text>
-          <text x="138" y="318" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">정림사지</text>
+          <text x="138" y="318" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">정림사지</text>
         </g>
         <!-- TRACK 02 전통복원 — 경주 -->
         <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 02 · 전통복원','경주 월지 발굴 현장','assets/field-heritage.jpg','https://images.unsplash.com/photo-1559628129-67cf63b72248?q=80&w=400')" onmouseleave="hideKoTip()">
@@ -963,7 +963,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="305" cy="295" r="9" class="ko-main" fill="#0F2A28" stroke="#A8CFCC" stroke-width="1.5"/>
           <circle cx="305" cy="295" r="9" class="ko-pulse" fill="none" stroke="rgba(168,207,204,0.35)" stroke-width="1.5"/>
           <text x="320" y="291" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">경주</text>
-          <text x="320" y="303" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">월지 발굴</text>
+          <text x="320" y="303" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">월지 발굴</text>
         </g>
 
         <!-- TRACK 03 생태기술 — 홍천 -->
@@ -971,7 +971,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="265" cy="165" r="14" fill="rgba(26,107,69,0.4)" stroke="rgba(214,235,234,0.25)" stroke-width="1"/>
           <circle cx="265" cy="165" r="7" class="ko-main" fill="#1a6b45" stroke="#D6EBEA" stroke-width="1.5"/>
           <text x="278" y="161" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">홍천</text>
-          <text x="278" y="173" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">스마트팜</text>
+          <text x="278" y="173" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">스마트팜</text>
         </g>
         <!-- TRACK 03 생태기술 — 지리산 -->
         <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 03 · 생태기술','지리산 생태 모니터링','assets/field-ecology.jpg','https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=400')" onmouseleave="hideKoTip()">
@@ -979,14 +979,14 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="220" cy="355" r="9" class="ko-main" fill="#1a6b45" stroke="#D6EBEA" stroke-width="1.5"/>
           <circle cx="220" cy="355" r="9" class="ko-pulse" fill="none" stroke="rgba(214,235,234,0.3)" stroke-width="1.5"/>
           <text x="234" y="351" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">지리산</text>
-          <text x="234" y="363" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">생태 모니터링</text>
+          <text x="234" y="363" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">생태 모니터링</text>
         </g>
         <!-- TRACK 03 생태기술 — 제주 -->
         <g class="ko-node" onmouseenter="showKoTip(event,'TRACK 03 · 생태기술','제주 곶자왈 eDNA 조사','assets/field-ecology.jpg','https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=400')" onmouseleave="hideKoTip()">
           <circle cx="215" cy="490" r="16" fill="rgba(26,107,69,0.4)" stroke="rgba(214,235,234,0.3)" stroke-width="1"/>
           <circle cx="215" cy="490" r="9" class="ko-main" fill="#1a6b45" stroke="#D6EBEA" stroke-width="1.5"/>
           <text x="229" y="486" style="font-family:'Space Mono',monospace;font-size:9px;fill:#A8CFCC;letter-spacing:.06em;">제주</text>
-          <text x="229" y="498" style="font-family:'Pretendard',sans-serif;font-size:8px;fill:#5C8F8A;">곶자왈 eDNA</text>
+          <text x="229" y="498" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8px;fill:#5C8F8A;">곶자왈 eDNA</text>
         </g>
 
         <!-- 서울 HQ -->
@@ -1245,7 +1245,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="100" cy="100" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <circle cx="100" cy="100" r="44" class="pulse" fill="none" stroke="rgba(92,143,138,0.25)" stroke-width="2"/>
           <text x="100" y="158" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">김현석</text>
-          <text x="100" y="171" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">반도체공정 · 前삼성전자</text>
+          <text x="100" y="171" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">반도체공정 · 前삼성전자</text>
         </g>
         <!-- NODE 1 — 박지연 -->
         <g class="fac-node" onclick="showFac(1)">
@@ -1253,7 +1253,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <image href="data:image/jpeg;base64,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" x="280" y="20" width="80" height="80" clip-path="url(#cp1)" preserveAspectRatio="xMidYMid slice"/>
           <circle cx="320" cy="60" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <text x="320" y="118" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">박지연</text>
-          <text x="320" y="131" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">디지털복원 · 前국가유산청</text>
+          <text x="320" y="131" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">디지털복원 · 前국가유산청</text>
         </g>
         <!-- NODE 2 — 오성민 -->
         <g class="fac-node" onclick="showFac(2)">
@@ -1261,7 +1261,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <image href="data:image/jpeg;base64,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" x="520" y="60" width="80" height="80" clip-path="url(#cp2)" preserveAspectRatio="xMidYMid slice"/>
           <circle cx="560" cy="100" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <text x="560" y="158" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">오성민</text>
-          <text x="560" y="171" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">스마트팜 · 농촌진흥청</text>
+          <text x="560" y="171" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">스마트팜 · 농촌진흥청</text>
         </g>
         <!-- NODE 3 — 이다은 -->
         <g class="fac-node" onclick="showFac(3)">
@@ -1269,7 +1269,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <image href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCACgAKADASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAQIDBgcIBQAE/8QAQRAAAQMDAgMDCQcDAgUFAAAAAQACAwQFEQYhBxIxQVFhExQiVHGBkZPRCBUjMkJSoWKxwUOCFiQ0RHKSorLh8f/EABkBAAIDAQAAAAAAAAAAAAAAAAACAQMFBP/EACMRAAICAgICAgMBAAAAAAAAAAABAhEDIQQSMUEFEyIyUXH/2gAMAwEAAhEDEQA/ALP89qvWp/mO+qPntV61P8x31TOAlAKwRsc89qvWZ/mH6oitqvWZ/mFNcqOEBY8K2q9Zn+Yfqh57VetT/Md9U2AjhAWOeeVXrM/zD9V7zyp9Zn+Y76pvC9hBA757Vesz/Md9UPPan1mf5jvqmsFcO+6ytOn2uNXOwOaPyg5J9yh6GVkh88qvWZ/mO+q955U+sz/Md9VV7uPOnIZOSamrgzO72xZA8VKtO6/0zqn0LVdqeabthceSQf7T19yhNMnfsk3nlV6zP8w/VA1tV61P8x31TeES1MKK88qvWZ/mO+qHntV6zP8AMd9UjCSW5QA555Vesz/Md9UDW1R/7qf5jvqm8YQQA4a2q9an+Y76r3nlV61P8x31TeENkEDgCK9hFBNAGUoLwCKhgeC8jhHCABjbKhet+I9BpUOpocVNdy5MY/LH/wCR7PYn+I+tWaStQbA9huFTtED+gdrz7OzxWf7mJaxj5pXOfLJlznE7uJ7T3pXIaMfY/qTivqC8TFktfPGwnaOBxjaPhuVw5L9VVcn4rpJXdMvJcR7yuZDGI7jGZAHhrwcHod1ItQabkDRcaHL4JdxyDZveCqHItUGfPIzzhhL48d4OQuVU0vk5GyQvdFI05a4EtIPgRuF0KKomjg8nMDzAbd6+KuqwWljhk9jlKZPVosvh3xurrM+O16ne+roRhrarHNND3c37m+PVX7TVMFbTx1VNNHNBK0OZJGctcD2grEBldzYDuh2z2K0uCvE2TT1yZYrpMTaqp4bGXHallPaP6XHr3HdPGe6ZXKOtGkCkpXULxGytKxBScJZCThSDEoYwlFBBA7hHsXgioJPIgLwRQAU3UTx0sEk8zgyKJhe9x6AAZJTgUF40agFj0VNE04lrnebgf04y7+NveobolK2ULrvW82pdUVFU5xMYfyws7GsH5R8P7ppl1D4Wxgc737Bo3LioeZXGRzydyclXRwJ4cffcwv8AdI800ZxBG4fmI7SuXJk6qzrx4uzo6egeCc96jZc7yTDG70mQsHZ4q2Rw6tMVD5q2AFgUzttJHC1sbWgADAGF9U8LANgFxvtPZ2pxhoqC8cJrLPE4CDldj8w6qlOIXDaqsYfUUpdNC3sxvhaxrWBrjsohqO0w19PJE9gIIwRhLGcoSLXjjOJjMZyQf/xLwSQd/qplxF0VJpu5OqIWk0kx7B+QqHNfyuBXfCSkrRl5IODpmquDOsf+LdHxCokLq63kU0xPV4A9F3vG3tCnazDwK1MbDriKhfJimubTTuBO3P1Yfjke9aeXRF2jmkqYlwQKUAgQnQokpJSyEnCgB3COF4IgIAIXiF7COEIkBWfftJX7nu1DaWu/6eESOHc55+gWg8brI/Gy4vueuLi4EnkkEbf9owkn4oeHkitso3V9dFSsbzPkeGho8Str6NssOm9P0NE4sZ5ONvM52w5u1ZN4L0H3jxEtUMrMtjldI4Hva0n+61rd3WeCnFXepjHTwjO7y1o9wWfyH+SiaPFWmySR3KgiOXV9MCOzygRluUM4BieHDvacqoLhqjhpUVsEM1HV00kz+WKeWN7WuO3bnxHZ2qeaboII2eTo3udE7oCc4VbbWi6MU9nQrKhm5c8D2rg1t0toyH19M13i8IX2mdVVD6B73AP64ONlXt+ruH2lj5Krp6usmMgjLmNc5vOc7Z6dhSJWyxtRQ7re30d8oZYOeOVrmkAscDhZuudHJarhLRzD0o3YB7wtBw1Gmbt+NamGGZh5SwlzXt8CCVVvFi2Np66lqWNx5TLXYCvwOnRzcqNx7ELoK91BdKapidh9PIyUHxa4FbZtdcy626mroyC2ojbIPeFhmJhEzXn8riQtd8Gbkblw6tRccvgY6B3hykgfxhaEWZkvBNUlyJQKcQT2oIlBADwGEUMohCJQRsF4bo9V7opGETPEUT3k/lBKxTqerNfeqyrcSfKTvk6/1FbD1ZWi36buFUf0Qux7cLGNflxyP1c249qpyfwfG/ZavBXT7aPVNpuJdlk7JXMcO3LStJ3HTFFfoIxVU7JuQ8zQ7oD7FRfAh7bvp6nqGR8tRZ5PIuI6FpOQT7ifgtHW+ZvIzJwFwZNz2amJ1G4kCunDClrrmy4uoaXztgDfLOyTgDHTp0UzsFohstNFA0YIA9y+y4XCGBvMXDATdPUmpLHnDA/plK6Q+2iK3QtOpHMecB7C3PdntXBvfDW23GKjaaCGbzJvLTukc4lgzn375K6Gpi+HUDZ4nNcWjL257FKaCthqqKOdjg5r25BSRbRZSoraDh1SUFU6unjb5c7lzNvj3qseL1JHIaWMAD8YgfBX7qCrYyJ55lQnEBv3lUYccRRNL3Ht93wRC+wuVfjspy4MbS1pgbjLTnZaK+zhcTPp25UJdk09SHAdwcMrNtRL5zWyzAHDnHHsV1/ZwrzDqG4UZOG1FK14HeWu+hWpHTRjy3ZoRw3SSllJKtKgEJON0rKSeqkgdwiBsvIgoBBCOEEpQSQPjPcDb9C1XKcOmcIwR4rLc7ABGMZ9EBaD+0VV+TslspQQPKSvkO/UNaB/lUJJGeeJvv8AgFTN2y2K/ElnCTWtLoWe41dZJO2CelewRxx87XyA5aHDqB13HetNWO+PuFnoq6H0oqmBkoIOcZAKxtbohNQPB7Xf5V8fZ61vFXWZ2l66T/m7fzGDm/1ISeg9h2x3Lm5ELXZHXxsvV9WW02Tz6pjZM7kYDuCfzHuX03HTJq6pldFcqyAwxkMhbJiMk97e1fPVWCkutRDJNJNGYcuYYpC3Du/ZRi82q5UssjZbzcmsG7JBiQe8bYXJFo1MeP7HV0c+9aNuRuLK2W8T5cwhzGnAwfBdK03D7so20bZgfJjYZ3woNeKWslmzHe6+aV/7Whq7elbBHa2y11fUT1VS5uAZXkgeACh/0fJj+vw7HL3eZql5jBOD1VL611bRtrLzap2yud5BscDosbS/qLj3Y7FZmrL7SWWhnrZ3ABoJA7+4BZtrq2W5V09ZMfxJnl7vDK6eLju5MzeZlqooVTMDy4dgVjcGq827X1qPNhsxdC7fqCPqq8tw5nv7dlKNFT+aaotE37amI+4ldjezORsMpJS+u6SVcVAKSUopJQgHV5KwjjIUkgHRFexheQBUn2haQy2m21AaCGGVhPtA+ipIQ88rXYz6BP8AC0zxTsrr1pKoawc0kGZQB3Y3WbsiLle7GMAH+2VRNbLoeDlWuRrIeQ7EOAx70LHV1Fu1fR1NNK+F8VVGOdhwQHPAI+BK+Cqe+jq5GDYB+fcvu0/BJdLrAyFvNPNVRhg/3Df4AlItjPTRsq03byE4pKv0ZerXHo8d4XbkgpaqIidrXNPYd1x6m1R19BGHbyNaOV46g47FHa2tvlrjLY3eXY3pzbFZadGt5OxdKC10gc6OCNrh0wFCL/fIKaJzQ8Z7AFzLxqG61Jc2Rro8+KjkjJZnFzyXE9SVI10QXilcKiqbTMe4hjnl3Lnbp2qv2bBTriPCXmBw6R5z71BiNgButLAqxoyeRvIz77Xhhe49nRSXSVOZtS22NoyfOoWe/mCjFI3kIb1JIyrH4Q2l1113amhpLIHuqpfANBx/OE/sT0ajwklKQKvKGJSSl4SSggeyiEAEQUAFeQJAbzOIDQMkk4AUcvXEnSen8tq7xC+Uf6NP+K8nuw3/ACVKTfgLJDLEJY3RuaHNcOUg9qyLrO3T2S7VVvljMXJI90Of1MJOFcF7+0DBGCyy2Z0ndLWP5R/6W7/Eqn9Zaku2taoVNfLCDHnybIowxrc9fH4lEsLaGjOmRWSUTHlnGHN2ypfwmp4Xa0tcJAfzSO9L9p5SB/dQ99BWybP5SB2lTjgtbXDiHQRyO/Q93vUYsLbphkypK0a2tpE1HGTt6OD4EbFMVtKx4cHNBC+eirRRXma3ynAnb5eLPwcPjv7106ktAOT8VjZsfSbizWxZO8VJFb6itLOY8jRue5R6rtIhpnYG+FZVdSRzv2GfYopdqaSrq/MKdvpO2JHZ4qqMXKSSLnJJNy9Ge+IDauCTml9KCUlrXewqFse0H0W4J7VanGCGL72p7ZCMx0zACqxmonMfhgwFvPjuCSRifcptyH6YB7gOYNAGS4noFo3gJpGa1UFReqpnLLWNDYgRgiP/AO1m6CGoie2Rhw5hDmnGcEHKunSH2gLxboYqa+W6C4QN28tB+FKB7Pyn+EscT8g5mg8IEKHWPjBo6/ERx3PzKc/6VazyRPsPQ/FTBkjJoxJE9kjHdHNcCD7wnaaFR4pKUUCoIHQo7xE1M/R+lam5wsY+pLmwwNd053HAJHbgZOPBSMKnvtAX+J4t+nmZMjD57KR2bFrR/JKeCtgyqrtqe9agLm3S61dZGHk+TfIQzP8A4jZc0EM2aAPYm2HHOD+5EkE4XT4KwSyg5BIHiUoEcox06DHavnkAc/lO6VFGYyMOIH7exF2A83AznBPipxwhtrptTTXBjXHzKJryR2ZdhQcb+Ctv7OrPLagu8L8GKopAwZ/c12f7J4ebK8v6lu6mpiaegusILZKaRr/9jtnf4XbDG1MbCDnmG6Fwp2zU8lK4ei6MsA9yasBNXQQy83pBvK4eI2P9lj/I4qmpr2afxuS4OD9H1stkcbHPO+22FGjbm2eC4XWpwX8rnZ/aFL8uAw7sUb1WGVFqnpZX+TZK0gnuUfHYO0+38D5DP1h1T8mYNX+Vq6ma51Iw6qkdyZ/aFDpYvSyAp9xOqqb7zpaKka4QU8Ozz+sk7n+MKEZy5bGTyZmL9RuOIAZxheiHK5zD0G49hSZ46hzuWJzWRn9WMlOU9MIcuy5ziN3E5yqy0dDRjGNl07JqW8abkL7Rcqmj7S2N3oO9rTsuWSgTupeyLLf0hx4uT7rRUGoYKWWnqHNhNTCzkexxOA4joR3q73DBwVimoqTFURyN3Mbg8e0HP+Fsq03CO7Wqir4nBzKmBkrXDoQWgqjJFJ6HR027kAdqyxxGvBvGtbzVc4ewVBhYR+1no4+IK03d65trtVbXvIa2mgfKT3YaSsgTSOmc+V59ORxe7xJOT/dNiXsiQ1G/8SQewownnk3TIdyzH+ppCXSHL1cKO9eYDGxXgElp9OT4pbUUAexW1wEk8zlmruxlcyIu7g5iqfGQrc4H0jqnS+oS3d8VVFK3HeGqzGt7Ks36l/3CMOAlZ07VyNLTCGsuVCScxTl7R3Bw5v8AK+201zLhQsDnblgyPBcWGYW/WYjOwqoBkeLTj+xC5OfjvH/hd8fkqdf0lUx2I96rLXFZLc7zT2Gmc7Mn4k5b+lnd71O/vZkk9dLKRHBSM3J28cqt+Hsx1BdLxqaYExukxG4/+0D2Df2lXcPF9cCjl5PsmymeKr4m6wqqWHHJSRR0+B2EDJ/+Sh7V19V1RrdQXOqc7mMtVI8Hw5jj+FyGJpPZZBUkOg7YSA8+X5G9AMuSxsCV81M7mbJN+52AfAJLGoca7meQNwEkv/F5e4ZSKRxcC7vJTPlMTVLiemGhDZI3KeaQn+VqLghdfvTh1QMc7MlE59K4dwact/ghZe5fQ5iOqvH7NFwcYb9bnP8ARD4qhjSemxacfwqpolH/2Q==" x="760" y="30" width="80" height="80" clip-path="url(#cp3)" preserveAspectRatio="xMidYMid slice"/>
           <circle cx="800" cy="70" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <text x="800" y="128" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">이다은</text>
-          <text x="800" y="141" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">소자설계 · KAIST 박사</text>
+          <text x="800" y="141" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">소자설계 · KAIST 박사</text>
         </g>
         <!-- NODE 4 — 최태원 -->
         <g class="fac-node" onclick="showFac(4)">
@@ -1277,7 +1277,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <image href="data:image/jpeg;base64,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" x="120" y="270" width="80" height="80" clip-path="url(#cp4)" preserveAspectRatio="xMidYMid slice"/>
           <circle cx="160" cy="310" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <text x="160" y="368" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">최태원</text>
-          <text x="160" y="381" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">생태기술 · 국립공원관리공단</text>
+          <text x="160" y="381" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">생태기술 · 국립공원관리공단</text>
         </g>
         <!-- NODE 5 — 정수아 -->
         <g class="fac-node" onclick="showFac(5)">
@@ -1286,7 +1286,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <circle cx="420" cy="360" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <circle cx="420" cy="360" r="44" class="pulse" fill="none" stroke="rgba(92,143,138,0.2)" stroke-width="2"/>
           <text x="420" y="418" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">정수아</text>
-          <text x="420" y="431" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">AI복원모델 · 서울대 공학</text>
+          <text x="420" y="431" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">AI복원모델 · 서울대 공학</text>
         </g>
         <!-- NODE 6 — 한동준 -->
         <g class="fac-node" onclick="showFac(6)">
@@ -1294,7 +1294,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <image href="data:image/jpeg;base64,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" x="640" y="280" width="80" height="80" clip-path="url(#cp6)" preserveAspectRatio="xMidYMid slice"/>
           <circle cx="680" cy="320" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <text x="680" y="378" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">한동준</text>
-          <text x="680" y="391" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">반도체장비 · 前SK하이닉스</text>
+          <text x="680" y="391" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">반도체장비 · 前SK하이닉스</text>
         </g>
         <!-- NODE 7 — 윤채린 -->
         <g class="fac-node" onclick="showFac(7)">
@@ -1302,7 +1302,7 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
           <image href="data:image/jpeg;base64,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" x="860" y="230" width="80" height="80" clip-path="url(#cp7)" preserveAspectRatio="xMidYMid slice"/>
           <circle cx="900" cy="270" r="44" fill="transparent" stroke="#5C8F8A" stroke-width="1.5"/>
           <text x="900" y="328" text-anchor="middle" style="font-family:'Space Mono',monospace;font-size:10px;fill:#A8CFCC;letter-spacing:.07em;">윤채린</text>
-          <text x="900" y="341" text-anchor="middle" style="font-family:'Pretendard',sans-serif;font-size:8.5px;fill:#5C8F8A;">드론측량 · 문화재연구원</text>
+          <text x="900" y="341" text-anchor="middle" style="font-family:'IBM Plex Sans KR',sans-serif;font-size:8.5px;fill:#5C8F8A;">드론측량 · 문화재연구원</text>
         </g>
       </svg>
       <!-- Detail panel -->
@@ -1673,63 +1673,63 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
       <tbody>
         <tr class="ac" data-t="반도체">
           <td class="td-id">S-4029</td>
-          <td class="td-title">이천 Fab 노광 공정 수율 저하 리포트<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">포토레지스트 도포 두께 불균일로 인한 패턴 결함 발생. 원인 분석 및 재설계 파라미터 백업 파일.</span></td>
+          <td class="td-title">이천 Fab 노광 공정 수율 저하 리포트<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">포토레지스트 도포 두께 불균일로 인한 패턴 결함 발생. 원인 분석 및 재설계 파라미터 백업 파일.</span></td>
           <td class="td-track"><span class="t-s">반도체</span></td>
           <td>2026.04.20</td>
           <td class="td-status s-failed">● FAILED</td>
         </tr>
         <tr class="ac" data-t="전통 복원">
           <td class="td-id">R-8812</td>
-          <td class="td-title">경주 월지 출토 목간 3D 메쉬 데이터<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">디지털 트윈 스캐닝 원본 데이터. 목재 마모도 측정 표면 텍스처 매핑 완료.</span></td>
+          <td class="td-title">경주 월지 출토 목간 3D 메쉬 데이터<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">디지털 트윈 스캐닝 원본 데이터. 목재 마모도 측정 표면 텍스처 매핑 완료.</span></td>
           <td class="td-track"><span class="t-r">전통 복원</span></td>
           <td>2026.04.18</td>
           <td class="td-status s-synced">● SYNCED</td>
         </tr>
         <tr class="ac" data-t="생태 기술">
           <td class="td-id">E-1044</td>
-          <td class="td-title">지리산 아고산대 침엽수림 토양 수분 모니터링<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">고도별 스마트 센서 배열에서 수집된 주간 토양 수분 변동량 로우 데이터. (CSV 첨부)</span></td>
+          <td class="td-title">지리산 아고산대 침엽수림 토양 수분 모니터링<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">고도별 스마트 센서 배열에서 수집된 주간 토양 수분 변동량 로우 데이터. (CSV 첨부)</span></td>
           <td class="td-track"><span class="t-e">생태 기술</span></td>
           <td>2026.04.15</td>
           <td class="td-status s-active">● ACTIVE</td>
         </tr>
         <tr class="ac" data-t="반도체">
           <td class="td-id">S-4030</td>
-          <td class="td-title">차세대 소자 설계 시뮬레이션 3차 결과<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">전력 효율 개선을 위한 트랜지스터 게이트 구조 변경 시뮬레이션 3차 결과 플롯.</span></td>
+          <td class="td-title">차세대 소자 설계 시뮬레이션 3차 결과<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">전력 효율 개선을 위한 트랜지스터 게이트 구조 변경 시뮬레이션 3차 결과 플롯.</span></td>
           <td class="td-track"><span class="t-s">반도체</span></td>
           <td>2026.04.12</td>
           <td class="td-status s-revised">● REVISED</td>
         </tr>
         <tr class="ac" data-t="생태 기술">
           <td class="td-id">E-1045</td>
-          <td class="td-title">스마트팜 센터 작물 생장 알고리즘 테스트<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">조도 및 영양액 배합 비율 조정에 따른 토마토 생육 속도 비교 영상 로그.</span></td>
+          <td class="td-title">스마트팜 센터 작물 생장 알고리즘 테스트<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">조도 및 영양액 배합 비율 조정에 따른 토마토 생육 속도 비교 영상 로그.</span></td>
           <td class="td-track"><span class="t-e">생태 기술</span></td>
           <td>2026.04.10</td>
           <td class="td-status s-active">● ACTIVE</td>
         </tr>
         <tr class="ac" data-t="전통 복원">
           <td class="td-id">R-8813</td>
-          <td class="td-title">경복궁 단청 안료 성분 AI 분석 모델링<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">전통 안료 화학 조성 역산출 딥러닝 모델 가중치 파일 업데이트.</span></td>
+          <td class="td-title">경복궁 단청 안료 성분 AI 분석 모델링<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">전통 안료 화학 조성 역산출 딥러닝 모델 가중치 파일 업데이트.</span></td>
           <td class="td-track"><span class="t-r">전통 복원</span></td>
           <td>2026.04.05</td>
           <td class="td-status s-synced">● SYNCED</td>
         </tr>
         <tr class="ac" data-t="반도체">
           <td class="td-id">S-4031</td>
-          <td class="td-title">용인 반도체 클러스터 인턴십 배치 결과<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">2026년 상반기 기업 인턴십 배치 완료. 참여 기업 7개사, 학생 12명 투입.</span></td>
+          <td class="td-title">용인 반도체 클러스터 인턴십 배치 결과<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">2026년 상반기 기업 인턴십 배치 완료. 참여 기업 7개사, 학생 12명 투입.</span></td>
           <td class="td-track"><span class="t-s">반도체</span></td>
           <td>2026.03.28</td>
           <td class="td-status s-complete">● COMPLETE</td>
         </tr>
         <tr class="ac" data-t="전통 복원">
           <td class="td-id">R-8810</td>
-          <td class="td-title">부여 정림사지 석탑 균열 진단 리포트<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">드론 포토그래메트리 기반 균열 패턴 정밀 분석. 국가유산청 제출본 첨부.</span></td>
+          <td class="td-title">부여 정림사지 석탑 균열 진단 리포트<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">드론 포토그래메트리 기반 균열 패턴 정밀 분석. 국가유산청 제출본 첨부.</span></td>
           <td class="td-track"><span class="t-r">전통 복원</span></td>
           <td>2026.03.20</td>
           <td class="td-status s-submitted">● SUBMITTED</td>
         </tr>
         <tr class="ac" data-t="생태 기술">
           <td class="td-id">E-1040</td>
-          <td class="td-title">제주 곶자왈 외래종 eDNA 모니터링 데이터<br><span style="font-size:.75rem;color:var(--st);font-family:'Pretendard',sans-serif;font-weight:400;">환경 DNA 샘플링 기반 외래 침입종 분포 현황 분석. 격자 도면 첨부.</span></td>
+          <td class="td-title">제주 곶자왈 외래종 eDNA 모니터링 데이터<br><span style="font-size:.75rem;color:var(--st);font-family:'IBM Plex Sans KR',sans-serif;font-weight:400;">환경 DNA 샘플링 기반 외래 침입종 분포 현황 분석. 격자 도면 첨부.</span></td>
           <td class="td-track"><span class="t-e">생태 기술</span></td>
           <td>2026.03.15</td>
           <td class="td-status s-active">● ACTIVE</td>
@@ -1814,17 +1814,25 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
   <!-- TYPOGRAPHY -->
   <section class="sec sec-dk">
     <div class="tag tag-light">타이포그래피 시스템</div>
-    <h2 class="sh reveal" style="color:var(--tw);margin-bottom:3rem;">공통된 타이포 시스템</h2>
+    <h2 class="sh reveal" style="color:var(--tw);margin-bottom:1rem;">본명조 + Cormorant + IBM Plex</h2>
+    <p style="color:var(--st);font-size:.92rem;line-height:1.8;max-width:620px;margin-bottom:3rem;" class="reveal rd1">
+      세 서체 모두 획 굵기 대비라는 공통 언어를 공유 → HU 심볼 DNA와 일관된 시스템.
+    </p>
     <div class="ty-grid reveal">
       <div class="ty">
-        <div class="ty-lbl">국문 서체</div>
-        <div class="ty-smp-ko">Pretendard<br>한국대학교</div>
-        <div class="ty-specs">Weight: Bold / SemiBold<br>자간: -2% ~ -3%<br>심볼 획 두께에 눌리지 않도록 응집력 확보</div>
+        <div class="ty-lbl">국문 디스플레이</div>
+        <div class="ty-smp-ko" style="font-family:'Noto Serif KR',serif;">본명조<br>한국대학교</div>
+        <div class="ty-specs">획 대비가 있는 명조.<br>HU 심볼의 두꺼운 곡선과 같은 리듬.</div>
       </div>
       <div class="ty">
-        <div class="ty-lbl">영문 / 모노스페이스 서체</div>
-        <div class="ty-smp-en">Space Mono<br>HANKUK</div>
-        <div class="ty-specs">Weight: Regular / Bold<br>자간: +5% ~ +10%<br>국문 대비 한 단계 낮게 — 현대적·쾌적한 인상</div>
+        <div class="ty-lbl">영문</div>
+        <div class="ty-smp-en" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;">Cormorant Garamond<br>HANKUK UNIVERSITY</div>
+        <div class="ty-specs">극단적 thin-thick 세리프.<br>학술적이고 유기적인 인상.</div>
+      </div>
+      <div class="ty">
+        <div class="ty-lbl">본문</div>
+        <div class="ty-smp-en" style="font-family:'IBM Plex Sans KR',sans-serif;font-weight:600;font-size:1.6rem;">IBM Plex Sans KR<br><span style="font-size:1.1rem;font-weight:400;">기술적 구조감, 본문 레이어</span></div>
+        <div class="ty-specs">기술적 구조감.<br>'냉각된' 키워드를 본문 레이어에서 담당.</div>
       </div>
     </div>
   </section>
@@ -1833,11 +1841,11 @@ footer{background:var(--di);padding:4rem 3rem;border-top:1px solid rgba(168,207,
   <div class="img-break-grid">
     <div style="overflow:hidden;position:relative;">
       <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200" alt="반도체" loading="lazy"/>
-      <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--tw);background:rgba(15,31,30,.7);padding:.4rem .8rem;">OFFICIAL BRANDING · Steps 1–2–3</div>
+      <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--tw);background:rgba(15,31,30,.7);padding:.4rem .8rem;">OFFICIAL BRANDING · Steps 1–2</div>
     </div>
     <div style="overflow:hidden;position:relative;">
       <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200" alt="굿즈" loading="lazy"/>
-      <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--tw);background:rgba(15,31,30,.7);padding:.4rem .8rem;">COMMUNICATION MARK · Steps 4–5–6</div>
+      <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--tw);background:rgba(15,31,30,.7);padding:.4rem .8rem;">COMMUNICATION MARK · Step 5</div>
     </div>
   </div>
 
